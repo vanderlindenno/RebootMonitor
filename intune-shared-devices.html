@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RebootMonitor with Microsoft Intune &amp; Managed Home Screen | Nordic Appworks</title>
+<meta name="description" content="How to deploy RebootMonitor with Microsoft Intune and Managed Home Screen so shared Android devices get rebooted at least once every 7 days.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Nordic Appworks">
+<meta name="theme-color" content="#005824">
+<link rel="canonical" href="https://rebootmonitor.com/intune-shared-devices.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="RebootMonitor">
+<meta property="og:title" content="RebootMonitor with Microsoft Intune &amp; Managed Home Screen">
+<meta property="og:description" content="How to deploy RebootMonitor with Microsoft Intune and Managed Home Screen so shared Android devices get rebooted at least once every 7 days.">
+<meta property="og:url" content="https://rebootmonitor.com/intune-shared-devices.html">
+<meta property="og:image" content="https://rebootmonitor.com/header-banner.png">
+<meta property="og:image:alt" content="RebootMonitor – track uptime, reboot history and device stability">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-09-29">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RebootMonitor with Microsoft Intune &amp; Managed Home Screen">
+<meta name="twitter:description" content="Keep shared Android devices fast, secure and up to date with regular reboots.">
+<meta name="twitter:image" content="https://rebootmonitor.com/header-banner.png">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://rebootmonitor.com/#organization",
+      "name": "Nordic Appworks",
+      "url": "https://rebootmonitor.com/",
+      "logo": "https://rebootmonitor.com/apple-touch-icon.png"
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://rebootmonitor.com/intune-shared-devices.html#article",
+      "headline": "Shared devices deserve regular reboots: RebootMonitor with Intune and Managed Home Screen",
+      "description": "How to deploy RebootMonitor with Microsoft Intune and Managed Home Screen so shared Android devices get rebooted at least once every 7 days.",
+      "url": "https://rebootmonitor.com/intune-shared-devices.html",
+      "mainEntityOfPage": "https://rebootmonitor.com/intune-shared-devices.html",
+      "inLanguage": "en",
+      "datePublished": "2026-09-29",
+      "dateModified": "2026-09-29",
+      "author": {
+        "@id": "https://rebootmonitor.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://rebootmonitor.com/#organization"
+      },
+      "image": [
+        "https://rebootmonitor.com/screenshot1.png",
+        "https://rebootmonitor.com/header-banner.png"
+      ],
+      "about": [
+        "Microsoft Intune",
+        "Managed Home Screen",
+        "Android Enterprise dedicated devices",
+        "Device reboot"
+      ],
+      "isPartOf": {
+        "@id": "https://rebootmonitor.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://rebootmonitor.com/intune-shared-devices.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://rebootmonitor.com/intune-shared-devices.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://rebootmonitor.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://rebootmonitor.com/about.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Intune & shared devices",
+          "item": "https://rebootmonitor.com/intune-shared-devices.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://rebootmonitor.com/intune-shared-devices.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why do shared Android devices rarely get restarted?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Shared devices are used by changing people who do not feel responsible for the device. Managed Home Screen sign-in and automatic sign-out make it feel even less like anyone's own device, so nobody thinks of rebooting it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should a shared Android device be rebooted?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At least once every 7 days. That lets pending Android system and security updates take effect and clears background processes that slow the device down."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does RebootMonitor work with Microsoft Intune and Managed Home Screen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Deploy it as a Managed Google Play app, assign it as Required to your shared device group and add it to the allowed apps in Managed Home Screen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does RebootMonitor send any data to a server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All reboot history is stored locally on the device. The app only uses the RECEIVE_BOOT_COMPLETED and POST_NOTIFICATIONS permissions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When does the reboot reminder appear?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When the device has not been restarted for 7 days. The reminder clears itself after the next reboot and stays silent during the first 7 days after installation."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{--green-dark:#005824;--green:#168039;--green-hover:#0f622c;--ground:#f5f7f8;--card:#fff;--text:#222;--muted:#4a5550;--line:#dfe5e2;--orange:#e07b17;--orange-soft:#fff1e2;--green-soft:#e6f4ea;color-scheme:light}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",Arial,sans-serif;margin:0;background:var(--ground);color:var(--text);font-size:16px;line-height:1.6}
+.icon{display:inline-block;width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.125em}
+header.hero{background-color:var(--green-dark);background-image:radial-gradient(rgba(255,255,255,.13) 1.5px,transparent 1.5px);background-size:28px 28px;color:#fff}
+.hero-inner{max-width:1200px;margin:auto;padding:48px 20px;display:flex;align-items:center;gap:36px;flex-wrap:wrap}
+.hero-logo{width:132px;height:132px;flex:none}
+.hero-text{flex:1;min-width:260px}
+.hero-eyebrow{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85;margin:0 0 8px}
+.hero h1{color:#fff;font-size:clamp(32px,5vw,54px);line-height:1.08;font-weight:800;margin:0 0 14px;text-wrap:balance}
+.hero p{font-size:19px;max-width:620px;margin:0;opacity:.95}
+.container{max-width:1200px;margin:auto;padding:40px 20px}
+.card{background:var(--card);padding:30px;border-radius:18px;box-shadow:0 4px 18px rgba(0,0,0,.08);margin:20px 0}
+h2{color:var(--green);margin:0 0 12px;text-wrap:balance}
+h3{margin:12px 0 6px}
+.lead{font-size:18px;color:var(--muted);margin:0 0 16px}
+.prose p{max-width:70ch}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.features .card{margin:0}
+.feature{text-align:center}
+.feature .icon{font-size:40px;color:var(--green)}
+.feature p{margin:0;color:var(--muted)}
+.split{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:36px;align-items:center}
+.phones{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.phones figure{margin:0;max-width:240px;width:100%;text-align:center}
+.phones svg{width:100%;height:auto;filter:drop-shadow(0 8px 20px rgba(0,0,0,.2))}
+.phones figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.steps{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;counter-reset:step}
+.steps li{counter-increment:step;position:relative;background:var(--green-soft);border-radius:14px;padding:20px 18px 18px}
+.steps li::before{content:counter(step);position:absolute;top:16px;right:18px;font-weight:800;font-size:28px;color:rgba(22,128,57,.25)}
+.steps .icon{font-size:30px;color:var(--green)}
+.steps h3{margin:10px 0 4px;font-size:17px}
+.steps p{margin:0;font-size:15px;color:var(--muted)}
+code{background:#eef2f0;padding:2px 6px;border-radius:6px;font-size:.92em}
+.check-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.check-list li{display:flex;gap:12px;align-items:flex-start}
+.check-list .icon{flex:none;font-size:22px;color:var(--green);margin-top:2px}
+.note{display:flex;gap:14px;align-items:flex-start;background:var(--orange-soft);border-radius:12px;padding:16px 18px;margin-top:20px}
+.note .icon{flex:none;font-size:24px;color:var(--orange);margin-top:2px}
+.note p{margin:0}
+.two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin:20px 0}
+.two-col .card{margin:0}
+.cta{display:flex;align-items:center;gap:24px;flex-wrap:wrap;border-left:6px solid var(--green)}
+.cta>.icon{font-size:48px;color:var(--green)}
+.cta .cta-text{flex:1;min-width:240px}
+.cta h2{margin-top:0}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;padding:12px 24px;border-radius:10px;font-weight:600}
+.btn:hover{background:var(--green-hover)}
+.btn:focus-visible,a:focus-visible{outline:3px solid #7fc79a;outline-offset:2px}
+a{color:var(--green)}
+.footer{background:var(--green-dark);color:#fff;text-align:center;padding:25px 16px}
+.footer a{color:#fff;display:inline-block;padding:12px}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+@media (max-width:600px){.container{padding:16px 14px}.card{padding:20px;margin:14px 0;border-radius:14px}.hero-inner{padding:32px 16px;gap:20px}.hero-logo{width:88px;height:88px}.hero p{font-size:17px}.features{grid-template-columns:1fr 1fr;gap:12px}.features .card{padding:16px 12px}.feature .icon{font-size:30px}.feature h3{font-size:16px}.feature p{font-size:14px}.btn{width:100%;justify-content:center;box-sizing:border-box}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.crumbs{max-width:1200px;margin:auto;padding:14px 20px 0;font-size:14px;color:var(--muted)}.crumbs ol{list-style:none;margin:0;padding:0;display:flex;gap:8px;flex-wrap:wrap}.crumbs li+li::before{content:"\203A";margin-right:8px}.meta-line{font-size:14px;color:var(--muted);margin:0 0 16px}.shot{margin:0;max-width:240px;width:100%;text-align:center}.shot img{width:100%;height:auto;border-radius:24px;box-shadow:0 8px 25px rgba(0,0,0,.2)}.shot figcaption{font-size:14px;color:var(--muted);margin-top:10px}.faq details{border-top:1px solid var(--line);padding:14px 0}.faq details:last-child{border-bottom:1px solid var(--line)}.faq summary{font-weight:600;cursor:pointer;color:var(--green-dark)}.faq p{margin:10px 0 0;max-width:70ch}</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.8"/><path d="M16.5 14.2c2.9.2 5 2.3 5 5.3"/></symbol>
+<symbol id="i-update" viewBox="0 0 24 24"><path d="M12 3v11"/><path d="m7.5 9.5 4.5 4.5 4.5-4.5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></symbol>
+<symbol id="i-gauge" viewBox="0 0 24 24"><path d="M3.5 17a9 9 0 1 1 17 0"/><path d="m12 13 4-5"/><circle cx="12" cy="13.5" r="1.4"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.3 7.5 9.5 4.3-1.2 7.5-5 7.5-9.5V6z"/><path d="m8.8 12 2.3 2.3 4.3-4.6"/></symbol>
+<symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-1.5 2.5-4 2.5h-2"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M12 8v8M8 12h8"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></symbol>
+<symbol id="i-phone-check" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="m9.3 12 1.9 1.9 3.6-3.8"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.2 12.2 2.6 2.6 5-5.2"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.5v.2"/></symbol>
+<symbol id="i-routine" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.4-5.7"/><path d="M20 4v5h-5"/><path d="M12 8v4l2.5 2"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3.8v16.4a1 1 0 0 0 1.5.9l13-8.2a1 1 0 0 0 0-1.7l-13-8.2A1 1 0 0 0 6 3.8z"/></symbol>
+<symbol id="i-logo" viewBox="0 0 108 108"><path d="M28.62 42.17a28 28 0 0 1 50.76 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M74.4 44.49l8.36 4.93 1.6-9.57z" fill="#fff" stroke="none"/><path d="M79.38 65.83a28 28 0 0 1-50.76 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M33.6 63.51l-8.36-4.93-1.6 9.57z" fill="#fff" stroke="none"/><rect x="37" y="40" width="34" height="28" rx="4" fill="#fff" stroke="none"/><g fill="#2E7D32" stroke="none"><rect x="44" y="44" width="5" height="5" rx="1"/><rect x="51.5" y="44" width="5" height="5" rx="1"/><rect x="59" y="44" width="5" height="5" rx="1"/><rect x="44" y="51.5" width="5" height="5" rx="1"/><rect x="51.5" y="51.5" width="5" height="5" rx="1"/><rect x="59" y="51.5" width="5" height="5" rx="1"/><rect x="44" y="59" width="5" height="5" rx="1"/><rect x="51.5" y="59" width="5" height="5" rx="1"/><rect x="59" y="59" width="5" height="5" rx="1"/></g></symbol>
+</svg>
+
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="https://rebootmonitor.com/">Home</a></li><li><a href="https://rebootmonitor.com/about.html">About</a></li><li aria-current="page">Intune &amp; shared devices</li></ol></nav>
+<header class="hero">
+  <div class="hero-inner">
+    <svg class="hero-logo" aria-hidden="true"><use href="#i-logo"/></svg>
+    <div class="hero-text">
+      <p class="hero-eyebrow">Microsoft Intune · Managed Home Screen · RebootMonitor</p>
+      <h1>Shared devices deserve regular reboots</h1>
+      <p>Shared Android devices are used by many people and owned by no one, so they almost never get restarted. RebootMonitor makes uptime visible and nudges the current user to reboot.</p>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+<article>
+
+<section class="card prose" aria-labelledby="problem">
+  <p class="meta-line">By Nordic Appworks · Published <time datetime="2026-09-29">29 September 2026</time></p>
+  <h2 id="problem">The shared device problem</h2>
+  <p class="lead">In healthcare, education, logistics and field service, one device is often shared by a whole team.</p>
+  <p>A nurse on the day shift uses it in the morning and a colleague on the evening shift picks it up later. Nobody feels responsible for the device, so nobody thinks of restarting it. Weeks or even months without a reboot are the norm rather than the exception.</p>
+  <p>This page explains how shared devices are set up with Microsoft Intune and Managed Home Screen, why a missing reboot causes problems, and how RebootMonitor closes that gap.</p>
+</section>
+
+<section class="card" aria-labelledby="mhs">
+  <div class="split">
+    <div class="prose">
+      <h2 id="mhs">Intune and Managed Home Screen</h2>
+      <p class="lead">Intune enrolls a shared device as an Android Enterprise dedicated device. Managed Home Screen decides what the user sees on it.</p>
+      <p>Managed Home Screen (MHS) is a Microsoft launcher that replaces the standard home screen. Users only see the apps the administrator has approved and cannot change device settings. A shared device stays predictable, no matter who is holding it.</p>
+      <p>MHS can also require a Microsoft Entra ID sign-in per session and sign users out automatically after inactivity. That makes the device suitable for changing users. It also makes the device feel like it belongs to no one.</p>
+    </div>
+    <div class="phones">
+      <figure>
+        <svg viewBox="0 0 240 480" role="img" aria-labelledby="ph1t">
+          <title id="ph1t">Managed Home Screen with a grid of approved apps, including RebootMonitor with a notification badge</title>
+          <rect x="4" y="4" width="232" height="472" rx="30" fill="#1d2320"/>
+          <rect x="14" y="14" width="212" height="452" rx="22" fill="#eaf1ed"/>
+          <rect x="14" y="14" width="212" height="70" rx="22" fill="#005824"/><rect x="14" y="60" width="212" height="24" fill="#005824"/>
+          <text x="30" y="44" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="11" opacity=".8">09:41</text>
+          <text x="30" y="68" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="700">Ward 4B · Shared device</text>
+          <g font-family="Segoe UI,Arial,sans-serif" font-size="10" fill="#2b3530" text-anchor="middle">
+            <rect x="34" y="110" width="44" height="44" rx="12" fill="#2f6fd6"/><text x="56" y="170">Mail</text>
+            <rect x="98" y="110" width="44" height="44" rx="12" fill="#7a57c9"/><text x="120" y="170">Chat</text>
+            <rect x="162" y="110" width="44" height="44" rx="12" fill="#d9822b"/><text x="184" y="170">Scanner</text>
+            <rect x="34" y="192" width="44" height="44" rx="12" fill="#2a9d8f"/><text x="56" y="252">Patients</text>
+            <rect x="98" y="192" width="44" height="44" rx="12" fill="#5a6470"/><text x="120" y="252">Camera</text>
+            <rect x="162" y="192" width="44" height="44" rx="12" fill="#c2455b"/><text x="184" y="252">Browser</text>
+            <rect x="34" y="274" width="44" height="44" rx="12" fill="#168039"/>
+            <svg x="34" y="274" width="44" height="44" viewBox="0 0 108 108"><use href="#i-logo"/></svg>
+            <circle cx="76" cy="276" r="9" fill="#e53935"/><text x="76" y="280" fill="#fff" font-size="11" font-weight="700">1</text>
+            <text x="56" y="334" font-weight="700" fill="#005824">Reboot</text><text x="56" y="346" font-weight="700" fill="#005824">Monitor</text>
+            <rect x="98" y="274" width="44" height="44" rx="12" fill="#3b7dd8"/><text x="120" y="334">Docs</text>
+          </g>
+          <rect x="30" y="410" width="180" height="36" rx="18" fill="#fff" stroke="#c9d6cf"/>
+          <text x="120" y="433" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="12" fill="#005824" font-weight="600">Sign out · End session</text>
+        </svg>
+        <figcaption>Managed Home Screen shows only approved apps.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="why" class="card">
+  <h2 id="why">Why a reboot matters</h2>
+  <p class="lead" style="margin-bottom:0">A device that runs for weeks falls behind on updates and gets slower and less reliable.</p>
+</section>
+<section class="features" aria-label="Effects of missing reboots">
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-update"/></svg><h3>Pending updates</h3><p>Android system updates and many security patches only take effect after a restart. The device can report as compliant while still running old code.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg><h3>Memory &amp; performance</h3><p>Background processes pile up over time. Apps slow down or crash, and the battery drains faster.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><h3>Policies &amp; apps</h3><p>New Intune profiles, app updates and MHS configuration are sometimes only fully applied after a restart.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg><h3>Helpdesk tickets</h3><p>Many "the device is acting strange" reports disappear after a reboot. Without one, they end up at the service desk.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><h3>No owner</h3><p>An owner notices and restarts a personal device. On a shared device, everyone passes the problem to the next user.</p></div>
+</section>
+
+<section class="card" aria-labelledby="solution">
+  <h2 id="solution">The solution: RebootMonitor</h2>
+  <p class="lead">RebootMonitor records every reboot locally and reminds the user once the device has gone 7 days without a restart.</p>
+  <p style="max-width:70ch">The app speaks to the person holding the device right now. They can see the device's status at a glance and get a clear reason to restart it.</p>
+  <div class="phones" style="margin-top:24px">
+    <figure class="shot">
+      <picture><source srcset="screenshot1.webp" type="image/webp"><img src="screenshot1.png" width="526" height="1171" alt="RebootMonitor dashboard on a shared Android device showing status, current uptime, days with reboots and the last 7 days" loading="lazy" decoding="async"></picture>
+      <figcaption>Status, uptime and the last 7 days at a glance.</figcaption>
+    </figure>
+    <figure class="shot">
+      <picture><source srcset="screenshot2.webp" type="image/webp"><img src="screenshot2.png" width="526" height="1170" alt="RebootMonitor reboot history with a monthly heatmap of reboots per day" loading="lazy" decoding="async"></picture>
+      <figcaption>Full reboot history with a monthly heatmap.</figcaption>
+    </figure>
+    <figure>
+      <svg viewBox="0 0 240 480" role="img" aria-labelledby="ph3t">
+        <title id="ph3t">A reboot reminder notification saying the device has not been restarted for 7 days</title>
+        <rect x="4" y="4" width="232" height="472" rx="30" fill="#1d2320"/>
+        <rect x="14" y="14" width="212" height="452" rx="22" fill="#2c3a33"/>
+        <g font-family="Segoe UI,Arial,sans-serif">
+          <text x="120" y="92" text-anchor="middle" font-size="42" font-weight="300" fill="#fff">09:41</text>
+          <text x="120" y="114" text-anchor="middle" font-size="11" fill="#cfd8d3">Tuesday, 29 September</text>
+          <rect x="24" y="146" width="192" height="116" rx="16" fill="#fff"/>
+          <rect x="36" y="158" width="20" height="20" rx="6" fill="#168039"/>
+          <svg x="36" y="158" width="20" height="20" viewBox="0 0 108 108"><use href="#i-logo"/></svg>
+          <text x="62" y="172" font-size="10" fill="#5b6560">Reboot Monitor · now</text>
+          <text x="36" y="200" font-size="13" font-weight="700" fill="#222">Reboot reminder</text>
+          <text x="36" y="218" font-size="10.5" fill="#333">The device has not been restarted</text>
+          <text x="36" y="232" font-size="10.5" fill="#333">for 7 days. Restarting it at least</text>
+          <text x="36" y="246" font-size="10.5" fill="#333">once every 7 days is recommended.</text>
+          <rect x="60" y="400" width="120" height="40" rx="20" fill="#168039"/>
+          <text x="120" y="425" text-anchor="middle" font-size="13" font-weight="600" fill="#fff">Restart</text>
+        </g>
+      </svg>
+      <figcaption>After 7 days without a reboot, the user gets a reminder.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="two-col">
+  <section class="card" aria-labelledby="nudge">
+    <h2 id="nudge">How it gets users to reboot</h2>
+    <ul class="check-list">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg><span>After 7 days without a reboot, a notification appears and the app icon gets a badge.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Opening the app shows a pop-up that recommends restarting the device.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-routine"/></svg><span>The reminder clears itself after the next reboot. It stays silent for the first 7 days after installation.</span></li>
+    </ul>
+  </section>
+  <section class="card" aria-labelledby="privacy">
+    <h2 id="privacy">Private and simple</h2>
+    <ul class="check-list">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><span>All data stays on the device in a local database. Nothing is sent anywhere.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Only two permissions: <code>RECEIVE_BOOT_COMPLETED</code> and <code>POST_NOTIFICATIONS</code>.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>History older than 12 months is cleaned up automatically. The app follows the device language, in 10 languages.</span></li>
+    </ul>
+  </section>
+</div>
+
+<section class="card" aria-labelledby="deploy">
+  <h2 id="deploy">Deploying with Intune</h2>
+  <p class="lead">Deploy RebootMonitor like any other Managed Google Play app. The one extra step is adding its icon to Managed Home Screen.</p>
+  <ol class="steps">
+    <li><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg><h3>Add the app</h3><p>In the Intune admin center, go to <em>Apps › Android › Add › Managed Google Play app</em> and approve RebootMonitor. Package name: <code>app.rebootmonitor.mobile</code>.</p></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg><h3>Assign it</h3><p>Assign the app as <em>Required</em> to the device group that holds the shared devices.</p></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><h3>Add it to MHS</h3><p>Add the app to the allowed apps in the dedicated device profile (multi-app kiosk) or the MHS app configuration policy.</p></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg><h3>Allow notifications</h3><p>Keep the notification bar available in MHS, so users actually see the reminder.</p></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#i-phone-check"/></svg><h3>Verify</h3><p>Open the app on a test device, check the uptime and reboot once. The reboot should appear in the overview right away.</p></li>
+  </ol>
+  <div class="note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><p>Without step 3 the app is installed but invisible. Reminders only start 7 days after installation, so don't expect notifications right after the rollout.</p></div>
+</section>
+
+<section class="card" aria-labelledby="tips">
+  <h2 id="tips">Tips for a lasting reboot habit</h2>
+  <p class="lead">Technology alone won't do it. RebootMonitor works best when the organization supports the habit too.</p>
+  <div class="features" style="margin-top:8px">
+    <div class="feature"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><h3>Put it up front</h3><p>Give the icon a fixed, visible spot in the MHS grid, so the badge stands out.</p></div>
+    <div class="feature"><svg class="icon" aria-hidden="true"><use href="#i-routine"/></svg><h3>Make it routine</h3><p>Tie the reboot to a fixed moment, such as a shift change or the end of the week.</p></div>
+    <div class="feature"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><h3>Keep it short</h3><p>A sticker on the charger saying "Restart this device at least once a week" beats a long manual.</p></div>
+    <div class="feature"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><h3>Combine with management</h3><p>Use uptime data in Intune to find devices that never restart, and follow up with that team.</p></div>
+  </div>
+</section>
+
+<section class="card faq" aria-labelledby="faq">
+  <h2 id="faq">Frequently asked questions</h2>
+  <details><summary>Why do shared Android devices rarely get restarted?</summary><p>Shared devices are used by changing people who do not feel responsible for the device. Managed Home Screen sign-in and automatic sign-out make it feel even less like anyone's own device, so nobody thinks of rebooting it.</p></details>
+  <details><summary>How often should a shared Android device be rebooted?</summary><p>At least once every 7 days. That lets pending Android system and security updates take effect and clears background processes that slow the device down.</p></details>
+  <details><summary>Does RebootMonitor work with Microsoft Intune and Managed Home Screen?</summary><p>Yes. Deploy it as a Managed Google Play app, assign it as Required to your shared device group and add it to the allowed apps in Managed Home Screen.</p></details>
+  <details><summary>Does RebootMonitor send any data to a server?</summary><p>No. All reboot history is stored locally on the device. The app only uses the RECEIVE_BOOT_COMPLETED and POST_NOTIFICATIONS permissions.</p></details>
+  <details><summary>When does the reboot reminder appear?</summary><p>When the device has not been restarted for 7 days. The reminder clears itself after the next reboot and stays silent during the first 7 days after installation.</p></details>
+</section>
+
+<section class="card cta" aria-labelledby="get">
+  <svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>
+  <div class="cta-text">
+    <h2 id="get">Keep shared devices fast, secure and up to date</h2>
+    <p style="margin:0">Shared devices have no owner, so the device itself has to ask for attention. RebootMonitor does exactly that, without extra work for the administrator.</p>
+  </div>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=app.rebootmonitor.mobile" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg> View on Google Play</a>
+</section>
+
+</article>
+</main>
+
+<footer class="footer">
+  <div>© 2026 Nordic Appworks • RebootMonitor</div>
+  <nav aria-label="Footer"><a href="https://rebootmonitor.com/">Home</a><a href="https://rebootmonitor.com/about.html">About</a><a href="https://rebootmonitor.com/intune-shared-devices.html" aria-current="page">Intune guide</a><a href="https://rebootmonitor.com/privacy.html">Privacy Policy</a><a href="https://play.google.com/store/apps/details?id=app.rebootmonitor.mobile" target="_blank" rel="noopener">Google Play</a></nav>
+</footer>
+</body>
+</html>
