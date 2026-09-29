@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Android Reboot Tracking | RebootMonitor</title>
+<meta name="description" content="Automatically track every Android device reboot with the exact date and time. A 7-day overview, a monthly heatmap and 12 months of history — all stored locally.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Nordic Appworks">
+<meta name="theme-color" content="#005824">
+<link rel="canonical" href="https://rebootmonitor.com/android-reboot-tracking.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="RebootMonitor">
+<meta property="og:title" content="Android Reboot Tracking | RebootMonitor">
+<meta property="og:description" content="Automatically track every Android device reboot with the exact date and time, plus a monthly heatmap and 12 months of history.">
+<meta property="og:url" content="https://rebootmonitor.com/android-reboot-tracking.html">
+<meta property="og:image" content="https://rebootmonitor.com/header-banner.png">
+<meta property="og:image:alt" content="RebootMonitor – track uptime, reboot history and device stability">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-09-29">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Android Reboot Tracking | RebootMonitor">
+<meta name="twitter:description" content="Automatically track every Android device reboot with the exact date and time.">
+<meta name="twitter:image" content="https://rebootmonitor.com/header-banner.png">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://rebootmonitor.com/#organization",
+      "name": "Nordic Appworks",
+      "url": "https://rebootmonitor.com/",
+      "logo": "https://rebootmonitor.com/apple-touch-icon.png"
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://rebootmonitor.com/android-reboot-tracking.html#article",
+      "headline": "Android Reboot Tracking with RebootMonitor",
+      "description": "Automatically track every Android device reboot with the exact date and time, plus a monthly heatmap and 12 months of history.",
+      "url": "https://rebootmonitor.com/android-reboot-tracking.html",
+      "mainEntityOfPage": "https://rebootmonitor.com/android-reboot-tracking.html",
+      "inLanguage": "en",
+      "datePublished": "2026-09-29",
+      "dateModified": "2026-09-29",
+      "author": { "@id": "https://rebootmonitor.com/#organization" },
+      "publisher": { "@id": "https://rebootmonitor.com/#organization" },
+      "image": ["https://rebootmonitor.com/screenshot2.png", "https://rebootmonitor.com/header-banner.png"],
+      "about": ["Android reboot", "Reboot history", "Device restart log"],
+      "isPartOf": { "@id": "https://rebootmonitor.com/#website" },
+      "breadcrumb": { "@id": "https://rebootmonitor.com/android-reboot-tracking.html#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://rebootmonitor.com/android-reboot-tracking.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rebootmonitor.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Android Reboot Tracking", "item": "https://rebootmonitor.com/android-reboot-tracking.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://rebootmonitor.com/android-reboot-tracking.html#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "How does RebootMonitor detect a reboot?", "acceptedAnswer": { "@type": "Answer", "text": "It listens for Android's RECEIVE_BOOT_COMPLETED broadcast, which the system sends once at the end of every startup, and records the current time." } },
+        { "@type": "Question", "name": "Can the same reboot be logged twice?", "acceptedAnswer": { "@type": "Answer", "text": "No. RebootMonitor also checks the device's boot counter, so a restart is only ever recorded once, even if the broadcast is somehow delayed or repeated." } },
+        { "@type": "Question", "name": "How long is reboot history kept?", "acceptedAnswer": { "@type": "Answer", "text": "Up to 12 months. Older entries are removed automatically, so the local database never grows without limit." } },
+        { "@type": "Question", "name": "Does tracking reboots require extra permissions?", "acceptedAnswer": { "@type": "Answer", "text": "Just RECEIVE_BOOT_COMPLETED to detect a restart, and POST_NOTIFICATIONS for the optional reminder. No location, contacts or storage access is needed." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{--green-dark:#005824;--green:#168039;--green-hover:#0f622c;--ground:#f5f7f8;--card:#fff;--text:#222;--muted:#4a5550;--line:#dfe5e2;--orange:#e07b17;--orange-soft:#fff1e2;--green-soft:#e6f4ea;color-scheme:light}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",Arial,sans-serif;margin:0;background:var(--ground);color:var(--text);font-size:16px;line-height:1.6}
+.icon{display:inline-block;width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.125em}
+header.hero{background-color:var(--green-dark);background-image:radial-gradient(rgba(255,255,255,.13) 1.5px,transparent 1.5px);background-size:28px 28px;color:#fff}
+.hero-inner{max-width:1200px;margin:auto;padding:48px 20px;display:flex;align-items:center;gap:36px;flex-wrap:wrap}
+.hero-logo{width:132px;height:132px;flex:none}
+.hero-text{flex:1;min-width:260px}
+.hero-eyebrow{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85;margin:0 0 8px}
+.hero h1{color:#fff;font-size:clamp(32px,5vw,54px);line-height:1.08;font-weight:800;margin:0 0 14px;text-wrap:balance}
+.hero p{font-size:19px;max-width:620px;margin:0;opacity:.95}
+.container{max-width:1200px;margin:auto;padding:40px 20px}
+.card{background:var(--card);padding:30px;border-radius:18px;box-shadow:0 4px 18px rgba(0,0,0,.08);margin:20px 0}
+h2{color:var(--green);margin:0 0 12px;text-wrap:balance}
+h3{margin:12px 0 6px}
+.lead{font-size:18px;color:var(--muted);margin:0 0 16px}
+.prose p{max-width:70ch}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.features .card{margin:0}
+.feature{text-align:center}
+.feature .icon{font-size:40px;color:var(--green)}
+.feature p{margin:0;color:var(--muted)}
+.split{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:36px;align-items:center}
+.phones{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.phones figure{margin:0;max-width:240px;width:100%;text-align:center}
+.phones svg{width:100%;height:auto;filter:drop-shadow(0 8px 20px rgba(0,0,0,.2))}
+.phones figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.steps{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;counter-reset:step}
+.steps li{counter-increment:step;position:relative;background:var(--green-soft);border-radius:14px;padding:20px 18px 18px}
+.steps li::before{content:counter(step);position:absolute;top:16px;right:18px;font-weight:800;font-size:28px;color:rgba(22,128,57,.25)}
+.steps .icon{font-size:30px;color:var(--green)}
+.steps h3{margin:10px 0 4px;font-size:17px}
+.steps p{margin:0;font-size:15px;color:var(--muted)}
+code{background:#eef2f0;padding:2px 6px;border-radius:6px;font-size:.92em}
+.check-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.check-list li{display:flex;gap:12px;align-items:flex-start}
+.check-list .icon{flex:none;font-size:22px;color:var(--green);margin-top:2px}
+.note{display:flex;gap:14px;align-items:flex-start;background:var(--orange-soft);border-radius:12px;padding:16px 18px;margin-top:20px}
+.note .icon{flex:none;font-size:24px;color:var(--orange);margin-top:2px}
+.note p{margin:0}
+.two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin:20px 0}
+.two-col .card{margin:0}
+.cta{display:flex;align-items:center;gap:24px;flex-wrap:wrap;border-left:6px solid var(--green)}
+.cta>.icon{font-size:48px;color:var(--green)}
+.cta .cta-text{flex:1;min-width:240px}
+.cta h2{margin-top:0}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;padding:12px 24px;border-radius:10px;font-weight:600}
+.btn:hover{background:var(--green-hover)}
+.btn:focus-visible,a:focus-visible{outline:3px solid #7fc79a;outline-offset:2px}
+a{color:var(--green)}
+.footer{background:var(--green-dark);color:#fff;text-align:center;padding:25px 16px}
+.footer a{color:#fff;display:inline-block;padding:12px}
+.related-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+@media (max-width:600px){.container{padding:16px 14px}.card{padding:20px;margin:14px 0;border-radius:14px}.hero-inner{padding:32px 16px;gap:20px}.hero-logo{width:88px;height:88px}.hero p{font-size:17px}.features{grid-template-columns:1fr 1fr;gap:12px}.features .card{padding:16px 12px}.feature .icon{font-size:30px}.feature h3{font-size:16px}.feature p{font-size:14px}.btn{width:100%;justify-content:center;box-sizing:border-box}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.meta-line{font-size:14px;color:var(--muted);margin:0 0 16px}
+.shot{margin:0;max-width:240px;width:100%;text-align:center}
+.shot img{width:100%;height:auto;border-radius:24px;box-shadow:0 8px 25px rgba(0,0,0,.2)}
+.shot figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.faq details{border-top:1px solid var(--line);padding:14px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{font-weight:600;cursor:pointer;color:var(--green-dark)}
+.faq p{margin:10px 0 0;max-width:70ch}
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<symbol id="i-log" viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="17" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></symbol>
+<symbol id="i-power" viewBox="0 0 24 24"><path d="M12 4v7"/><path d="M7.5 6.5a7.5 7.5 0 1 0 9 0"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M8 3v4M16 3v4M3.5 10h17"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-1.5 2.5-4 2.5h-2"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.2 12.2 2.6 2.6 5-5.2"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.5v.2"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3.8v16.4a1 1 0 0 0 1.5.9l13-8.2a1 1 0 0 0 0-1.7l-13-8.2A1 1 0 0 0 6 3.8z"/></symbol>
+<symbol id="i-logo" viewBox="0 0 108 108"><path d="M28.62 42.17a28 28 0 0 1 50.76 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M74.4 44.49l8.36 4.93 1.6-9.57z" fill="#fff" stroke="none"/><path d="M79.38 65.83a28 28 0 0 1-50.76 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M33.6 63.51l-8.36-4.93-1.6 9.57z" fill="#fff" stroke="none"/><rect x="37" y="40" width="34" height="28" rx="4" fill="#fff" stroke="none"/><g fill="#2E7D32" stroke="none"><rect x="44" y="44" width="5" height="5" rx="1"/><rect x="51.5" y="44" width="5" height="5" rx="1"/><rect x="59" y="44" width="5" height="5" rx="1"/><rect x="44" y="51.5" width="5" height="5" rx="1"/><rect x="51.5" y="51.5" width="5" height="5" rx="1"/><rect x="59" y="51.5" width="5" height="5" rx="1"/><rect x="44" y="59" width="5" height="5" rx="1"/><rect x="51.5" y="59" width="5" height="5" rx="1"/><rect x="59" y="59" width="5" height="5" rx="1"/></g></symbol>
+</svg>
+
+<header class="hero">
+  <div class="hero-inner">
+    <svg class="hero-logo" aria-hidden="true"><use href="#i-logo"/></svg>
+    <div class="hero-text">
+      <p class="hero-eyebrow">Android Reboot Tracking · RebootMonitor</p>
+      <h1>Every reboot, tracked automatically</h1>
+      <p>RebootMonitor logs the exact date and time of every restart, so you never have to guess when a device was last rebooted again.</p>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+<article>
+
+<section class="card prose" aria-labelledby="problem">
+  <p class="meta-line">By Nordic Appworks · Published <time datetime="2026-09-29">29 September 2026</time></p>
+  <h2 id="problem">"When was this last restarted?"</h2>
+  <p class="lead">It's one of the first questions in almost any troubleshooting conversation — and usually nobody has a real answer.</p>
+  <p>Without a log, the honest answer is a shrug: "a while ago, I think." RebootMonitor replaces the guess with a fact, recorded automatically the moment a restart happens.</p>
+  <p>No app has to be opened for a reboot to be tracked. The next time you check, the entry is already there.</p>
+</section>
+
+<section class="features" aria-label="How reboot tracking works">
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-power"/></svg><h3>Detected automatically</h3><p>RebootMonitor listens for Android's boot-completed signal and logs the exact time, with no action needed from the user.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-log"/></svg><h3>No duplicate entries</h3><p>Android's own boot counter is used to make sure a single restart is never recorded twice.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><h3>7-day, 30-day, 90-day, 12-month</h3><p>Zoom out from a simple weekly view all the way to a full year of history.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><h3>Tap-to-inspect heatmap</h3><p>A monthly calendar shows reboot activity at a glance; tap any day for its exact reboot times.</p></div>
+</section>
+
+<section class="card" aria-labelledby="log">
+  <h2 id="log">What the reboot log looks like</h2>
+  <p class="lead">Color-coded, dated, and searchable by month — never a raw text file.</p>
+  <div class="phones" style="margin-top:16px">
+    <figure class="shot">
+      <picture><source srcset="screenshot1.webp" type="image/webp"><img src="screenshot1.png" width="525" height="1171" alt="RebootMonitor 7-day reboot log with exact reboot times" loading="lazy" decoding="async"></picture>
+      <figcaption>The last 7 days, with exact reboot times.</figcaption>
+    </figure>
+    <figure class="shot">
+      <picture><source srcset="screenshot2.webp" type="image/webp"><img src="screenshot2.png" width="526" height="1169" alt="RebootMonitor full reboot history with a monthly heatmap and monthly overview" loading="lazy" decoding="async"></picture>
+      <figcaption>Full history with a monthly heatmap and overview.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="two-col">
+  <section class="card" aria-labelledby="who">
+    <h2 id="who">Built for troubleshooting</h2>
+    <ul class="check-list">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg><span>Confirm a reboot you asked a user to perform actually happened, and exactly when.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Check whether a fix that "requires a restart" has really been applied.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Spot patterns — a device that keeps rebooting unexpectedly is as worth knowing about as one that never reboots.</span></li>
+    </ul>
+  </section>
+  <section class="card" aria-labelledby="private">
+    <h2 id="private">No manual logging required</h2>
+    <ul class="check-list">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><span>Everything is recorded and stored locally, with no server involved.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Entries older than 12 months are cleaned up automatically.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Works the same on a personal phone or an unattended shared device.</span></li>
+    </ul>
+  </section>
+</div>
+
+<section class="card faq" aria-labelledby="faq">
+  <h2 id="faq">Frequently asked questions</h2>
+  <details><summary>How does RebootMonitor detect a reboot?</summary><p>It listens for Android's <code>RECEIVE_BOOT_COMPLETED</code> broadcast, which the system sends once at the end of every startup, and records the current time.</p></details>
+  <details><summary>Can the same reboot be logged twice?</summary><p>No. RebootMonitor also checks the device's boot counter, so a restart is only ever recorded once, even if the broadcast is somehow delayed or repeated.</p></details>
+  <details><summary>How long is reboot history kept?</summary><p>Up to 12 months. Older entries are removed automatically, so the local database never grows without limit.</p></details>
+  <details><summary>Does tracking reboots require extra permissions?</summary><p>Just <code>RECEIVE_BOOT_COMPLETED</code> to detect a restart, and <code>POST_NOTIFICATIONS</code> for the optional reminder. No location, contacts or storage access is needed.</p></details>
+</section>
+
+<section class="card cta" aria-labelledby="get">
+  <svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>
+  <div class="cta-text">
+    <h2 id="get">Start tracking reboots today</h2>
+    <p style="margin:0">No setup beyond installing the app — the first restart after that is already logged.</p>
+  </div>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=app.rebootmonitor.mobile" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg> View on Google Play</a>
+</section>
+
+<section class="card" aria-labelledby="related">
+  <h2 id="related">Related reading</h2>
+  <ul class="related-list">
+    <li><a href="android-uptime-monitoring.html">Android Uptime Monitoring</a> — the live uptime counter that sits alongside the reboot log.</li>
+    <li><a href="android-device-uptime-report.html">Android Device Uptime Report</a> — turning the log into a readable report.</li>
+    <li><a href="android-kiosk-monitoring.html">Android Kiosk Monitoring</a> — reboot tracking for unattended devices.</li>
+    <li><a href="intune-shared-device-monitoring.html">Intune Shared Device Monitoring</a> — reboot tracking across a managed fleet.</li>
+  </ul>
+</section>
+
+</article>
+</main>
+
+<footer class="footer">
+  <div>© 2026 Nordic Appworks • RebootMonitor</div>
+  <nav aria-label="Footer"><a href="https://rebootmonitor.com/">Home</a><a href="https://rebootmonitor.com/about.html">About</a><a href="https://rebootmonitor.com/intune-shared-devices.html">Intune guide</a><a href="https://rebootmonitor.com/privacy.html">Privacy Policy</a><a href="https://play.google.com/store/apps/details?id=app.rebootmonitor.mobile" target="_blank" rel="noopener">Google Play</a></nav>
+</footer>
+</body>
+</html>

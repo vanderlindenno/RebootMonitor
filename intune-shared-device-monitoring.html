@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Intune Shared Device Monitoring | RebootMonitor</title>
+<meta name="description" content="Monitor reboot health across Intune-managed shared Android devices, without a server-side fleet dashboard. See who's overdue for a restart, right on the device.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Nordic Appworks">
+<meta name="theme-color" content="#005824">
+<link rel="canonical" href="https://rebootmonitor.com/intune-shared-device-monitoring.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="RebootMonitor">
+<meta property="og:title" content="Intune Shared Device Monitoring | RebootMonitor">
+<meta property="og:description" content="Monitor reboot health across Intune-managed shared Android devices, without a server-side fleet dashboard.">
+<meta property="og:url" content="https://rebootmonitor.com/intune-shared-device-monitoring.html">
+<meta property="og:image" content="https://rebootmonitor.com/header-banner.png">
+<meta property="og:image:alt" content="RebootMonitor – track uptime, reboot history and device stability">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-09-29">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Intune Shared Device Monitoring | RebootMonitor">
+<meta name="twitter:description" content="Monitor reboot health across Intune-managed shared Android devices.">
+<meta name="twitter:image" content="https://rebootmonitor.com/header-banner.png">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://rebootmonitor.com/#organization",
+      "name": "Nordic Appworks",
+      "url": "https://rebootmonitor.com/",
+      "logo": "https://rebootmonitor.com/apple-touch-icon.png"
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://rebootmonitor.com/intune-shared-device-monitoring.html#article",
+      "headline": "Intune Shared Device Monitoring with RebootMonitor",
+      "description": "Monitor reboot health across Intune-managed shared Android devices, without a server-side fleet dashboard.",
+      "url": "https://rebootmonitor.com/intune-shared-device-monitoring.html",
+      "mainEntityOfPage": "https://rebootmonitor.com/intune-shared-device-monitoring.html",
+      "inLanguage": "en",
+      "datePublished": "2026-09-29",
+      "dateModified": "2026-09-29",
+      "author": { "@id": "https://rebootmonitor.com/#organization" },
+      "publisher": { "@id": "https://rebootmonitor.com/#organization" },
+      "image": ["https://rebootmonitor.com/screenshot1.png", "https://rebootmonitor.com/header-banner.png"],
+      "about": ["Microsoft Intune", "Shared devices", "Device monitoring", "Managed Home Screen"],
+      "isPartOf": { "@id": "https://rebootmonitor.com/#website" },
+      "breadcrumb": { "@id": "https://rebootmonitor.com/intune-shared-device-monitoring.html#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://rebootmonitor.com/intune-shared-device-monitoring.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rebootmonitor.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Intune Shared Device Monitoring", "item": "https://rebootmonitor.com/intune-shared-device-monitoring.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://rebootmonitor.com/intune-shared-device-monitoring.html#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Does RebootMonitor give admins a fleet-wide reboot dashboard in Intune?", "acceptedAnswer": { "@type": "Answer", "text": "No, and that is deliberate. RebootMonitor reports reboot status on the device itself rather than to a central server, so there is no cross-device dashboard to view from the Intune admin center." } },
+        { "@type": "Question", "name": "Why monitor on the device instead of centrally?", "acceptedAnswer": { "@type": "Answer", "text": "On a shared device, the person most able to act on a low-uptime warning is whoever is holding it right now, not an admin browsing a report days later. On-device monitoring turns the signal into an action immediately." } },
+        { "@type": "Question", "name": "Can this be combined with Intune's own compliance reporting?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Intune already reports last check-in and compliance state per device. RebootMonitor adds the one signal Intune does not track: how long it has actually been since the device restarted." } },
+        { "@type": "Question", "name": "Does this replace a device compliance policy?", "acceptedAnswer": { "@type": "Answer", "text": "No. It is a lightweight nudge for users, not an enforcement mechanism. Devices are not blocked or marked non-compliant for a missed reboot." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{--green-dark:#005824;--green:#168039;--green-hover:#0f622c;--ground:#f5f7f8;--card:#fff;--text:#222;--muted:#4a5550;--line:#dfe5e2;--orange:#e07b17;--orange-soft:#fff1e2;--green-soft:#e6f4ea;color-scheme:light}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",Arial,sans-serif;margin:0;background:var(--ground);color:var(--text);font-size:16px;line-height:1.6}
+.icon{display:inline-block;width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.125em}
+header.hero{background-color:var(--green-dark);background-image:radial-gradient(rgba(255,255,255,.13) 1.5px,transparent 1.5px);background-size:28px 28px;color:#fff}
+.hero-inner{max-width:1200px;margin:auto;padding:48px 20px;display:flex;align-items:center;gap:36px;flex-wrap:wrap}
+.hero-logo{width:132px;height:132px;flex:none}
+.hero-text{flex:1;min-width:260px}
+.hero-eyebrow{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85;margin:0 0 8px}
+.hero h1{color:#fff;font-size:clamp(32px,5vw,54px);line-height:1.08;font-weight:800;margin:0 0 14px;text-wrap:balance}
+.hero p{font-size:19px;max-width:620px;margin:0;opacity:.95}
+.container{max-width:1200px;margin:auto;padding:40px 20px}
+.card{background:var(--card);padding:30px;border-radius:18px;box-shadow:0 4px 18px rgba(0,0,0,.08);margin:20px 0}
+h2{color:var(--green);margin:0 0 12px;text-wrap:balance}
+h3{margin:12px 0 6px}
+.lead{font-size:18px;color:var(--muted);margin:0 0 16px}
+.prose p{max-width:70ch}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.features .card{margin:0}
+.feature{text-align:center}
+.feature .icon{font-size:40px;color:var(--green)}
+.feature p{margin:0;color:var(--muted)}
+.split{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:36px;align-items:center}
+.phones{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.phones figure{margin:0;max-width:240px;width:100%;text-align:center}
+.phones svg{width:100%;height:auto;filter:drop-shadow(0 8px 20px rgba(0,0,0,.2))}
+.phones figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.steps{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;counter-reset:step}
+.steps li{counter-increment:step;position:relative;background:var(--green-soft);border-radius:14px;padding:20px 18px 18px}
+.steps li::before{content:counter(step);position:absolute;top:16px;right:18px;font-weight:800;font-size:28px;color:rgba(22,128,57,.25)}
+.steps .icon{font-size:30px;color:var(--green)}
+.steps h3{margin:10px 0 4px;font-size:17px}
+.steps p{margin:0;font-size:15px;color:var(--muted)}
+code{background:#eef2f0;padding:2px 6px;border-radius:6px;font-size:.92em}
+.check-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.check-list li{display:flex;gap:12px;align-items:flex-start}
+.check-list .icon{flex:none;font-size:22px;color:var(--green);margin-top:2px}
+.note{display:flex;gap:14px;align-items:flex-start;background:var(--orange-soft);border-radius:12px;padding:16px 18px;margin-top:20px}
+.note .icon{flex:none;font-size:24px;color:var(--orange);margin-top:2px}
+.note p{margin:0}
+.two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin:20px 0}
+.two-col .card{margin:0}
+.cta{display:flex;align-items:center;gap:24px;flex-wrap:wrap;border-left:6px solid var(--green)}
+.cta>.icon{font-size:48px;color:var(--green)}
+.cta .cta-text{flex:1;min-width:240px}
+.cta h2{margin-top:0}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;padding:12px 24px;border-radius:10px;font-weight:600}
+.btn:hover{background:var(--green-hover)}
+.btn:focus-visible,a:focus-visible{outline:3px solid #7fc79a;outline-offset:2px}
+a{color:var(--green)}
+.footer{background:var(--green-dark);color:#fff;text-align:center;padding:25px 16px}
+.footer a{color:#fff;display:inline-block;padding:12px}
+.related-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+@media (max-width:600px){.container{padding:16px 14px}.card{padding:20px;margin:14px 0;border-radius:14px}.hero-inner{padding:32px 16px;gap:20px}.hero-logo{width:88px;height:88px}.hero p{font-size:17px}.features{grid-template-columns:1fr 1fr;gap:12px}.features .card{padding:16px 12px}.feature .icon{font-size:30px}.feature h3{font-size:16px}.feature p{font-size:14px}.btn{width:100%;justify-content:center;box-sizing:border-box}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.meta-line{font-size:14px;color:var(--muted);margin:0 0 16px}
+.shot{margin:0;max-width:240px;width:100%;text-align:center}
+.shot img{width:100%;height:auto;border-radius:24px;box-shadow:0 8px 25px rgba(0,0,0,.2)}
+.shot figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.faq details{border-top:1px solid var(--line);padding:14px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{font-weight:600;cursor:pointer;color:var(--green-dark)}
+.faq p{margin:10px 0 0;max-width:70ch}
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.8"/><path d="M16.5 14.2c2.9.2 5 2.3 5 5.3"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.3 7.5 9.5 4.3-1.2 7.5-5 7.5-9.5V6z"/><path d="m8.8 12 2.3 2.3 4.3-4.6"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.2 12.2 2.6 2.6 5-5.2"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.5v.2"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3.8v16.4a1 1 0 0 0 1.5.9l13-8.2a1 1 0 0 0 0-1.7l-13-8.2A1 1 0 0 0 6 3.8z"/></symbol>
+<symbol id="i-logo" viewBox="0 0 108 108"><path d="M28.62 42.17a28 28 0 0 1 50.76 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M74.4 44.49l8.36 4.93 1.6-9.57z" fill="#fff" stroke="none"/><path d="M79.38 65.83a28 28 0 0 1-50.76 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M33.6 63.51l-8.36-4.93-1.6 9.57z" fill="#fff" stroke="none"/><rect x="37" y="40" width="34" height="28" rx="4" fill="#fff" stroke="none"/><g fill="#2E7D32" stroke="none"><rect x="44" y="44" width="5" height="5" rx="1"/><rect x="51.5" y="44" width="5" height="5" rx="1"/><rect x="59" y="44" width="5" height="5" rx="1"/><rect x="44" y="51.5" width="5" height="5" rx="1"/><rect x="51.5" y="51.5" width="5" height="5" rx="1"/><rect x="59" y="51.5" width="5" height="5" rx="1"/><rect x="44" y="59" width="5" height="5" rx="1"/><rect x="51.5" y="59" width="5" height="5" rx="1"/><rect x="59" y="59" width="5" height="5" rx="1"/></g></symbol>
+</svg>
+
+<header class="hero">
+  <div class="hero-inner">
+    <svg class="hero-logo" aria-hidden="true"><use href="#i-logo"/></svg>
+    <div class="hero-text">
+      <p class="hero-eyebrow">Microsoft Intune · Shared Devices · RebootMonitor</p>
+      <h1>Monitoring reboot health across a shared device fleet</h1>
+      <p>Shared, Intune-enrolled Android devices have no single owner to notice a reboot is overdue. RebootMonitor puts that signal in front of whoever is holding the device right now.</p>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+<article>
+
+<section class="card prose" aria-labelledby="gap">
+  <p class="meta-line">By Nordic Appworks · Published <time datetime="2026-09-29">29 September 2026</time></p>
+  <h2 id="gap">A monitoring gap most fleets don't notice</h2>
+  <p class="lead">Intune tells you a lot about a device — compliance state, last check-in, installed apps. It doesn't tell you how long it's been since it actually restarted.</p>
+  <p>On a personal device, that gap doesn't matter much: the owner reboots it eventually, because they notice it slowing down. On a shared device, nobody feels that ownership, so the gap can run for months without anyone in IT ever seeing it.</p>
+  <p>This page is about closing that specific gap. For step-by-step deployment instructions, see our full <a href="intune-shared-devices.html">Intune deployment guide</a>.</p>
+</section>
+
+<section class="features" aria-label="What monitoring looks like with RebootMonitor">
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg><h3>Visible on the device</h3><p>Anyone picking up the device sees its current status and uptime immediately, no admin console required.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg><h3>A nudge after 7 days</h3><p>A notification and in-app popup appear once a device has gone a week without a restart.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><h3>Per-device history</h3><p>Every device keeps its own 12-month reboot history and monthly heatmap, viewable on that device.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><h3>Fits Managed Home Screen</h3><p>Works as one more tile in a locked-down, single-purpose or multi-app kiosk configuration.</p></div>
+</section>
+
+<section class="card" aria-labelledby="model">
+  <h2 id="model">A decentralized monitoring model, on purpose</h2>
+  <p class="lead">RebootMonitor does not send reboot data to a server, so there is no central "which devices haven't rebooted" report to check from your desk.</p>
+  <p style="max-width:70ch">That is a deliberate trade-off, not a missing feature. The person best placed to act on a low-uptime warning is whoever is using the device at that moment — not an administrator reading a report days later. Putting the signal directly on the device turns monitoring into action immediately, without building or maintaining a separate reporting pipeline.</p>
+  <div class="phones" style="margin-top:16px">
+    <figure class="shot">
+      <picture><source srcset="screenshot1.webp" type="image/webp"><img src="screenshot1.png" width="525" height="1171" alt="RebootMonitor dashboard on a shared, Intune-managed Android device" loading="lazy" decoding="async"></picture>
+      <figcaption>What the current user sees on a shared device.</figcaption>
+    </figure>
+    <figure class="shot">
+      <picture><source srcset="screenshot2.webp" type="image/webp"><img src="screenshot2.png" width="526" height="1169" alt="RebootMonitor reboot history with a monthly heatmap on a shared device" loading="lazy" decoding="async"></picture>
+      <figcaption>Per-device history, kept locally on that device.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="two-col">
+  <section class="card" aria-labelledby="combine">
+    <h2 id="combine">Pairs well with what Intune already reports</h2>
+    <ul class="check-list">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Intune already shows last check-in and compliance state per device.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>RebootMonitor adds the one number Intune doesn't track: time since the last actual restart.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><span>Support staff can ask the current user to check the app instead of chasing device logs remotely.</span></li>
+    </ul>
+  </section>
+  <section class="card" aria-labelledby="private">
+    <h2 id="private">Private by default</h2>
+    <ul class="check-list">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><span>No reboot data leaves the device, so there's nothing extra to secure or govern centrally.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Deploys as a normal Managed Google Play app, assigned Required to your device group.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Only <code>RECEIVE_BOOT_COMPLETED</code> and <code>POST_NOTIFICATIONS</code> permissions are used.</span></li>
+    </ul>
+  </section>
+</div>
+
+<section class="card faq" aria-labelledby="faq">
+  <h2 id="faq">Frequently asked questions</h2>
+  <details><summary>Does RebootMonitor give admins a fleet-wide reboot dashboard in Intune?</summary><p>No, and that is deliberate. RebootMonitor reports reboot status on the device itself rather than to a central server, so there is no cross-device dashboard to view from the Intune admin center.</p></details>
+  <details><summary>Why monitor on the device instead of centrally?</summary><p>On a shared device, the person most able to act on a low-uptime warning is whoever is holding it right now, not an admin browsing a report days later. On-device monitoring turns the signal into an action immediately.</p></details>
+  <details><summary>Can this be combined with Intune's own compliance reporting?</summary><p>Yes. Intune already reports last check-in and compliance state per device. RebootMonitor adds the one signal Intune does not track: how long it has actually been since the device restarted.</p></details>
+  <details><summary>Does this replace a device compliance policy?</summary><p>No. It is a lightweight nudge for users, not an enforcement mechanism. Devices are not blocked or marked non-compliant for a missed reboot.</p></details>
+</section>
+
+<section class="card cta" aria-labelledby="get">
+  <svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>
+  <div class="cta-text">
+    <h2 id="get">Give your shared devices a reboot habit</h2>
+    <p style="margin:0">Deploy RebootMonitor as a Managed Google Play app and let every device monitor its own reboot health.</p>
+  </div>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=app.rebootmonitor.mobile" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg> View on Google Play</a>
+</section>
+
+<section class="card" aria-labelledby="related">
+  <h2 id="related">Related reading</h2>
+  <ul class="related-list">
+    <li><a href="intune-shared-devices.html">Intune deployment guide</a> — step-by-step setup with Managed Home Screen.</li>
+    <li><a href="android-kiosk-monitoring.html">Android Kiosk Monitoring</a> — the same idea applied to single-purpose kiosks.</li>
+    <li><a href="android-uptime-monitoring.html">Android Uptime Monitoring</a> — how the on-device uptime signal works.</li>
+    <li><a href="android-device-uptime-report.html">Android Device Uptime Report</a> — what a per-device report actually contains.</li>
+  </ul>
+</section>
+
+</article>
+</main>
+
+<footer class="footer">
+  <div>© 2026 Nordic Appworks • RebootMonitor</div>
+  <nav aria-label="Footer"><a href="https://rebootmonitor.com/">Home</a><a href="https://rebootmonitor.com/about.html">About</a><a href="https://rebootmonitor.com/intune-shared-devices.html">Intune guide</a><a href="https://rebootmonitor.com/privacy.html">Privacy Policy</a><a href="https://play.google.com/store/apps/details?id=app.rebootmonitor.mobile" target="_blank" rel="noopener">Google Play</a></nav>
+</footer>
+</body>
+</html>

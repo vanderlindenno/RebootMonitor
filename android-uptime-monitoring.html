@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Android Uptime Monitoring | RebootMonitor</title>
+<meta name="description" content="Track Android device uptime in real time, right on the device. See how long it's been running, spot devices that are overdue for a reboot, and build healthier device habits.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Nordic Appworks">
+<meta name="theme-color" content="#005824">
+<link rel="canonical" href="https://rebootmonitor.com/android-uptime-monitoring.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="RebootMonitor">
+<meta property="og:title" content="Android Uptime Monitoring | RebootMonitor">
+<meta property="og:description" content="Track Android device uptime in real time, right on the device. See how long it's been running and spot devices that are overdue for a reboot.">
+<meta property="og:url" content="https://rebootmonitor.com/android-uptime-monitoring.html">
+<meta property="og:image" content="https://rebootmonitor.com/header-banner.png">
+<meta property="og:image:alt" content="RebootMonitor – track uptime, reboot history and device stability">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-09-29">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Android Uptime Monitoring | RebootMonitor">
+<meta name="twitter:description" content="Track Android device uptime in real time, right on the device.">
+<meta name="twitter:image" content="https://rebootmonitor.com/header-banner.png">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://rebootmonitor.com/#organization",
+      "name": "Nordic Appworks",
+      "url": "https://rebootmonitor.com/",
+      "logo": "https://rebootmonitor.com/apple-touch-icon.png"
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://rebootmonitor.com/android-uptime-monitoring.html#article",
+      "headline": "Android Uptime Monitoring with RebootMonitor",
+      "description": "Track Android device uptime in real time, right on the device. See how long it's been running and spot devices that are overdue for a reboot.",
+      "url": "https://rebootmonitor.com/android-uptime-monitoring.html",
+      "mainEntityOfPage": "https://rebootmonitor.com/android-uptime-monitoring.html",
+      "inLanguage": "en",
+      "datePublished": "2026-09-29",
+      "dateModified": "2026-09-29",
+      "author": { "@id": "https://rebootmonitor.com/#organization" },
+      "publisher": { "@id": "https://rebootmonitor.com/#organization" },
+      "image": ["https://rebootmonitor.com/screenshot1.png", "https://rebootmonitor.com/header-banner.png"],
+      "about": ["Android uptime", "Device monitoring", "Reboot history"],
+      "isPartOf": { "@id": "https://rebootmonitor.com/#website" },
+      "breadcrumb": { "@id": "https://rebootmonitor.com/android-uptime-monitoring.html#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://rebootmonitor.com/android-uptime-monitoring.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rebootmonitor.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Android Uptime Monitoring", "item": "https://rebootmonitor.com/android-uptime-monitoring.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://rebootmonitor.com/android-uptime-monitoring.html#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What exactly does RebootMonitor mean by \"uptime\"?", "acceptedAnswer": { "@type": "Answer", "text": "The time elapsed since the device's last restart, read directly from the Android system clock. It resets to zero every time the device actually reboots." } },
+        { "@type": "Question", "name": "Does uptime tracking work without an internet connection?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. RebootMonitor never requests internet access. Uptime and reboot history are calculated and stored entirely on the device." } },
+        { "@type": "Question", "name": "Can I see uptime trends over time, not just right now?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Alongside the live uptime counter, the history screen shows a 30/90-day or 12-month view and a monthly heatmap of reboot activity." } },
+        { "@type": "Question", "name": "Is this a fleet-wide monitoring dashboard?", "acceptedAnswer": { "@type": "Answer", "text": "No. RebootMonitor shows uptime on the device itself, for whoever is looking at it right now. There is no central server or cross-device dashboard, by design." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{--green-dark:#005824;--green:#168039;--green-hover:#0f622c;--ground:#f5f7f8;--card:#fff;--text:#222;--muted:#4a5550;--line:#dfe5e2;--orange:#e07b17;--orange-soft:#fff1e2;--green-soft:#e6f4ea;color-scheme:light}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",Arial,sans-serif;margin:0;background:var(--ground);color:var(--text);font-size:16px;line-height:1.6}
+.icon{display:inline-block;width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.125em}
+header.hero{background-color:var(--green-dark);background-image:radial-gradient(rgba(255,255,255,.13) 1.5px,transparent 1.5px);background-size:28px 28px;color:#fff}
+.hero-inner{max-width:1200px;margin:auto;padding:48px 20px;display:flex;align-items:center;gap:36px;flex-wrap:wrap}
+.hero-logo{width:132px;height:132px;flex:none}
+.hero-text{flex:1;min-width:260px}
+.hero-eyebrow{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85;margin:0 0 8px}
+.hero h1{color:#fff;font-size:clamp(32px,5vw,54px);line-height:1.08;font-weight:800;margin:0 0 14px;text-wrap:balance}
+.hero p{font-size:19px;max-width:620px;margin:0;opacity:.95}
+.container{max-width:1200px;margin:auto;padding:40px 20px}
+.card{background:var(--card);padding:30px;border-radius:18px;box-shadow:0 4px 18px rgba(0,0,0,.08);margin:20px 0}
+h2{color:var(--green);margin:0 0 12px;text-wrap:balance}
+h3{margin:12px 0 6px}
+.lead{font-size:18px;color:var(--muted);margin:0 0 16px}
+.prose p{max-width:70ch}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.features .card{margin:0}
+.feature{text-align:center}
+.feature .icon{font-size:40px;color:var(--green)}
+.feature p{margin:0;color:var(--muted)}
+.split{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:36px;align-items:center}
+.phones{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.phones figure{margin:0;max-width:240px;width:100%;text-align:center}
+.phones svg{width:100%;height:auto;filter:drop-shadow(0 8px 20px rgba(0,0,0,.2))}
+.phones figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.steps{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;counter-reset:step}
+.steps li{counter-increment:step;position:relative;background:var(--green-soft);border-radius:14px;padding:20px 18px 18px}
+.steps li::before{content:counter(step);position:absolute;top:16px;right:18px;font-weight:800;font-size:28px;color:rgba(22,128,57,.25)}
+.steps .icon{font-size:30px;color:var(--green)}
+.steps h3{margin:10px 0 4px;font-size:17px}
+.steps p{margin:0;font-size:15px;color:var(--muted)}
+code{background:#eef2f0;padding:2px 6px;border-radius:6px;font-size:.92em}
+.check-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.check-list li{display:flex;gap:12px;align-items:flex-start}
+.check-list .icon{flex:none;font-size:22px;color:var(--green);margin-top:2px}
+.note{display:flex;gap:14px;align-items:flex-start;background:var(--orange-soft);border-radius:12px;padding:16px 18px;margin-top:20px}
+.note .icon{flex:none;font-size:24px;color:var(--orange);margin-top:2px}
+.note p{margin:0}
+.two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin:20px 0}
+.two-col .card{margin:0}
+.cta{display:flex;align-items:center;gap:24px;flex-wrap:wrap;border-left:6px solid var(--green)}
+.cta>.icon{font-size:48px;color:var(--green)}
+.cta .cta-text{flex:1;min-width:240px}
+.cta h2{margin-top:0}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;padding:12px 24px;border-radius:10px;font-weight:600}
+.btn:hover{background:var(--green-hover)}
+.btn:focus-visible,a:focus-visible{outline:3px solid #7fc79a;outline-offset:2px}
+a{color:var(--green)}
+.footer{background:var(--green-dark);color:#fff;text-align:center;padding:25px 16px}
+.footer a{color:#fff;display:inline-block;padding:12px}
+.related-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+@media (max-width:600px){.container{padding:16px 14px}.card{padding:20px;margin:14px 0;border-radius:14px}.hero-inner{padding:32px 16px;gap:20px}.hero-logo{width:88px;height:88px}.hero p{font-size:17px}.features{grid-template-columns:1fr 1fr;gap:12px}.features .card{padding:16px 12px}.feature .icon{font-size:30px}.feature h3{font-size:16px}.feature p{font-size:14px}.btn{width:100%;justify-content:center;box-sizing:border-box}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.meta-line{font-size:14px;color:var(--muted);margin:0 0 16px}
+.shot{margin:0;max-width:240px;width:100%;text-align:center}
+.shot img{width:100%;height:auto;border-radius:24px;box-shadow:0 8px 25px rgba(0,0,0,.2)}
+.shot figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.faq details{border-top:1px solid var(--line);padding:14px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{font-weight:600;cursor:pointer;color:var(--green-dark)}
+.faq p{margin:10px 0 0;max-width:70ch}
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<symbol id="i-gauge" viewBox="0 0 24 24"><path d="M3.5 17a9 9 0 1 1 17 0"/><path d="m12 13 4-5"/><circle cx="12" cy="13.5" r="1.4"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M8 3v4M16 3v4M3.5 10h17"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="i-update" viewBox="0 0 24 24"><path d="M12 3v11"/><path d="m7.5 9.5 4.5 4.5 4.5-4.5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.3 7.5 9.5 4.3-1.2 7.5-5 7.5-9.5V6z"/><path d="m8.8 12 2.3 2.3 4.3-4.6"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.2 12.2 2.6 2.6 5-5.2"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.5v.2"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3.8v16.4a1 1 0 0 0 1.5.9l13-8.2a1 1 0 0 0 0-1.7l-13-8.2A1 1 0 0 0 6 3.8z"/></symbol>
+<symbol id="i-logo" viewBox="0 0 108 108"><path d="M28.62 42.17a28 28 0 0 1 50.76 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M74.4 44.49l8.36 4.93 1.6-9.57z" fill="#fff" stroke="none"/><path d="M79.38 65.83a28 28 0 0 1-50.76 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M33.6 63.51l-8.36-4.93-1.6 9.57z" fill="#fff" stroke="none"/><rect x="37" y="40" width="34" height="28" rx="4" fill="#fff" stroke="none"/><g fill="#2E7D32" stroke="none"><rect x="44" y="44" width="5" height="5" rx="1"/><rect x="51.5" y="44" width="5" height="5" rx="1"/><rect x="59" y="44" width="5" height="5" rx="1"/><rect x="44" y="51.5" width="5" height="5" rx="1"/><rect x="51.5" y="51.5" width="5" height="5" rx="1"/><rect x="59" y="51.5" width="5" height="5" rx="1"/><rect x="44" y="59" width="5" height="5" rx="1"/><rect x="51.5" y="59" width="5" height="5" rx="1"/><rect x="59" y="59" width="5" height="5" rx="1"/></g></symbol>
+</svg>
+
+<header class="hero">
+  <div class="hero-inner">
+    <svg class="hero-logo" aria-hidden="true"><use href="#i-logo"/></svg>
+    <div class="hero-text">
+      <p class="hero-eyebrow">Android Uptime Monitoring · RebootMonitor</p>
+      <h1>Know your device's uptime, instantly</h1>
+      <p>RebootMonitor shows exactly how long an Android device has been running since its last restart — no fleet dashboard, no ADB commands, just the answer on the device itself.</p>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+<article>
+
+<section class="card prose" aria-labelledby="problem">
+  <p class="meta-line">By Nordic Appworks · Published <time datetime="2026-09-29">29 September 2026</time></p>
+  <h2 id="problem">Uptime is easy to lose track of</h2>
+  <p class="lead">Android doesn't put uptime anywhere a normal user will find it, so devices quietly keep running for weeks.</p>
+  <p>Checking uptime the "official" way means digging into Settings, enabling Developer options, or connecting a computer with ADB. Nobody does that for a phone or tablet they use every day — and on a device nobody personally owns, nobody does it at all.</p>
+  <p>RebootMonitor puts that number front and center: current uptime, updated live, the moment you open the app.</p>
+</section>
+
+<section class="features" aria-label="What uptime monitoring looks like in RebootMonitor">
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg><h3>Live uptime counter</h3><p>Days, hours and minutes since the last restart, calculated straight from the system clock.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><h3>Color-coded status</h3><p>"Good" or "Reboot recommended" at a glance, based on how long the device has been up.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><h3>History, not just a snapshot</h3><p>A 7-day overview plus 30-day, 90-day and 12-month views of every recorded restart.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><h3>Monthly heatmap</h3><p>Tap any day in the calendar to see exactly when the device restarted that day.</p></div>
+</section>
+
+<section class="card" aria-labelledby="report">
+  <h2 id="report">What the uptime screen actually shows</h2>
+  <p class="lead">Three numbers, one table — no configuration required.</p>
+  <div class="phones" style="margin-top:16px">
+    <figure class="shot">
+      <picture><source srcset="screenshot1.webp" type="image/webp"><img src="screenshot1.png" width="525" height="1171" alt="RebootMonitor dashboard showing status, current uptime and days with reboots in the last 7 days" loading="lazy" decoding="async"></picture>
+      <figcaption>Status, live uptime and days with reboots.</figcaption>
+    </figure>
+    <figure class="shot">
+      <picture><source srcset="screenshot2.webp" type="image/webp"><img src="screenshot2.png" width="526" height="1169" alt="RebootMonitor history screen with a monthly reboot heatmap" loading="lazy" decoding="async"></picture>
+      <figcaption>Longer-term uptime patterns in a monthly heatmap.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="two-col">
+  <section class="card" aria-labelledby="why">
+    <h2 id="why">Why uptime is worth watching</h2>
+    <ul class="check-list">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-update"/></svg><span>Pending Android system and security updates often only apply after a restart.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg><span>Long uptimes correlate with slower, less responsive devices as memory and cached processes build up.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span>A device that never restarts is a device where nobody is checking on it — which is exactly when problems go unnoticed.</span></li>
+    </ul>
+  </section>
+  <section class="card" aria-labelledby="private">
+    <h2 id="private">Monitoring that stays on the device</h2>
+    <ul class="check-list">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><span>Uptime and reboot history are calculated and stored locally. Nothing is uploaded anywhere.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Only two permissions: <code>RECEIVE_BOOT_COMPLETED</code> and <code>POST_NOTIFICATIONS</code>.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>No account, no ads, no analytics — the app has nothing to gain from your data.</span></li>
+    </ul>
+  </section>
+</div>
+
+<section class="card faq" aria-labelledby="faq">
+  <h2 id="faq">Frequently asked questions</h2>
+  <details><summary>What exactly does RebootMonitor mean by "uptime"?</summary><p>The time elapsed since the device's last restart, read directly from the Android system clock. It resets to zero every time the device actually reboots.</p></details>
+  <details><summary>Does uptime tracking work without an internet connection?</summary><p>Yes. RebootMonitor never requests internet access. Uptime and reboot history are calculated and stored entirely on the device.</p></details>
+  <details><summary>Can I see uptime trends over time, not just right now?</summary><p>Yes. Alongside the live uptime counter, the history screen shows a 30/90-day or 12-month view and a monthly heatmap of reboot activity.</p></details>
+  <details><summary>Is this a fleet-wide monitoring dashboard?</summary><p>No. RebootMonitor shows uptime on the device itself, for whoever is looking at it right now. There is no central server or cross-device dashboard, by design — see our <a href="intune-shared-device-monitoring.html">Intune shared device monitoring</a> page for how that works in practice on managed fleets.</p></details>
+</section>
+
+<section class="card cta" aria-labelledby="get">
+  <svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>
+  <div class="cta-text">
+    <h2 id="get">See your device's uptime right now</h2>
+    <p style="margin:0">Install RebootMonitor and the current uptime is the first thing you'll see.</p>
+  </div>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=app.rebootmonitor.mobile" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg> View on Google Play</a>
+</section>
+
+<section class="card" aria-labelledby="related">
+  <h2 id="related">Related reading</h2>
+  <ul class="related-list">
+    <li><a href="android-reboot-tracking.html">Android Reboot Tracking</a> — how every restart gets logged automatically.</li>
+    <li><a href="android-device-uptime-report.html">Android Device Uptime Report</a> — reading the full uptime report on a device.</li>
+    <li><a href="android-kiosk-monitoring.html">Android Kiosk Monitoring</a> — uptime visibility for unattended, single-purpose devices.</li>
+    <li><a href="intune-shared-device-monitoring.html">Intune Shared Device Monitoring</a> — uptime visibility across a managed fleet.</li>
+  </ul>
+</section>
+
+</article>
+</main>
+
+<footer class="footer">
+  <div>© 2026 Nordic Appworks • RebootMonitor</div>
+  <nav aria-label="Footer"><a href="https://rebootmonitor.com/">Home</a><a href="https://rebootmonitor.com/about.html">About</a><a href="https://rebootmonitor.com/intune-shared-devices.html">Intune guide</a><a href="https://rebootmonitor.com/privacy.html">Privacy Policy</a><a href="https://play.google.com/store/apps/details?id=app.rebootmonitor.mobile" target="_blank" rel="noopener">Google Play</a></nav>
+</footer>
+</body>
+</html>

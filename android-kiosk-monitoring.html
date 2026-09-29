@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Android Kiosk Monitoring | RebootMonitor</title>
+<meta name="description" content="Keep unattended Android kiosks, self-service terminals and digital signage stable with automatic reboot tracking and a 7-day reboot reminder.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Nordic Appworks">
+<meta name="theme-color" content="#005824">
+<link rel="canonical" href="https://rebootmonitor.com/android-kiosk-monitoring.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="RebootMonitor">
+<meta property="og:title" content="Android Kiosk Monitoring | RebootMonitor">
+<meta property="og:description" content="Keep unattended Android kiosks and self-service terminals stable with automatic reboot tracking and a 7-day reminder.">
+<meta property="og:url" content="https://rebootmonitor.com/android-kiosk-monitoring.html">
+<meta property="og:image" content="https://rebootmonitor.com/header-banner.png">
+<meta property="og:image:alt" content="RebootMonitor – track uptime, reboot history and device stability">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-09-29">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Android Kiosk Monitoring | RebootMonitor">
+<meta name="twitter:description" content="Keep unattended Android kiosks stable with automatic reboot tracking.">
+<meta name="twitter:image" content="https://rebootmonitor.com/header-banner.png">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://rebootmonitor.com/#organization",
+      "name": "Nordic Appworks",
+      "url": "https://rebootmonitor.com/",
+      "logo": "https://rebootmonitor.com/apple-touch-icon.png"
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://rebootmonitor.com/android-kiosk-monitoring.html#article",
+      "headline": "Android Kiosk Monitoring with RebootMonitor",
+      "description": "Keep unattended Android kiosks, self-service terminals and digital signage stable with automatic reboot tracking and a 7-day reminder.",
+      "url": "https://rebootmonitor.com/android-kiosk-monitoring.html",
+      "mainEntityOfPage": "https://rebootmonitor.com/android-kiosk-monitoring.html",
+      "inLanguage": "en",
+      "datePublished": "2026-09-29",
+      "dateModified": "2026-09-29",
+      "author": { "@id": "https://rebootmonitor.com/#organization" },
+      "publisher": { "@id": "https://rebootmonitor.com/#organization" },
+      "image": ["https://rebootmonitor.com/screenshot1.png", "https://rebootmonitor.com/header-banner.png"],
+      "about": ["Android kiosk", "Self-service terminal", "Digital signage", "Device monitoring"],
+      "isPartOf": { "@id": "https://rebootmonitor.com/#website" },
+      "breadcrumb": { "@id": "https://rebootmonitor.com/android-kiosk-monitoring.html#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://rebootmonitor.com/android-kiosk-monitoring.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rebootmonitor.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Android Kiosk Monitoring", "item": "https://rebootmonitor.com/android-kiosk-monitoring.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://rebootmonitor.com/android-kiosk-monitoring.html#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Does RebootMonitor work in single-app kiosk mode?", "acceptedAnswer": { "@type": "Answer", "text": "It needs to be reachable by whoever maintains the kiosk, so it works best in a multi-app kiosk or Managed Home Screen setup where staff can open it alongside the main kiosk app." } },
+        { "@type": "Question", "name": "Will it interfere with the kiosk application?", "acceptedAnswer": { "@type": "Answer", "text": "No. RebootMonitor runs independently, only reacts to the device restarting, and does not take over the screen or block the kiosk app in any way." } },
+        { "@type": "Question", "name": "Can staff be alerted without unlocking the kiosk?", "acceptedAnswer": { "@type": "Answer", "text": "The reminder appears as a standard Android notification and an app icon badge, visible to anyone with access to the notification shade or the app itself." } },
+        { "@type": "Question", "name": "Does this need a network connection to work?", "acceptedAnswer": { "@type": "Answer", "text": "No. Detection, history and the reminder are all handled locally on the kiosk, so it keeps working even if the device is offline." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{--green-dark:#005824;--green:#168039;--green-hover:#0f622c;--ground:#f5f7f8;--card:#fff;--text:#222;--muted:#4a5550;--line:#dfe5e2;--orange:#e07b17;--orange-soft:#fff1e2;--green-soft:#e6f4ea;color-scheme:light}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",Arial,sans-serif;margin:0;background:var(--ground);color:var(--text);font-size:16px;line-height:1.6}
+.icon{display:inline-block;width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.125em}
+header.hero{background-color:var(--green-dark);background-image:radial-gradient(rgba(255,255,255,.13) 1.5px,transparent 1.5px);background-size:28px 28px;color:#fff}
+.hero-inner{max-width:1200px;margin:auto;padding:48px 20px;display:flex;align-items:center;gap:36px;flex-wrap:wrap}
+.hero-logo{width:132px;height:132px;flex:none}
+.hero-text{flex:1;min-width:260px}
+.hero-eyebrow{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85;margin:0 0 8px}
+.hero h1{color:#fff;font-size:clamp(32px,5vw,54px);line-height:1.08;font-weight:800;margin:0 0 14px;text-wrap:balance}
+.hero p{font-size:19px;max-width:620px;margin:0;opacity:.95}
+.container{max-width:1200px;margin:auto;padding:40px 20px}
+.card{background:var(--card);padding:30px;border-radius:18px;box-shadow:0 4px 18px rgba(0,0,0,.08);margin:20px 0}
+h2{color:var(--green);margin:0 0 12px;text-wrap:balance}
+h3{margin:12px 0 6px}
+.lead{font-size:18px;color:var(--muted);margin:0 0 16px}
+.prose p{max-width:70ch}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.features .card{margin:0}
+.feature{text-align:center}
+.feature .icon{font-size:40px;color:var(--green)}
+.feature p{margin:0;color:var(--muted)}
+.split{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:36px;align-items:center}
+.phones{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.phones figure{margin:0;max-width:240px;width:100%;text-align:center}
+.phones svg{width:100%;height:auto;filter:drop-shadow(0 8px 20px rgba(0,0,0,.2))}
+.phones figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.steps{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;counter-reset:step}
+.steps li{counter-increment:step;position:relative;background:var(--green-soft);border-radius:14px;padding:20px 18px 18px}
+.steps li::before{content:counter(step);position:absolute;top:16px;right:18px;font-weight:800;font-size:28px;color:rgba(22,128,57,.25)}
+.steps .icon{font-size:30px;color:var(--green)}
+.steps h3{margin:10px 0 4px;font-size:17px}
+.steps p{margin:0;font-size:15px;color:var(--muted)}
+code{background:#eef2f0;padding:2px 6px;border-radius:6px;font-size:.92em}
+.check-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.check-list li{display:flex;gap:12px;align-items:flex-start}
+.check-list .icon{flex:none;font-size:22px;color:var(--green);margin-top:2px}
+.note{display:flex;gap:14px;align-items:flex-start;background:var(--orange-soft);border-radius:12px;padding:16px 18px;margin-top:20px}
+.note .icon{flex:none;font-size:24px;color:var(--orange);margin-top:2px}
+.note p{margin:0}
+.two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin:20px 0}
+.two-col .card{margin:0}
+.cta{display:flex;align-items:center;gap:24px;flex-wrap:wrap;border-left:6px solid var(--green)}
+.cta>.icon{font-size:48px;color:var(--green)}
+.cta .cta-text{flex:1;min-width:240px}
+.cta h2{margin-top:0}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;padding:12px 24px;border-radius:10px;font-weight:600}
+.btn:hover{background:var(--green-hover)}
+.btn:focus-visible,a:focus-visible{outline:3px solid #7fc79a;outline-offset:2px}
+a{color:var(--green)}
+.footer{background:var(--green-dark);color:#fff;text-align:center;padding:25px 16px}
+.footer a{color:#fff;display:inline-block;padding:12px}
+.related-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+@media (max-width:600px){.container{padding:16px 14px}.card{padding:20px;margin:14px 0;border-radius:14px}.hero-inner{padding:32px 16px;gap:20px}.hero-logo{width:88px;height:88px}.hero p{font-size:17px}.features{grid-template-columns:1fr 1fr;gap:12px}.features .card{padding:16px 12px}.feature .icon{font-size:30px}.feature h3{font-size:16px}.feature p{font-size:14px}.btn{width:100%;justify-content:center;box-sizing:border-box}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.meta-line{font-size:14px;color:var(--muted);margin:0 0 16px}
+.shot{margin:0;max-width:240px;width:100%;text-align:center}
+.shot img{width:100%;height:auto;border-radius:24px;box-shadow:0 8px 25px rgba(0,0,0,.2)}
+.shot figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.faq details{border-top:1px solid var(--line);padding:14px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{font-weight:600;cursor:pointer;color:var(--green-dark)}
+.faq p{margin:10px 0 0;max-width:70ch}
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<symbol id="i-kiosk" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="16" rx="2"/><path d="M9 21.5h6M12 18.5v3"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+<symbol id="i-freeze" viewBox="0 0 24 24"><path d="M12 2v20M4.5 6.5l15 11M19.5 6.5l-15 11"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.8"/><path d="M16.5 14.2c2.9.2 5 2.3 5 5.3"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.2 12.2 2.6 2.6 5-5.2"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.5v.2"/></symbol>
+<symbol id="i-signal" viewBox="0 0 24 24"><path d="M4 20V14M9.5 20V9M15 20V5M20.5 20v-8"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3.8v16.4a1 1 0 0 0 1.5.9l13-8.2a1 1 0 0 0 0-1.7l-13-8.2A1 1 0 0 0 6 3.8z"/></symbol>
+<symbol id="i-logo" viewBox="0 0 108 108"><path d="M28.62 42.17a28 28 0 0 1 50.76 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M74.4 44.49l8.36 4.93 1.6-9.57z" fill="#fff" stroke="none"/><path d="M79.38 65.83a28 28 0 0 1-50.76 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M33.6 63.51l-8.36-4.93-1.6 9.57z" fill="#fff" stroke="none"/><rect x="37" y="40" width="34" height="28" rx="4" fill="#fff" stroke="none"/><g fill="#2E7D32" stroke="none"><rect x="44" y="44" width="5" height="5" rx="1"/><rect x="51.5" y="44" width="5" height="5" rx="1"/><rect x="59" y="44" width="5" height="5" rx="1"/><rect x="44" y="51.5" width="5" height="5" rx="1"/><rect x="51.5" y="51.5" width="5" height="5" rx="1"/><rect x="59" y="51.5" width="5" height="5" rx="1"/><rect x="44" y="59" width="5" height="5" rx="1"/><rect x="51.5" y="59" width="5" height="5" rx="1"/><rect x="59" y="59" width="5" height="5" rx="1"/></g></symbol>
+</svg>
+
+<header class="hero">
+  <div class="hero-inner">
+    <svg class="hero-logo" aria-hidden="true"><use href="#i-logo"/></svg>
+    <div class="hero-text">
+      <p class="hero-eyebrow">Kiosk &amp; Self-Service Devices · RebootMonitor</p>
+      <h1>Kiosks run alone. Their uptime shouldn't go unnoticed.</h1>
+      <p>Self-service kiosks, check-in terminals and digital signage often run for months without anyone thinking to restart them. RebootMonitor keeps that simple maintenance step visible.</p>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+<article>
+
+<section class="card prose" aria-labelledby="problem">
+  <p class="meta-line">By Nordic Appworks · Published <time datetime="2026-09-29">29 September 2026</time></p>
+  <h2 id="problem">Unattended by design, forgotten in practice</h2>
+  <p class="lead">A kiosk in a lobby or a self-checkout terminal is built to run without supervision — which also means nobody is watching for signs it needs a restart.</p>
+  <p>Where a phone gets picked up, glanced at and occasionally restarted just by being handled, a kiosk sits in the same spot, running the same app, for as long as it's left plugged in. The first sign of trouble is often a frozen screen a customer reports, or doesn't.</p>
+  <p>RebootMonitor gives that silent device a voice: a visible uptime, a history, and a reminder when it's overdue.</p>
+</section>
+
+<section class="features" aria-label="Why kiosks need reboot monitoring">
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-kiosk"/></svg><h3>Runs 24/7</h3><p>No sleep, no idle screen-off — kiosks accumulate uptime faster than almost any other device type.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-freeze"/></svg><h3>Fails publicly</h3><p>A frozen or sluggish kiosk is a visible failure to customers or visitors, not a private inconvenience.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><h3>No daily user</h3><p>Nobody uses it the way they'd use a personal device, so nobody notices it needs attention.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-signal"/></svg><h3>Easy to overlook remotely</h3><p>A kiosk can look "online" in a management console while quietly running for months without a restart.</p></div>
+</section>
+
+<section class="card" aria-labelledby="visibility">
+  <h2 id="visibility">What RebootMonitor adds to a kiosk</h2>
+  <p class="lead">Whoever services the kiosk — cleaning staff, a store manager, a technician — can check its status in seconds.</p>
+  <div class="phones" style="margin-top:16px">
+    <figure class="shot">
+      <picture><source srcset="screenshot1.webp" type="image/webp"><img src="screenshot1.png" width="525" height="1171" alt="RebootMonitor dashboard on an Android kiosk showing uptime and reboot status" loading="lazy" decoding="async"></picture>
+      <figcaption>Current status and uptime, checked in seconds.</figcaption>
+    </figure>
+    <figure class="shot">
+      <picture><source srcset="screenshot2.webp" type="image/webp"><img src="screenshot2.png" width="526" height="1169" alt="RebootMonitor reboot history and monthly heatmap on an Android kiosk" loading="lazy" decoding="async"></picture>
+      <figcaption>A month's worth of reboot activity at a glance.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="two-col">
+  <section class="card" aria-labelledby="reminder">
+    <h2 id="reminder">A reminder that reaches the person nearby</h2>
+    <ul class="check-list">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg><span>After 7 days without a restart, a notification and app badge appear on the device.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span>The reminder stays silent for the first 7 days after installation and clears itself after the next reboot.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Runs independently of whatever kiosk or launcher app is running in the foreground.</span></li>
+    </ul>
+  </section>
+  <section class="card" aria-labelledby="private">
+    <h2 id="private">Lightweight enough for locked-down hardware</h2>
+    <ul class="check-list">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><span>Works fully offline — reboot detection and history never depend on a network connection.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Only two permissions: <code>RECEIVE_BOOT_COMPLETED</code> and <code>POST_NOTIFICATIONS</code>.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>No account, no background network activity, nothing that could conflict with a locked-down kiosk profile.</span></li>
+    </ul>
+  </section>
+</div>
+
+<div class="note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><p>On a fully locked single-app kiosk, RebootMonitor needs to be reachable to be useful. It works best alongside a multi-app kiosk mode or Managed Home Screen setup — see our <a href="intune-shared-devices.html">Intune deployment guide</a> for a worked example.</p></div>
+
+<section class="card faq" aria-labelledby="faq">
+  <h2 id="faq">Frequently asked questions</h2>
+  <details><summary>Does RebootMonitor work in single-app kiosk mode?</summary><p>It needs to be reachable by whoever maintains the kiosk, so it works best in a multi-app kiosk or Managed Home Screen setup where staff can open it alongside the main kiosk app.</p></details>
+  <details><summary>Will it interfere with the kiosk application?</summary><p>No. RebootMonitor runs independently, only reacts to the device restarting, and does not take over the screen or block the kiosk app in any way.</p></details>
+  <details><summary>Can staff be alerted without unlocking the kiosk?</summary><p>The reminder appears as a standard Android notification and an app icon badge, visible to anyone with access to the notification shade or the app itself.</p></details>
+  <details><summary>Does this need a network connection to work?</summary><p>No. Detection, history and the reminder are all handled locally on the kiosk, so it keeps working even if the device is offline.</p></details>
+</section>
+
+<section class="card cta" aria-labelledby="get">
+  <svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>
+  <div class="cta-text">
+    <h2 id="get">Give your kiosks a way to ask for a restart</h2>
+    <p style="margin:0">A quiet, offline-friendly way to keep unattended Android devices healthy.</p>
+  </div>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=app.rebootmonitor.mobile" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg> View on Google Play</a>
+</section>
+
+<section class="card" aria-labelledby="related">
+  <h2 id="related">Related reading</h2>
+  <ul class="related-list">
+    <li><a href="intune-shared-device-monitoring.html">Intune Shared Device Monitoring</a> — the same approach for managed, shared devices.</li>
+    <li><a href="android-uptime-monitoring.html">Android Uptime Monitoring</a> — how the live uptime counter works.</li>
+    <li><a href="android-reboot-tracking.html">Android Reboot Tracking</a> — how every restart gets logged automatically.</li>
+    <li><a href="android-device-uptime-report.html">Android Device Uptime Report</a> — reading the full report on a device.</li>
+  </ul>
+</section>
+
+</article>
+</main>
+
+<footer class="footer">
+  <div>© 2026 Nordic Appworks • RebootMonitor</div>
+  <nav aria-label="Footer"><a href="https://rebootmonitor.com/">Home</a><a href="https://rebootmonitor.com/about.html">About</a><a href="https://rebootmonitor.com/intune-shared-devices.html">Intune guide</a><a href="https://rebootmonitor.com/privacy.html">Privacy Policy</a><a href="https://play.google.com/store/apps/details?id=app.rebootmonitor.mobile" target="_blank" rel="noopener">Google Play</a></nav>
+</footer>
+</body>
+</html>
