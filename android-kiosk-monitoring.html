@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Android Kiosk Monitoring | RebootMonitor</title>
-<meta name="description" content="Keep unattended Android kiosks, self-service terminals and digital signage stable with automatic reboot tracking and a 7-day reboot reminder.">
+<meta name="description" content="Keep unattended Android kiosks, self-service terminals and digital signage stable with automatic reboot tracking and a configurable reboot reminder (7 days by default).">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="Nordic Appworks">
 <meta name="theme-color" content="#005824">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="RebootMonitor">
 <meta property="og:title" content="Android Kiosk Monitoring | RebootMonitor">
-<meta property="og:description" content="Keep unattended Android kiosks and self-service terminals stable with automatic reboot tracking and a 7-day reminder.">
+<meta property="og:description" content="Keep unattended Android kiosks and self-service terminals stable with automatic reboot tracking and a configurable reboot reminder.">
 <meta property="og:url" content="https://rebootmonitor.com/android-kiosk-monitoring.html">
 <meta property="og:image" content="https://rebootmonitor.com/header-banner.png">
 <meta property="og:image:alt" content="RebootMonitor – track uptime, reboot history and device stability">
@@ -44,12 +44,12 @@
       "@type": "TechArticle",
       "@id": "https://rebootmonitor.com/android-kiosk-monitoring.html#article",
       "headline": "Android Kiosk Monitoring with RebootMonitor",
-      "description": "Keep unattended Android kiosks, self-service terminals and digital signage stable with automatic reboot tracking and a 7-day reminder.",
+      "description": "Keep unattended Android kiosks, self-service terminals and digital signage stable with automatic reboot tracking and a configurable reboot reminder (7 days by default).",
       "url": "https://rebootmonitor.com/android-kiosk-monitoring.html",
       "mainEntityOfPage": "https://rebootmonitor.com/android-kiosk-monitoring.html",
       "inLanguage": "en",
       "datePublished": "2026-09-29",
-      "dateModified": "2026-09-29",
+      "dateModified": "2026-10-01",
       "author": { "@id": "https://rebootmonitor.com/#organization" },
       "publisher": { "@id": "https://rebootmonitor.com/#organization" },
       "image": ["https://rebootmonitor.com/screenshot1.png", "https://rebootmonitor.com/header-banner.png"],
@@ -210,8 +210,9 @@ a{color:var(--green)}
   <section class="card" aria-labelledby="reminder">
     <h2 id="reminder">A reminder that reaches the person nearby</h2>
     <ul class="check-list">
-      <li><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg><span>After 7 days without a restart, a notification and app badge appear on the device.</span></li>
-      <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span>The reminder stays silent for the first 7 days after installation and clears itself after the next reboot.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg><span>After the chosen interval without a restart (7 days by default, or 3 or 14 days, or off), a notification and app badge appear on the device.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span>The reminder stays silent for the first reminder period after installation and clears itself after the next reboot.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span>A built-in shortcut to the device's battery optimization settings helps keep reminders reliable in the background.</span></li>
       <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Runs independently of whatever kiosk or launcher app is running in the foreground.</span></li>
     </ul>
   </section>

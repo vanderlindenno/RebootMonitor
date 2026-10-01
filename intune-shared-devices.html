@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>RebootMonitor with Microsoft Intune &amp; Managed Home Screen | Nordic Appworks</title>
-<meta name="description" content="How to deploy RebootMonitor with Microsoft Intune and Managed Home Screen so shared Android devices get rebooted at least once every 7 days.">
+<meta name="description" content="How to deploy RebootMonitor with Microsoft Intune and Managed Home Screen so shared Android devices get rebooted regularly, with a configurable reminder (7 days by default).">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="Nordic Appworks">
 <meta name="theme-color" content="#005824">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="RebootMonitor">
 <meta property="og:title" content="RebootMonitor with Microsoft Intune &amp; Managed Home Screen">
-<meta property="og:description" content="How to deploy RebootMonitor with Microsoft Intune and Managed Home Screen so shared Android devices get rebooted at least once every 7 days.">
+<meta property="og:description" content="How to deploy RebootMonitor with Microsoft Intune and Managed Home Screen so shared Android devices get rebooted regularly, with a configurable reminder (7 days by default).">
 <meta property="og:url" content="https://rebootmonitor.com/intune-shared-devices.html">
 <meta property="og:image" content="https://rebootmonitor.com/header-banner.png">
 <meta property="og:image:alt" content="RebootMonitor – track uptime, reboot history and device stability">
@@ -44,12 +44,12 @@
       "@type": "TechArticle",
       "@id": "https://rebootmonitor.com/intune-shared-devices.html#article",
       "headline": "Shared devices deserve regular reboots: RebootMonitor with Intune and Managed Home Screen",
-      "description": "How to deploy RebootMonitor with Microsoft Intune and Managed Home Screen so shared Android devices get rebooted at least once every 7 days.",
+      "description": "How to deploy RebootMonitor with Microsoft Intune and Managed Home Screen so shared Android devices get rebooted regularly, with a configurable reminder (7 days by default).",
       "url": "https://rebootmonitor.com/intune-shared-devices.html",
       "mainEntityOfPage": "https://rebootmonitor.com/intune-shared-devices.html",
       "inLanguage": "en",
       "datePublished": "2026-09-29",
-      "dateModified": "2026-09-29",
+      "dateModified": "2026-10-01",
       "author": {
         "@id": "https://rebootmonitor.com/#organization"
       },
@@ -138,7 +138,7 @@
           "name": "When does the reboot reminder appear?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "When the device has not been restarted for 7 days. The reminder clears itself after the next reboot and stays silent during the first 7 days after installation."
+            "text": "By default, when the device has not been restarted for 7 days. That interval can be changed to 3 or 14 days, or turned off, from the app's settings menu. The reminder clears itself after the next reboot and stays silent during the first reminder period after installation. A shortcut to the device's battery optimization settings is also included, to help keep reminders reliable in the background."
           }
         }
       ]
@@ -301,7 +301,7 @@ a{color:var(--green)}
 
 <section class="card" aria-labelledby="solution">
   <h2 id="solution">The solution: RebootMonitor</h2>
-  <p class="lead">RebootMonitor records every reboot locally and reminds the user once the device has gone 7 days without a restart.</p>
+  <p class="lead">RebootMonitor records every reboot locally and reminds the user once the device has gone without a restart for too long &mdash; 7 days by default, adjustable to 3 or 14 days, or off.</p>
   <p style="max-width:70ch">The app speaks to the person holding the device right now. They can see the device's status at a glance and get a clear reason to restart it.</p>
   <div class="phones" style="margin-top:24px">
     <figure class="shot">
@@ -312,27 +312,9 @@ a{color:var(--green)}
       <picture><source srcset="screenshot2.webp" type="image/webp"><img src="screenshot2.png" width="526" height="1170" alt="RebootMonitor reboot history with a monthly heatmap of reboots per day" loading="lazy" decoding="async"></picture>
       <figcaption>Full reboot history with a monthly heatmap.</figcaption>
     </figure>
-    <figure>
-      <svg viewBox="0 0 240 480" role="img" aria-labelledby="ph3t">
-        <title id="ph3t">A reboot reminder notification saying the device has not been restarted for 7 days</title>
-        <rect x="4" y="4" width="232" height="472" rx="30" fill="#1d2320"/>
-        <rect x="14" y="14" width="212" height="452" rx="22" fill="#2c3a33"/>
-        <g font-family="Segoe UI,Arial,sans-serif">
-          <text x="120" y="92" text-anchor="middle" font-size="42" font-weight="300" fill="#fff">09:41</text>
-          <text x="120" y="114" text-anchor="middle" font-size="11" fill="#cfd8d3">Tuesday, 29 September</text>
-          <rect x="24" y="146" width="192" height="116" rx="16" fill="#fff"/>
-          <rect x="36" y="158" width="20" height="20" rx="6" fill="#168039"/>
-          <svg x="36" y="158" width="20" height="20" viewBox="0 0 108 108"><use href="#i-logo"/></svg>
-          <text x="62" y="172" font-size="10" fill="#5b6560">Reboot Monitor · now</text>
-          <text x="36" y="200" font-size="13" font-weight="700" fill="#222">Reboot reminder</text>
-          <text x="36" y="218" font-size="10.5" fill="#333">The device has not been restarted</text>
-          <text x="36" y="232" font-size="10.5" fill="#333">for 7 days. Restarting it at least</text>
-          <text x="36" y="246" font-size="10.5" fill="#333">once every 7 days is recommended.</text>
-          <rect x="60" y="400" width="120" height="40" rx="20" fill="#168039"/>
-          <text x="120" y="425" text-anchor="middle" font-size="13" font-weight="600" fill="#fff">Restart</text>
-        </g>
-      </svg>
-      <figcaption>After 7 days without a reboot, the user gets a reminder.</figcaption>
+    <figure class="shot">
+      <picture><source srcset="screenshot3.webp" type="image/webp"><img src="screenshot3.png" width="525" height="1171" alt="RebootMonitor reminder settings with a configurable reboot reminder (3, 7 or 14 days, or off) and a battery optimization shortcut" loading="lazy" decoding="async"></picture>
+      <figcaption>The reminder interval is configurable &mdash; 7 days by default &mdash; with a shortcut to battery optimization settings.</figcaption>
     </figure>
   </div>
 </section>
@@ -341,9 +323,10 @@ a{color:var(--green)}
   <section class="card" aria-labelledby="nudge">
     <h2 id="nudge">How it gets users to reboot</h2>
     <ul class="check-list">
-      <li><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg><span>After 7 days without a reboot, a notification appears and the app icon gets a badge.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg><span>After the chosen interval without a reboot (7 days by default, or 3 or 14 days), a notification appears and the app icon gets a badge.</span></li>
       <li><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Opening the app shows a pop-up that recommends restarting the device.</span></li>
-      <li><svg class="icon" aria-hidden="true"><use href="#i-routine"/></svg><span>The reminder clears itself after the next reboot. It stays silent for the first 7 days after installation.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-routine"/></svg><span>The reminder clears itself after the next reboot. It stays silent for the first reminder period after installation, and can be turned off entirely.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span>A built-in shortcut to the device's battery optimization settings helps keep reminders reliable in the background.</span></li>
     </ul>
   </section>
   <section class="card" aria-labelledby="privacy">
@@ -366,7 +349,7 @@ a{color:var(--green)}
     <li><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg><h3>Allow notifications</h3><p>Keep the notification bar available in MHS, so users actually see the reminder.</p></li>
     <li><svg class="icon" aria-hidden="true"><use href="#i-phone-check"/></svg><h3>Verify</h3><p>Open the app on a test device, check the uptime and reboot once. The reboot should appear in the overview right away.</p></li>
   </ol>
-  <div class="note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><p>Without step 3 the app is installed but invisible. Reminders only start 7 days after installation, so don't expect notifications right after the rollout.</p></div>
+  <div class="note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><p>Without step 3 the app is installed but invisible. Reminders only start after the chosen interval (7 days by default) has passed since installation, so don't expect notifications right after the rollout.</p></div>
 </section>
 
 <section class="card" aria-labelledby="tips">
@@ -386,7 +369,7 @@ a{color:var(--green)}
   <details><summary>How often should a shared Android device be rebooted?</summary><p>At least once every 7 days. That lets pending Android system and security updates take effect and clears background processes that slow the device down.</p></details>
   <details><summary>Does RebootMonitor work with Microsoft Intune and Managed Home Screen?</summary><p>Yes. Deploy it as a Managed Google Play app, assign it as Required to your shared device group and add it to the allowed apps in Managed Home Screen.</p></details>
   <details><summary>Does RebootMonitor send any data to a server?</summary><p>No. All reboot history is stored locally on the device. The app only uses the RECEIVE_BOOT_COMPLETED and POST_NOTIFICATIONS permissions.</p></details>
-  <details><summary>When does the reboot reminder appear?</summary><p>When the device has not been restarted for 7 days. The reminder clears itself after the next reboot and stays silent during the first 7 days after installation.</p></details>
+  <details><summary>When does the reboot reminder appear?</summary><p>By default, when the device has not been restarted for 7 days. That interval can be changed to 3 or 14 days, or turned off, from the app's settings menu. The reminder clears itself after the next reboot and stays silent during the first reminder period after installation. A shortcut to the device's battery optimization settings is also included, to help keep reminders reliable in the background.</p></details>
 </section>
 
 <section class="card cta" aria-labelledby="get">
