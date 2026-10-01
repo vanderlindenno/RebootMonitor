@@ -140,6 +140,14 @@
             "@type": "Answer",
             "text": "By default, when the device has not been restarted for 7 days. That interval can be changed to 3 or 14 days, or turned off, from the app's settings menu. The reminder clears itself after the next reboot and stays silent during the first reminder period after installation. A shortcut to the device's battery optimization settings is also included, to help keep reminders reliable in the background."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Can battery optimization be managed centrally instead of per device?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On Samsung devices, yes. Deploy the Samsung Knox Service Plugin as an OEMConfig app through Intune and use its settings to exempt RebootMonitor from battery optimization across the whole fleet, instead of relying on the in-app shortcut on every device."
+          }
         }
       ]
     }
@@ -348,6 +356,7 @@ a{color:var(--green)}
     <li><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><h3>Add it to MHS</h3><p>Add the app to the allowed apps in the dedicated device profile (multi-app kiosk) or the MHS app configuration policy.</p></li>
     <li><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg><h3>Allow notifications</h3><p>Keep the notification bar available in MHS, so users actually see the reminder.</p></li>
     <li><svg class="icon" aria-hidden="true"><use href="#i-phone-check"/></svg><h3>Verify</h3><p>Open the app on a test device, check the uptime and reboot once. The reboot should appear in the overview right away.</p></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><h3>Exempt it from battery optimization</h3><p>Aggressive battery management on some OEMs can delay or block the reminder. Users can allow it themselves via the shortcut in the app's settings, or, on Samsung devices, an admin can exempt RebootMonitor fleet-wide through Intune using the <strong>Samsung Knox Service Plugin</strong> (OEMConfig), instead of relying on each device.</p></li>
   </ol>
   <div class="note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><p>Without step 3 the app is installed but invisible. Reminders only start after the chosen interval (7 days by default) has passed since installation, so don't expect notifications right after the rollout.</p></div>
 </section>
@@ -370,6 +379,7 @@ a{color:var(--green)}
   <details><summary>Does RebootMonitor work with Microsoft Intune and Managed Home Screen?</summary><p>Yes. Deploy it as a Managed Google Play app, assign it as Required to your shared device group and add it to the allowed apps in Managed Home Screen.</p></details>
   <details><summary>Does RebootMonitor send any data to a server?</summary><p>No. All reboot history is stored locally on the device. The app only uses the RECEIVE_BOOT_COMPLETED and POST_NOTIFICATIONS permissions.</p></details>
   <details><summary>When does the reboot reminder appear?</summary><p>By default, when the device has not been restarted for 7 days. That interval can be changed to 3 or 14 days, or turned off, from the app's settings menu. The reminder clears itself after the next reboot and stays silent during the first reminder period after installation. A shortcut to the device's battery optimization settings is also included, to help keep reminders reliable in the background.</p></details>
+  <details><summary>Can battery optimization be managed centrally instead of per device?</summary><p>On Samsung devices, yes. Deploy the Samsung Knox Service Plugin as an OEMConfig app through Intune and use its settings to exempt RebootMonitor from battery optimization across the whole fleet, instead of relying on the in-app shortcut on every device.</p></details>
 </section>
 
 <section class="card cta" aria-labelledby="get">
