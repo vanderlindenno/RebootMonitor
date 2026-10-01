@@ -138,7 +138,7 @@
           "name": "When does the reboot reminder appear?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "By default, when the device has not been restarted for 7 days. That interval can be changed to 3 or 14 days, or turned off, from the app's settings menu. The reminder clears itself after the next reboot and stays silent during the first reminder period after installation. A shortcut to the device's battery optimization settings is also included, to help keep reminders reliable in the background."
+            "text": "By default, when the device has not been restarted for 7 days. That interval can be changed to 3 or 14 days, or turned off, from the app's settings menu. The reminder clears itself after the next reboot and stays silent during the first reminder period after installation. A shortcut to the device's battery optimization settings is also included, in case a reminder ever doesn't arrive as expected."
           }
         },
         {
@@ -322,7 +322,7 @@ a{color:var(--green)}
     </figure>
     <figure class="shot">
       <picture><source srcset="screenshot3.webp" type="image/webp"><img src="screenshot3.png" width="525" height="1171" alt="RebootMonitor reminder settings with a configurable reboot reminder (3, 7 or 14 days, or off) and a battery optimization shortcut" loading="lazy" decoding="async"></picture>
-      <figcaption>The reminder interval is configurable &mdash; 7 days by default &mdash; with a shortcut to battery optimization settings.</figcaption>
+      <figcaption>The reminder interval is configurable &mdash; 7 days by default &mdash; with a battery optimization shortcut to use if a reminder ever doesn't arrive.</figcaption>
     </figure>
   </div>
 </section>
@@ -334,7 +334,7 @@ a{color:var(--green)}
       <li><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg><span>After the chosen interval without a reboot (7 days by default, or 3 or 14 days), a notification appears and the app icon gets a badge.</span></li>
       <li><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Opening the app shows a pop-up that recommends restarting the device.</span></li>
       <li><svg class="icon" aria-hidden="true"><use href="#i-routine"/></svg><span>The reminder clears itself after the next reboot. It stays silent for the first reminder period after installation, and can be turned off entirely.</span></li>
-      <li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span>A built-in shortcut to the device's battery optimization settings helps keep reminders reliable in the background.</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span>If a reminder doesn't arrive as expected on a particular device, a built-in shortcut jumps straight to its battery optimization settings.</span></li>
     </ul>
   </section>
   <section class="card" aria-labelledby="privacy">
@@ -356,7 +356,7 @@ a{color:var(--green)}
     <li><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><h3>Add it to MHS</h3><p>Add the app to the allowed apps in the dedicated device profile (multi-app kiosk) or the MHS app configuration policy.</p></li>
     <li><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg><h3>Allow notifications</h3><p>Keep the notification bar available in MHS, so users actually see the reminder.</p></li>
     <li><svg class="icon" aria-hidden="true"><use href="#i-phone-check"/></svg><h3>Verify</h3><p>Open the app on a test device, check the uptime and reboot once. The reboot should appear in the overview right away.</p></li>
-    <li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><h3>Exempt it from battery optimization</h3><p>Aggressive battery management on some OEMs can delay or block the reminder. Users can allow it themselves via the shortcut in the app's settings, or, on Samsung devices, an admin can exempt RebootMonitor fleet-wide through Intune using the <strong>Samsung Knox Service Plugin</strong> (OEMConfig), instead of relying on each device.</p></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><h3>Check battery optimization if needed</h3><p>Most devices deliver the reminder fine on default battery settings. If a reminder doesn't show up on a particular device, users can check the shortcut in the app's settings, or, on Samsung devices, an admin can manage that setting fleet-wide through Intune using the <strong>Samsung Knox Service Plugin</strong> (OEMConfig) instead of relying on each device.</p></li>
   </ol>
   <div class="note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><p>Without step 3 the app is installed but invisible. Reminders only start after the chosen interval (7 days by default) has passed since installation, so don't expect notifications right after the rollout.</p></div>
 </section>
@@ -378,7 +378,7 @@ a{color:var(--green)}
   <details><summary>How often should a shared Android device be rebooted?</summary><p>At least once every 7 days. That lets pending Android system and security updates take effect and clears background processes that slow the device down.</p></details>
   <details><summary>Does RebootMonitor work with Microsoft Intune and Managed Home Screen?</summary><p>Yes. Deploy it as a Managed Google Play app, assign it as Required to your shared device group and add it to the allowed apps in Managed Home Screen.</p></details>
   <details><summary>Does RebootMonitor send any data to a server?</summary><p>No. All reboot history is stored locally on the device. The app only uses the RECEIVE_BOOT_COMPLETED and POST_NOTIFICATIONS permissions.</p></details>
-  <details><summary>When does the reboot reminder appear?</summary><p>By default, when the device has not been restarted for 7 days. That interval can be changed to 3 or 14 days, or turned off, from the app's settings menu. The reminder clears itself after the next reboot and stays silent during the first reminder period after installation. A shortcut to the device's battery optimization settings is also included, to help keep reminders reliable in the background.</p></details>
+  <details><summary>When does the reboot reminder appear?</summary><p>By default, when the device has not been restarted for 7 days. That interval can be changed to 3 or 14 days, or turned off, from the app's settings menu. The reminder clears itself after the next reboot and stays silent during the first reminder period after installation. A shortcut to the device's battery optimization settings is also included, in case a reminder ever doesn't arrive as expected.</p></details>
   <details><summary>Can battery optimization be managed centrally instead of per device?</summary><p>On Samsung devices, yes. Deploy the Samsung Knox Service Plugin as an OEMConfig app through Intune and use its settings to exempt RebootMonitor from battery optimization across the whole fleet, instead of relying on the in-app shortcut on every device.</p></details>
 </section>
 

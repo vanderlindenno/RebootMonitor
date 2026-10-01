@@ -73,7 +73,7 @@
         { "@type": "Question", "name": "Why monitor on the device instead of centrally?", "acceptedAnswer": { "@type": "Answer", "text": "On a shared device, the person most able to act on a low-uptime warning is whoever is holding it right now, not an admin browsing a report days later. On-device monitoring turns the signal into an action immediately." } },
         { "@type": "Question", "name": "Can this be combined with Intune's own compliance reporting?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Intune already reports last check-in and compliance state per device. RebootMonitor adds the one signal Intune does not track: how long it has actually been since the device restarted." } },
         { "@type": "Question", "name": "Does this replace a device compliance policy?", "acceptedAnswer": { "@type": "Answer", "text": "No. It is a lightweight nudge for users, not an enforcement mechanism. Devices are not blocked or marked non-compliant for a missed reboot." } },
-        { "@type": "Question", "name": "What about battery optimization blocking the reminder?", "acceptedAnswer": { "@type": "Answer", "text": "Aggressive battery management on some OEMs can delay or block the reminder. Users can exempt the app themselves via a shortcut in its settings, or, on Samsung devices, an admin can push that exemption fleet-wide through Intune using the Samsung Knox Service Plugin (OEMConfig)." } }
+        { "@type": "Question", "name": "What about battery optimization blocking the reminder?", "acceptedAnswer": { "@type": "Answer", "text": "Most devices deliver the reminder fine on default battery settings. If a particular device doesn't seem to receive it, users can check the shortcut to battery optimization settings built into the app, or, on Samsung devices, an admin can manage that setting fleet-wide through Intune using the Samsung Knox Service Plugin (OEMConfig)." } }
       ]
     }
   ]
@@ -186,7 +186,7 @@ a{color:var(--green)}
 
 <section class="features" aria-label="What monitoring looks like with RebootMonitor">
   <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg><h3>Visible on the device</h3><p>Anyone picking up the device sees its current status and uptime immediately, no admin console required.</p></div>
-  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg><h3>A configurable nudge</h3><p>A notification and in-app popup appear once a device has gone too long without a restart &mdash; 7 days by default, adjustable to 3 or 14 days, or off, with a shortcut to battery optimization settings for reliable delivery.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg><h3>A configurable nudge</h3><p>A notification and in-app popup appear once a device has gone too long without a restart &mdash; 7 days by default, adjustable to 3 or 14 days, or off. A battery optimization shortcut is built in for the rare device where a reminder doesn't come through.</p></div>
   <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><h3>Per-device history</h3><p>Every device keeps its own 12-month reboot history and monthly heatmap, viewable on that device.</p></div>
   <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><h3>Fits Managed Home Screen</h3><p>Works as one more tile in a locked-down, single-purpose or multi-app kiosk configuration.</p></div>
 </section>
@@ -232,7 +232,7 @@ a{color:var(--green)}
   <details><summary>Why monitor on the device instead of centrally?</summary><p>On a shared device, the person most able to act on a low-uptime warning is whoever is holding it right now, not an admin browsing a report days later. On-device monitoring turns the signal into an action immediately.</p></details>
   <details><summary>Can this be combined with Intune's own compliance reporting?</summary><p>Yes. Intune already reports last check-in and compliance state per device. RebootMonitor adds the one signal Intune does not track: how long it has actually been since the device restarted.</p></details>
   <details><summary>Does this replace a device compliance policy?</summary><p>No. It is a lightweight nudge for users, not an enforcement mechanism. Devices are not blocked or marked non-compliant for a missed reboot.</p></details>
-  <details><summary>What about battery optimization blocking the reminder?</summary><p>Aggressive battery management on some OEMs can delay or block the reminder. Users can exempt the app themselves via a shortcut in its settings, or, on Samsung devices, an admin can push that exemption fleet-wide through Intune using the Samsung Knox Service Plugin (OEMConfig).</p></details>
+  <details><summary>What about battery optimization blocking the reminder?</summary><p>Most devices deliver the reminder fine on default battery settings. If a particular device doesn't seem to receive it, users can check the shortcut to battery optimization settings built into the app, or, on Samsung devices, an admin can manage that setting fleet-wide through Intune using the Samsung Knox Service Plugin (OEMConfig).</p></details>
 </section>
 
 <section class="card cta" aria-labelledby="get">
