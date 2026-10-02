@@ -49,7 +49,7 @@
       "mainEntityOfPage": "https://rebootmonitor.com/intune-shared-devices.html",
       "inLanguage": "en",
       "datePublished": "2026-09-29",
-      "dateModified": "2026-10-01",
+      "dateModified": "2026-10-02",
       "author": {
         "@id": "https://rebootmonitor.com/#organization"
       },
@@ -211,7 +211,7 @@ a{color:var(--green)}
 @media (max-width:760px){.split{grid-template-columns:1fr}}
 @media (max-width:600px){.container{padding:16px 14px}.card{padding:20px;margin:14px 0;border-radius:14px}.hero-inner{padding:32px 16px;gap:20px}.hero-logo{width:88px;height:88px}.hero p{font-size:17px}.features{grid-template-columns:1fr 1fr;gap:12px}.features .card{padding:16px 12px}.feature .icon{font-size:30px}.feature h3{font-size:16px}.feature p{font-size:14px}.btn{width:100%;justify-content:center;box-sizing:border-box}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-.crumbs{max-width:1200px;margin:auto;padding:14px 20px 0;font-size:14px;color:var(--muted)}.crumbs ol{list-style:none;margin:0;padding:0;display:flex;gap:8px;flex-wrap:wrap}.crumbs li+li::before{content:"\203A";margin-right:8px}.meta-line{font-size:14px;color:var(--muted);margin:0 0 16px}.shot{margin:0;max-width:240px;width:100%;text-align:center}.shot img{width:100%;height:auto;border-radius:24px;box-shadow:0 8px 25px rgba(0,0,0,.2)}.shot figcaption{font-size:14px;color:var(--muted);margin-top:10px}.faq details{border-top:1px solid var(--line);padding:14px 0}.faq details:last-child{border-bottom:1px solid var(--line)}.faq summary{font-weight:600;cursor:pointer;color:var(--green-dark)}.faq p{margin:10px 0 0;max-width:70ch}</style>
+.crumbs{max-width:1200px;margin:auto;padding:14px 20px 0;font-size:14px;color:var(--muted)}.crumbs ol{list-style:none;margin:0;padding:0;display:flex;gap:8px;flex-wrap:wrap}.crumbs li+li::before{content:"\203A";margin-right:8px}.meta-line{font-size:14px;color:var(--muted);margin:0 0 16px}.shot{margin:0;max-width:240px;width:100%;text-align:center}.shot img{width:100%;height:auto;border-radius:24px;box-shadow:0 8px 25px rgba(0,0,0,.2)}.shot figcaption{font-size:14px;color:var(--muted);margin-top:10px}.faq details{border-top:1px solid var(--line);padding:14px 0}.faq details:last-child{border-bottom:1px solid var(--line)}.faq summary{font-weight:600;cursor:pointer;color:var(--green-dark)}.faq p{margin:10px 0 0;max-width:70ch}.related-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}</style>
 </head>
 <body>
 
@@ -380,6 +380,15 @@ a{color:var(--green)}
   <details><summary>Does RebootMonitor send any data to a server?</summary><p>No. All reboot history is stored locally on the device. The app only uses the RECEIVE_BOOT_COMPLETED and POST_NOTIFICATIONS permissions.</p></details>
   <details><summary>When does the reboot reminder appear?</summary><p>By default, when the device has not been restarted for 7 days. That interval can be changed to 3 or 14 days, or turned off, from the app's settings menu. The reminder clears itself after the next reboot and stays silent during the first reminder period after installation. A shortcut to the device's battery optimization settings is also included, in case a reminder ever doesn't arrive as expected.</p></details>
   <details><summary>Can battery optimization be managed centrally instead of per device?</summary><p>On Samsung devices, yes. Deploy the Samsung Knox Service Plugin as an OEMConfig app through Intune and use its settings to exempt RebootMonitor from battery optimization across the whole fleet, instead of relying on the in-app shortcut on every device.</p></details>
+</section>
+
+<section class="card" aria-labelledby="related">
+  <h2 id="related">Related reading</h2>
+  <ul class="related-list">
+    <li><a href="android-reboot-notification.html">Android Reboot Notification</a> — a closer look at how the configurable reminder works, for one phone or a whole fleet.</li>
+    <li><a href="intune-shared-device-monitoring.html">Intune Shared Device Monitoring</a> — the decentralized monitoring model behind this approach.</li>
+    <li><a href="android-kiosk-monitoring.html">Android Kiosk Monitoring</a> — the same idea applied to single-purpose kiosks.</li>
+  </ul>
 </section>
 
 <section class="card cta" aria-labelledby="get">
