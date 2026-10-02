@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reminders May Be Delayed? Here's the Fix | RebootMonitor</title>
+<meta name="description" content="A simple, step-by-step guide to fixing delayed RebootMonitor reminders caused by Android battery optimization. No technical knowledge needed.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Nordic Appworks">
+<meta name="theme-color" content="#005824">
+<link rel="canonical" href="https://rebootmonitor.com/fix-delayed-reminders.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="RebootMonitor">
+<meta property="og:title" content="Reminders May Be Delayed? Here's the Fix | RebootMonitor">
+<meta property="og:description" content="A simple, step-by-step guide to fixing delayed RebootMonitor reminders caused by Android battery optimization.">
+<meta property="og:url" content="https://rebootmonitor.com/fix-delayed-reminders.html">
+<meta property="og:image" content="https://rebootmonitor.com/header-banner.png">
+<meta property="og:image:alt" content="RebootMonitor – fixing delayed reminders">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-10-02">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Reminders May Be Delayed? Here's the Fix | RebootMonitor">
+<meta name="twitter:description" content="A simple, step-by-step guide to fixing delayed RebootMonitor reminders.">
+<meta name="twitter:image" content="https://rebootmonitor.com/header-banner.png">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://rebootmonitor.com/#organization",
+      "name": "Nordic Appworks",
+      "url": "https://rebootmonitor.com/",
+      "logo": "https://rebootmonitor.com/apple-touch-icon.png"
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://rebootmonitor.com/fix-delayed-reminders.html#howto",
+      "name": "How to fix delayed RebootMonitor reminders",
+      "description": "Some phones limit what apps can do in the background to save battery. Here's how to make sure RebootMonitor is allowed to send reminders on time.",
+      "step": [
+        { "@type": "HowToStep", "name": "Open Reminder settings", "text": "Open RebootMonitor and tap the gear icon in the top right corner." },
+        { "@type": "HowToStep", "name": "Look for the yellow card", "text": "If your phone could delay reminders, a card titled 'Reminders may be delayed' appears at the top." },
+        { "@type": "HowToStep", "name": "Tap the card", "text": "Tap it to open your phone's own battery settings for RebootMonitor." },
+        { "@type": "HowToStep", "name": "Allow unrestricted background use", "text": "Turn on the option that removes battery restrictions for RebootMonitor. The exact wording differs by phone brand." }
+      ],
+      "isPartOf": { "@id": "https://rebootmonitor.com/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://rebootmonitor.com/fix-delayed-reminders.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rebootmonitor.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Fix Delayed Reminders", "item": "https://rebootmonitor.com/fix-delayed-reminders.html" }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{--green-dark:#005824;--green:#168039;--green-hover:#0f622c;--ground:#f5f7f8;--card:#fff;--text:#222;--muted:#4a5550;--line:#dfe5e2;--orange:#e07b17;--orange-soft:#fff1e2;--green-soft:#e6f4ea;color-scheme:light}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",Arial,sans-serif;margin:0;background:var(--ground);color:var(--text);font-size:16px;line-height:1.6}
+.icon{display:inline-block;width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.125em}
+header.hero{background-color:var(--green-dark);background-image:radial-gradient(rgba(255,255,255,.13) 1.5px,transparent 1.5px);background-size:28px 28px;color:#fff}
+.hero-inner{max-width:1200px;margin:auto;padding:48px 20px;display:flex;align-items:center;gap:36px;flex-wrap:wrap}
+.hero-logo{width:132px;height:132px;flex:none}
+.hero-text{flex:1;min-width:260px}
+.hero-eyebrow{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85;margin:0 0 8px}
+.hero h1{color:#fff;font-size:clamp(30px,5vw,48px);line-height:1.1;font-weight:800;margin:0 0 14px;text-wrap:balance}
+.hero p{font-size:19px;max-width:620px;margin:0;opacity:.95}
+.container{max-width:900px;margin:auto;padding:40px 20px}
+.card{background:var(--card);padding:30px;border-radius:18px;box-shadow:0 4px 18px rgba(0,0,0,.08);margin:20px 0}
+h2{color:var(--green);margin:0 0 12px;text-wrap:balance}
+h3{margin:0 0 6px;font-size:19px}
+.lead{font-size:18px;color:var(--muted);margin:0 0 16px}
+.prose p{max-width:70ch}
+.guide-step{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,260px);gap:28px;align-items:center}
+.guide-step:nth-child(even){grid-template-columns:minmax(0,260px) minmax(0,1fr)}
+.guide-step:nth-child(even) .guide-shot{order:-1}
+.guide-num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;font-size:16px;margin-bottom:10px}
+.guide-text p{color:var(--muted);font-size:16px;margin:0}
+.guide-shot{text-align:center}
+.guide-shot img{width:100%;max-width:230px;height:auto;border-radius:20px;box-shadow:0 8px 25px rgba(0,0,0,.18)}
+.guide-shot.wide img{max-width:100%;border-radius:12px}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px}
+.before-after figure{margin:0;text-align:center}
+.before-after img{width:100%;height:auto;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.12);border:3px solid var(--line)}
+.before-after figcaption{margin-top:8px;font-weight:700;font-size:14px}
+.before-after .before figcaption{color:var(--orange)}
+.before-after .after figcaption{color:var(--green)}
+.note{display:flex;gap:14px;align-items:flex-start;background:var(--orange-soft);border-radius:12px;padding:16px 18px;margin-top:10px}
+.note .icon{flex:none;font-size:24px;color:var(--orange);margin-top:2px}
+.note p{margin:0}
+.reassure{display:flex;gap:14px;align-items:flex-start;background:var(--green-soft);border-radius:12px;padding:16px 18px;margin-top:10px}
+.reassure .icon{flex:none;font-size:24px;color:var(--green);margin-top:2px}
+.reassure p{margin:0}
+.cta{display:flex;align-items:center;gap:24px;flex-wrap:wrap;border-left:6px solid var(--green)}
+.cta>.icon{font-size:48px;color:var(--green)}
+.cta .cta-text{flex:1;min-width:240px}
+.cta h2{margin-top:0}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;padding:12px 24px;border-radius:10px;font-weight:600}
+.btn:hover{background:var(--green-hover)}
+.btn:focus-visible,a:focus-visible{outline:3px solid #7fc79a;outline-offset:2px}
+a{color:var(--green)}
+.footer{background:var(--green-dark);color:#fff;text-align:center;padding:25px 16px}
+.footer a{color:#fff;display:inline-block;padding:12px}
+@media (max-width:640px){.guide-step,.guide-step:nth-child(even){grid-template-columns:1fr !important}.guide-step:nth-child(even) .guide-shot{order:0}.container{padding:16px 14px}.card{padding:20px;margin:14px 0;border-radius:14px}.hero-inner{padding:32px 16px;gap:20px}.hero-logo{width:88px;height:88px}.hero p{font-size:17px}.before-after{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2.5 12h3M18.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></symbol>
+<symbol id="i-battery" viewBox="0 0 24 24"><rect x="3" y="7" width="15" height="10" rx="2"/><path d="M20 10.5v3"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.2 12.2 2.6 2.6 5-5.2"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.5v.2"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3.8v16.4a1 1 0 0 0 1.5.9l13-8.2a1 1 0 0 0 0-1.7l-13-8.2A1 1 0 0 0 6 3.8z"/></symbol>
+<symbol id="i-logo" viewBox="0 0 108 108"><path d="M28.62 42.17a28 28 0 0 1 50.76 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M74.4 44.49l8.36 4.93 1.6-9.57z" fill="#fff" stroke="none"/><path d="M79.38 65.83a28 28 0 0 1-50.76 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M33.6 63.51l-8.36-4.93-1.6 9.57z" fill="#fff" stroke="none"/><rect x="37" y="40" width="34" height="28" rx="4" fill="#fff" stroke="none"/><g fill="#2E7D32" stroke="none"><rect x="44" y="44" width="5" height="5" rx="1"/><rect x="51.5" y="44" width="5" height="5" rx="1"/><rect x="59" y="44" width="5" height="5" rx="1"/><rect x="44" y="51.5" width="5" height="5" rx="1"/><rect x="51.5" y="51.5" width="5" height="5" rx="1"/><rect x="59" y="51.5" width="5" height="5" rx="1"/><rect x="44" y="59" width="5" height="5" rx="1"/><rect x="51.5" y="59" width="5" height="5" rx="1"/><rect x="59" y="59" width="5" height="5" rx="1"/></g></symbol>
+</svg>
+
+<header class="hero">
+  <div class="hero-inner">
+    <svg class="hero-logo" aria-hidden="true"><use href="#i-logo"/></svg>
+    <div class="hero-text">
+      <p class="hero-eyebrow">Help Guide · RebootMonitor</p>
+      <h1>"Reminders may be delayed" — here's the easy fix</h1>
+      <p>Some phones limit what apps can do in the background to save battery. That's usually fine — but it can delay RebootMonitor's reminders by days. This page shows you exactly what to tap, with pictures, no technical knowledge needed.</p>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+<article>
+
+<section class="card prose" aria-labelledby="why">
+  <h2 id="why">Why does this happen?</h2>
+  <p class="lead">It's not a bug — it's your phone trying to save battery.</p>
+  <p>Android phones can restrict what apps are allowed to do while they're not open, to make the battery last longer. RebootMonitor needs to check your device's status once a day in the background. If your phone restricts it too much, that daily check can be delayed — sometimes by several days.</p>
+  <div class="reassure">
+    <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>
+    <p>Good news: fixing it takes less than a minute, and RebootMonitor still uses almost no battery either way — this setting just controls how strictly your phone limits it.</p>
+  </div>
+</section>
+
+<section class="card" aria-labelledby="step1">
+  <div class="guide-step">
+    <div class="guide-text">
+      <span class="guide-num">1</span>
+      <h3 id="step1">Open the gear icon</h3>
+      <p>Open RebootMonitor. In the top right corner, next to the app name, tap the gear (⚙) icon.</p>
+    </div>
+    <figure class="guide-shot wide">
+      <picture><source srcset="help_gear_closeup.webp" type="image/webp"><img src="help_gear_closeup.png" width="525" height="112" alt="RebootMonitor top bar with the gear icon for Reminder settings highlighted" loading="lazy" decoding="async"></picture>
+    </figure>
+  </div>
+</section>
+
+<section class="card" aria-labelledby="step2">
+  <div class="guide-step">
+    <figure class="guide-shot">
+      <picture><source srcset="help_settings.webp" type="image/webp"><img src="help_settings.png" width="525" height="1167" alt="RebootMonitor Reminder settings screen showing the yellow 'Reminders may be delayed' card at the top" loading="lazy" decoding="async"></picture>
+    </figure>
+    <div class="guide-text">
+      <span class="guide-num">2</span>
+      <h3 id="step2">Look for the yellow card</h3>
+      <p>If your phone could delay reminders, you'll see a yellow card at the top that says <strong>"Reminders may be delayed."</strong></p>
+      <p>If you don't see this card, your phone already allows RebootMonitor to run normally — nothing to do!</p>
+    </div>
+  </div>
+</section>
+
+<section class="card" aria-labelledby="step3">
+  <div class="guide-step">
+    <div class="guide-text">
+      <span class="guide-num">3</span>
+      <h3 id="step3">Tap the card</h3>
+      <p>Tap anywhere on the yellow card. This opens your phone's own battery settings screen for RebootMonitor — it's a standard Android screen, not part of the app.</p>
+      <p>You'll see RebootMonitor listed with a switch next to it.</p>
+    </div>
+    <figure class="guide-shot wide">
+      <picture><source srcset="help_battery_before.webp" type="image/webp"><img src="help_battery_before.png" width="525" height="328" alt="Phone battery settings screen showing RebootMonitor with the optimization switch turned on, meaning it is currently restricted" loading="lazy" decoding="async"></picture>
+    </figure>
+  </div>
+</section>
+
+<section class="card" aria-labelledby="step4">
+  <h3 id="step4"><span class="guide-num" style="margin-right:8px;vertical-align:middle">4</span>Turn the switch off</h3>
+  <p style="color:var(--muted);max-width:65ch">Switch it <strong>off</strong> (or choose "Allow" / "Unrestricted" / "Don't optimize" — the exact words depend on your phone's brand). That's it. Reminders will now arrive on time.</p>
+  <div class="before-after">
+    <figure class="before">
+      <picture><source srcset="help_battery_before.webp" type="image/webp"><img src="help_battery_before.png" width="525" height="328" alt="Before: switch turned on, RebootMonitor is restricted and reminders may be delayed"></picture>
+      <figcaption>Before — restricted</figcaption>
+    </figure>
+    <figure class="after">
+      <picture><source srcset="help_battery_after.webp" type="image/webp"><img src="help_battery_after.png" width="525" height="328" alt="After: switch turned off, RebootMonitor is unrestricted and reminders will arrive on time"></picture>
+      <figcaption>After — fixed ✓</figcaption>
+    </figure>
+  </div>
+  <div class="note">
+    <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>
+    <p>Phone brands word this differently. Samsung calls it "Optimise battery usage"; other phones say "Allow background activity," "Unrestricted," or "No restrictions." Whatever the wording, you're looking for the option that means RebootMonitor is <em>not</em> limited.</p>
+  </div>
+</section>
+
+<section class="card cta" aria-labelledby="done">
+  <svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg>
+  <div class="cta-text">
+    <h2 id="done">That's it — you're done</h2>
+    <p style="margin:0">Go back into RebootMonitor's settings and the yellow card will be gone. Your reminders will now arrive right on schedule.</p>
+  </div>
+  <a class="btn" href="android-reboot-notification.html"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg> More about reminders</a>
+</section>
+
+</article>
+</main>
+
+<footer class="footer">
+  <div>© 2026 Nordic Appworks • RebootMonitor</div>
+  <nav aria-label="Footer"><a href="https://rebootmonitor.com/">Home</a><a href="https://rebootmonitor.com/about.html">About</a><a href="https://rebootmonitor.com/android-reboot-notification.html">Reminders</a><a href="https://rebootmonitor.com/privacy.html">Privacy Policy</a><a href="https://play.google.com/store/apps/details?id=app.rebootmonitor.mobile" target="_blank" rel="noopener">Google Play</a></nav>
+</footer>
+</body>
+</html>
