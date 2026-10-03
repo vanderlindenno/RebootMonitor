@@ -150,7 +150,7 @@ a{color:var(--green)}
 .video-link{display:inline-block;margin-top:12px}
 .videos{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-top:20px}
 .videos figure{margin:0;width:260px;max-width:100%;text-align:center}
-.videos figcaption{margin-top:12px;font-size:15px}
+.videos figcaption{margin-top:14px;font-size:16px}.videos figcaption .btn{margin-top:10px;padding:10px 20px;font-size:15px}
 
 @media (max-width:640px){.guide-step,.guide-step:nth-child(even){grid-template-columns:1fr !important}.guide-step:nth-child(even) .guide-shot{order:0}.container{padding:16px 14px}.card{padding:20px;margin:14px 0;border-radius:14px}.hero-inner{padding:32px 16px;gap:20px}.hero-logo{width:88px;height:88px}.hero p{font-size:17px}.before-after{grid-template-columns:1fr}.video-card{grid-template-columns:1fr}}
 </style>
@@ -202,7 +202,7 @@ a{color:var(--green)}
           <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3.8v16.4a1 1 0 0 0 1.5.9l13-8.2a1 1 0 0 0 0-1.7l-13-8.2A1 1 0 0 0 6 3.8z"/></svg></span>
         </button>
       </div>
-      <figcaption><strong>Samsung phones</strong><br><a href="https://youtube.com/shorts/yGsnK-M3X0A" target="_blank" rel="noopener">Watch on YouTube</a></figcaption>
+      <figcaption><strong>Samsung phones</strong><br><a class="btn" href="https://youtube.com/shorts/yGsnK-M3X0A" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg> Watch on YouTube</a></figcaption>
     </figure>
     <figure>
       <div class="yt" data-id="8X_3hDOI63M">
@@ -211,7 +211,7 @@ a{color:var(--green)}
           <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3.8v16.4a1 1 0 0 0 1.5.9l13-8.2a1 1 0 0 0 0-1.7l-13-8.2A1 1 0 0 0 6 3.8z"/></svg></span>
         </button>
       </div>
-      <figcaption><strong>Pixel and other Android phones</strong><br><a href="https://youtube.com/shorts/8X_3hDOI63M" target="_blank" rel="noopener">Watch on YouTube</a></figcaption>
+      <figcaption><strong>Pixel and other Android phones</strong><br><a class="btn" href="https://youtube.com/shorts/8X_3hDOI63M" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg> Watch on YouTube</a></figcaption>
     </figure>
   </div>
 </section>
@@ -322,6 +322,7 @@ document.querySelectorAll('.yt').forEach(function(box){
   var btn=box.querySelector('button');
   if(!btn)return;
   btn.addEventListener('click',function(){
+    if(location.protocol==='file:'){window.open('https://youtube.com/shorts/'+box.getAttribute('data-id'),'_blank','noopener');return;}
     var f=document.createElement('iframe');
     f.src='https://www.youtube-nocookie.com/embed/'+box.getAttribute('data-id')+'?autoplay=1&rel=0&playsinline=1';
     f.title='RebootMonitor: how to fix delayed reminders (1-minute video)';
