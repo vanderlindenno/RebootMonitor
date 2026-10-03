@@ -50,7 +50,7 @@
       "mainEntityOfPage": "https://rebootmonitor.com/android-reboot-notification.html",
       "inLanguage": "en",
       "datePublished": "2026-10-02",
-      "dateModified": "2026-10-02",
+      "dateModified": "2026-10-03",
       "author": { "@id": "https://rebootmonitor.com/#organization" },
       "publisher": { "@id": "https://rebootmonitor.com/#organization" },
       "image": ["https://rebootmonitor.com/screenshot3.png", "https://rebootmonitor.com/header-banner.png"],
@@ -74,8 +74,8 @@
         { "@type": "Question", "name": "What triggers the reboot notification?", "acceptedAnswer": { "@type": "Answer", "text": "The device going without a restart for longer than the chosen interval: 3, 7 (recommended) or 14 days. It checks once a day in the background and clears itself automatically after the next reboot." } },
         { "@type": "Question", "name": "Can I turn the notification off?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The reminder is fully optional and can be switched off from the app's settings menu at any time, with no effect on the reboot history or dashboard." } },
         { "@type": "Question", "name": "Is this useful for a single personal phone, or only for managed fleets?", "acceptedAnswer": { "@type": "Answer", "text": "Both. On a personal phone it is a simple, private nudge to restart occasionally. On managed fleets it gives every device a voice, without needing a server-side dashboard to watch." } },
-        { "@type": "Question", "name": "What if the notification doesn't arrive on some devices?", "acceptedAnswer": { "@type": "Answer", "text": "Aggressive battery management on some phones can delay background checks. A built-in shortcut jumps straight to that device's battery optimization settings, and on Samsung fleets an admin can manage the same setting centrally through Intune using the Samsung Knox Service Plugin. Our step-by-step guide shows exactly what to tap." } },
-        { "@type": "Question", "name": "Can I check the status without opening the app?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. RebootMonitor can be added as a homescreen widget, or as a Quick Settings tile, both showing the current status, uptime and last reboot time at a glance." } }
+        { "@type": "Question", "name": "What if the notification doesn't arrive on some devices?", "acceptedAnswer": { "@type": "Answer", "text": "Aggressive battery management on some phones can delay background checks. A built-in shortcut jumps straight to that device's battery optimization settings, and on Samsung fleets an admin can manage the same setting centrally through Intune using the Samsung Knox Service Plugin. Our step-by-step guide shows exactly what to tap, and there is a 1-minute video too." } },
+        { "@type": "Question", "name": "Can I check the status without opening the app?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. RebootMonitor can be added as a homescreen widget that shows the current status, uptime and last reboot time at a glance." } }
       ]
     }
   ]
@@ -199,19 +199,19 @@ a{color:var(--green)}
   <p class="lead">One screen, four options, no ambiguity about what's currently active.</p>
   <div class="phones" style="margin-top:16px">
     <figure class="shot">
-      <img src="001.png" width="525" height="1170" alt="RebootMonitor Android uptime monitor dashboard showing device status, current uptime and the last reboot time" loading="lazy" decoding="async">
+      <img src="001.png" width="525" height="1167" alt="RebootMonitor Android uptime monitor dashboard showing device status, current uptime and the last reboot time" loading="lazy" decoding="async">
       <figcaption>The dashboard tip follows whatever interval is chosen.</figcaption>
     </figure>
     <figure class="shot">
-      <img src="002.png" width="525" height="1169" alt="RebootMonitor reboot tracker with reboot history, a monthly heatmap and uptime history overview" loading="lazy" decoding="async">
+      <img src="002.png" width="525" height="1167" alt="RebootMonitor reboot tracker with reboot history, a monthly heatmap and uptime history overview" loading="lazy" decoding="async">
       <figcaption>Full reboot history, so you can see how the device has been doing.</figcaption>
     </figure>
     <figure class="shot">
-      <img src="003.png" width="525" height="1171" alt="RebootMonitor reboot reminder and restart reminder settings (3, 7 or 14 days, or off) with a battery optimization shortcut, for device reboot monitoring on personal phones, kiosks and Intune-managed fleets" loading="lazy" decoding="async">
+      <img src="003.png" width="525" height="1167" alt="RebootMonitor reboot reminder and restart reminder settings (3, 7 or 14 days, or off) with a battery optimization shortcut, for device reboot monitoring on personal phones, kiosks and Intune-managed fleets" loading="lazy" decoding="async">
       <figcaption>7 days is selected and marked as recommended by default.</figcaption>
     </figure>
     <figure class="shot">
-      <img src="004.png" width="525" height="1170" alt="RebootMonitor app information dialog with version, install date and a support link" loading="lazy" decoding="async">
+      <img src="004.png" width="525" height="1167" alt="RebootMonitor app information dialog with version, install date and a support link" loading="lazy" decoding="async">
       <figcaption>Quick access to app info and support, right from the dashboard.</figcaption>
     </figure>
   </div>
@@ -236,15 +236,15 @@ a{color:var(--green)}
   </section>
 </div>
 
-<div class="note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><p>Most devices deliver the reminder fine on default battery settings. If one ever doesn't arrive as expected, the settings screen includes a direct shortcut to check or adjust it — no need to dig through Android's general app list. New to this? Follow the <a href="fix-delayed-reminders.html">step-by-step guide with pictures</a>.</p></div>
+<div class="note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><p>Most devices deliver the reminder fine on default battery settings. If one ever doesn't arrive as expected, the settings screen includes a direct shortcut to check or adjust it — no need to dig through Android's general app list. New to this? Follow the <a href="fix-delayed-reminders.html">step-by-step guide with pictures</a> or <a href="https://youtube.com/shorts/5LCGV0TWync" target="_blank" rel="noopener">watch the 1-minute video</a>.</p></div>
 
 <section class="card faq" aria-labelledby="faq">
   <h2 id="faq">Frequently asked questions</h2>
   <details><summary>What triggers the reboot notification?</summary><p>The device going without a restart for longer than the chosen interval: 3, 7 (recommended) or 14 days. It checks once a day in the background and clears itself automatically after the next reboot.</p></details>
   <details><summary>Can I turn the notification off?</summary><p>Yes. The reminder is fully optional and can be switched off from the app's settings menu at any time, with no effect on the reboot history or dashboard.</p></details>
   <details><summary>Is this useful for a single personal phone, or only for managed fleets?</summary><p>Both. On a personal phone it's a simple, private nudge to restart occasionally. On managed fleets it gives every device a voice, without needing a server-side dashboard to watch.</p></details>
-  <details><summary>What if the notification doesn't arrive on some devices?</summary><p>Aggressive battery management on some phones can delay background checks. A built-in shortcut jumps straight to that device's battery optimization settings, and on Samsung fleets an admin can manage the same setting centrally through Intune using the Samsung Knox Service Plugin. Our <a href="fix-delayed-reminders.html">step-by-step guide</a> shows exactly what to tap.</p></details>
-  <details><summary>Can I check the status without opening the app?</summary><p>Yes. RebootMonitor can be added as a homescreen widget, or as a Quick Settings tile, both showing the current status, uptime and last reboot time at a glance.</p></details>
+  <details><summary>What if the notification doesn't arrive on some devices?</summary><p>Aggressive battery management on some phones can delay background checks. A built-in shortcut jumps straight to that device's battery optimization settings, and on Samsung fleets an admin can manage the same setting centrally through Intune using the Samsung Knox Service Plugin. Our <a href="fix-delayed-reminders.html">step-by-step guide</a> shows exactly what to tap, and there is a <a href="https://youtube.com/shorts/5LCGV0TWync" target="_blank" rel="noopener">1-minute video</a> too.</p></details>
+  <details><summary>Can I check the status without opening the app?</summary><p>Yes. RebootMonitor can be added as a homescreen widget that shows the current status, uptime and last reboot time at a glance.</p></details>
 </section>
 
 <section class="card cta" aria-labelledby="get">

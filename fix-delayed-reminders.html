@@ -46,12 +46,24 @@
       "name": "How to fix delayed RebootMonitor reminders",
       "description": "Some phones limit what apps can do in the background to save battery. Here's how to make sure RebootMonitor is allowed to send reminders on time.",
       "step": [
-        { "@type": "HowToStep", "name": "Open Reminder settings", "text": "Open RebootMonitor and tap the gear icon in the top right corner." },
+        { "@type": "HowToStep", "name": "Open Settings", "text": "Open RebootMonitor and tap the gear icon in the top right corner." },
         { "@type": "HowToStep", "name": "Look for the yellow card", "text": "If your phone could delay reminders, a card titled 'Reminders may be delayed' appears at the top." },
         { "@type": "HowToStep", "name": "Tap the card", "text": "Tap it to open your phone's own battery settings for RebootMonitor." },
-        { "@type": "HowToStep", "name": "Allow unrestricted background use", "text": "Turn on the option that removes battery restrictions for RebootMonitor. The exact wording differs by phone brand." }
+        { "@type": "HowToStep", "name": "Allow unrestricted background use", "text": "On Samsung phones, switch the optimisation off for RebootMonitor. On Google Pixel and most other phones, open Allow background usage and choose Unrestricted; Optimized is not enough. The exact wording differs by phone brand." }
       ],
       "isPartOf": { "@id": "https://rebootmonitor.com/#website" }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://rebootmonitor.com/fix-delayed-reminders.html#video",
+      "name": "Fix \"Reminders may be delayed\" on Android - RebootMonitor (1-minute guide)",
+      "description": "How to stop Android from delaying RebootMonitor's reminders: open Settings, tap the yellow card and set the battery optimization for the app.",
+      "thumbnailUrl": "https://rebootmonitor.com/help_video_thumb.jpg",
+      "uploadDate": "2026-10-03",
+      "duration": "PT54S",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/5LCGV0TWync",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://rebootmonitor.com/fix-delayed-reminders.html#howto" }
     },
     {
       "@type": "BreadcrumbList",
@@ -113,7 +125,18 @@ h3{margin:0 0 6px;font-size:19px}
 a{color:var(--green)}
 .footer{background:var(--green-dark);color:#fff;text-align:center;padding:25px 16px}
 .footer a{color:#fff;display:inline-block;padding:12px}
-@media (max-width:640px){.guide-step,.guide-step:nth-child(even){grid-template-columns:1fr !important}.guide-step:nth-child(even) .guide-shot{order:0}.container{padding:16px 14px}.card{padding:20px;margin:14px 0;border-radius:14px}.hero-inner{padding:32px 16px;gap:20px}.hero-logo{width:88px;height:88px}.hero p{font-size:17px}.before-after{grid-template-columns:1fr}}
+.video-card{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:28px;align-items:center}
+.yt{position:relative;width:100%;max-width:260px;aspect-ratio:9/16;border-radius:20px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.25);background:#000;margin:auto}
+.yt picture{position:absolute;inset:0;display:block}
+.yt img{width:100%;height:100%;object-fit:cover;display:block}
+.yt>button{position:absolute;inset:0;width:100%;border:0;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.yt .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:rgba(255,255,255,.94);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.35)}
+.yt .play svg{width:34px;height:34px;fill:var(--green-dark);margin-left:5px}
+.yt>button:hover .play{background:#fff}
+.yt>button:focus-visible{outline:4px solid #7fc79a;outline-offset:-4px}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-link{display:inline-block;margin-top:12px}
+@media (max-width:640px){.guide-step,.guide-step:nth-child(even){grid-template-columns:1fr !important}.guide-step:nth-child(even) .guide-shot{order:0}.container{padding:16px 14px}.card{padding:20px;margin:14px 0;border-radius:14px}.hero-inner{padding:32px 16px;gap:20px}.hero-logo{width:88px;height:88px}.hero p{font-size:17px}.before-after{grid-template-columns:1fr}.video-card{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -152,6 +175,21 @@ a{color:var(--green)}
   </div>
 </section>
 
+<section class="card video-card" aria-labelledby="video">
+  <div>
+    <h2 id="video">Prefer to watch? Here's the 1-minute video</h2>
+    <p class="lead">See every tap, from the yellow card to the finished fix.</p>
+    <p style="color:var(--muted);max-width:55ch;margin:0">The video shows a Samsung phone. On a Google Pixel or another phone, follow the written steps below.</p>
+    <a class="video-link" href="https://youtube.com/shorts/5LCGV0TWync" target="_blank" rel="noopener">Watch on YouTube</a>
+  </div>
+  <div class="yt" data-id="5LCGV0TWync">
+    <button type="button" aria-label="Play the 1-minute video: how to fix delayed reminders">
+      <picture><source srcset="help_video_thumb.webp" type="image/webp"><img src="help_video_thumb.jpg" width="540" height="960" alt="Video thumbnail: Reminders may be delayed? Fix it in 1 minute" loading="lazy" decoding="async"></picture>
+      <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3.8v16.4a1 1 0 0 0 1.5.9l13-8.2a1 1 0 0 0 0-1.7l-13-8.2A1 1 0 0 0 6 3.8z"/></svg></span>
+    </button>
+  </div>
+</section>
+
 <section class="card" aria-labelledby="step1">
   <div class="guide-step">
     <div class="guide-text">
@@ -160,7 +198,7 @@ a{color:var(--green)}
       <p>Open RebootMonitor. In the top right corner, next to the app name, tap the gear (⚙) icon.</p>
     </div>
     <figure class="guide-shot wide">
-      <picture><source srcset="help_gear_closeup.webp" type="image/webp"><img src="help_gear_closeup.png" width="525" height="112" alt="RebootMonitor top bar with the gear icon for Reminder settings highlighted" loading="lazy" decoding="async"></picture>
+      <picture><source srcset="help_gear_closeup.webp" type="image/webp"><img src="help_gear_closeup.png" width="525" height="112" alt="RebootMonitor top bar with the gear icon for Settings highlighted" loading="lazy" decoding="async"></picture>
     </figure>
   </div>
 </section>
@@ -168,7 +206,7 @@ a{color:var(--green)}
 <section class="card" aria-labelledby="step2">
   <div class="guide-step">
     <figure class="guide-shot">
-      <picture><source srcset="help_settings.webp" type="image/webp"><img src="help_settings.png" width="525" height="1167" alt="RebootMonitor Reminder settings screen showing the yellow 'Reminders may be delayed' card at the top" loading="lazy" decoding="async"></picture>
+      <picture><source srcset="help_settings.webp" type="image/webp"><img src="help_settings.png" width="525" height="1167" alt="RebootMonitor Settings screen showing the yellow 'Reminders may be delayed' card at the top" loading="lazy" decoding="async"></picture>
     </figure>
     <div class="guide-text">
       <span class="guide-num">2</span>
@@ -184,8 +222,8 @@ a{color:var(--green)}
     <div class="guide-text">
       <span class="guide-num">3</span>
       <h3 id="step3">Tap the card</h3>
-      <p>Tap anywhere on the yellow card. This opens your phone's own battery settings screen for RebootMonitor — it's a standard Android screen, not part of the app.</p>
-      <p>You'll see RebootMonitor listed with a switch next to it.</p>
+      <p>Tap anywhere on the yellow card. This opens your phone's own battery settings screen — it's a standard Android screen, not part of the app.</p>
+      <p>What it looks like depends on your phone. Samsung shows a list of apps with a switch; Google Pixel and most other phones show a page for RebootMonitor. Follow the part below that matches your phone.</p>
     </div>
     <figure class="guide-shot wide">
       <picture><source srcset="help_battery_before.webp" type="image/webp"><img src="help_battery_before.png" width="525" height="328" alt="Phone battery settings screen showing RebootMonitor with the optimization switch turned on, meaning it is currently restricted" loading="lazy" decoding="async"></picture>
@@ -194,21 +232,46 @@ a{color:var(--green)}
 </section>
 
 <section class="card" aria-labelledby="step4">
-  <h3 id="step4"><span class="guide-num" style="margin-right:8px;vertical-align:middle">4</span>Turn the switch off</h3>
-  <p style="color:var(--muted);max-width:65ch">Switch it <strong>off</strong> (or choose "Allow" / "Unrestricted" / "Don't optimize" — the exact words depend on your phone's brand). That's it. Reminders will now arrive on time.</p>
+  <h3 id="step4"><span class="guide-num" style="margin-right:8px;vertical-align:middle">4</span>Allow RebootMonitor to run in the background</h3>
+  <p style="color:var(--muted);max-width:65ch">Pick the part that looks like your phone. Both do the same thing: they tell Android not to hold RebootMonitor back.</p>
+
+  <h3 style="margin-top:22px">Samsung phones: turn the switch off</h3>
+  <p style="color:var(--muted);max-width:65ch">Find RebootMonitor in the list and switch it <strong>off</strong>. Samsung calls this "Optimise battery usage" — off means RebootMonitor is not limited. Reminders will now arrive on time.</p>
   <div class="before-after">
     <figure class="before">
-      <picture><source srcset="help_battery_before.webp" type="image/webp"><img src="help_battery_before.png" width="525" height="328" alt="Before: switch turned on, RebootMonitor is restricted and reminders may be delayed"></picture>
+      <picture><source srcset="help_battery_before.webp" type="image/webp"><img src="help_battery_before.png" width="525" height="328" alt="Samsung battery settings with the RebootMonitor switch turned on, meaning it is currently restricted and reminders may be delayed" loading="lazy" decoding="async"></picture>
       <figcaption>Before — restricted</figcaption>
     </figure>
     <figure class="after">
-      <picture><source srcset="help_battery_after.webp" type="image/webp"><img src="help_battery_after.png" width="525" height="328" alt="After: switch turned off, RebootMonitor is unrestricted and reminders will arrive on time"></picture>
+      <picture><source srcset="help_battery_after.webp" type="image/webp"><img src="help_battery_after.png" width="525" height="328" alt="Samsung battery settings with the RebootMonitor switch turned off, meaning it is unrestricted and reminders will arrive on time" loading="lazy" decoding="async"></picture>
       <figcaption>After — fixed ✓</figcaption>
+    </figure>
+  </div>
+
+  <h3 style="margin-top:28px">Google Pixel and most other phones: choose "Unrestricted"</h3>
+  <p style="color:var(--muted);max-width:65ch">You'll see a page for RebootMonitor with a row called <strong>"Allow background usage"</strong>.</p>
+  <ol style="color:var(--muted);max-width:65ch;padding-left:22px">
+    <li>If the switch on that row is off, switch it on.</li>
+    <li>Tap the row itself (on the arrow or the text). A second page opens.</li>
+    <li>Choose <strong>"Unrestricted"</strong>.</li>
+  </ol>
+  <div class="before-after">
+    <figure class="before">
+      <picture><source srcset="help_android_1.webp" type="image/webp"><img src="help_android_1.png" width="525" height="608" alt="Android battery page for RebootMonitor with the Allow background usage row; tap the row to open the options" loading="lazy" decoding="async"></picture>
+      <figcaption>1. Tap "Allow background usage"</figcaption>
+    </figure>
+    <figure class="after">
+      <picture><source srcset="help_android_2.webp" type="image/webp"><img src="help_android_2.png" width="525" height="656" alt="Android Allow background usage page with the Unrestricted option selected" loading="lazy" decoding="async"></picture>
+      <figcaption>2. Choose "Unrestricted" ✓</figcaption>
     </figure>
   </div>
   <div class="note">
     <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>
-    <p>Phone brands word this differently. Samsung calls it "Optimise battery usage"; other phones say "Allow background activity," "Unrestricted," or "No restrictions." Whatever the wording, you're looking for the option that means RebootMonitor is <em>not</em> limited.</p>
+    <p><strong>"Optimized" is not enough.</strong> It still lets Android delay RebootMonitor in the background, so the yellow card will stay. Only <strong>"Unrestricted"</strong> (or Samsung's switch turned off) clears it.</p>
+  </div>
+  <div class="note" style="margin-top:12px">
+    <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>
+    <p>Phone brands word this differently. Other names you may see are "Allow background activity," "No restrictions," or "Don't optimize." Whatever the wording, you're looking for the option that means RebootMonitor is <em>not</em> limited.</p>
   </div>
 </section>
 
@@ -228,5 +291,20 @@ a{color:var(--green)}
   <div>© 2026 Nordic Appworks • RebootMonitor</div>
   <nav aria-label="Footer"><a href="https://rebootmonitor.com/">Home</a><a href="https://rebootmonitor.com/about.html">About</a><a href="https://rebootmonitor.com/android-reboot-notification.html">Reminders</a><a href="https://rebootmonitor.com/privacy.html">Privacy Policy</a><a href="https://play.google.com/store/apps/details?id=app.rebootmonitor.mobile" target="_blank" rel="noopener">Google Play</a></nav>
 </footer>
+<script>
+document.querySelectorAll('.yt').forEach(function(box){
+  var btn=box.querySelector('button');
+  if(!btn)return;
+  btn.addEventListener('click',function(){
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+box.getAttribute('data-id')+'?autoplay=1&rel=0&playsinline=1';
+    f.title='RebootMonitor: how to fix delayed reminders (1-minute video)';
+    f.allow='accelerometer; autoplay; encrypted-media; picture-in-picture';
+    f.allowFullscreen=true;
+    f.referrerPolicy='strict-origin-when-cross-origin';
+    box.replaceChildren(f);
+  });
+});
+</script>
 </body>
 </html>
