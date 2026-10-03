@@ -55,13 +55,25 @@
     },
     {
       "@type": "VideoObject",
-      "@id": "https://rebootmonitor.com/fix-delayed-reminders.html#video",
-      "name": "Fix \"Reminders may be delayed\" on Android - RebootMonitor (1-minute guide)",
-      "description": "How to stop Android from delaying RebootMonitor's reminders: open Settings, tap the yellow card and set the battery optimization for the app.",
+      "@id": "https://rebootmonitor.com/fix-delayed-reminders.html#video-yGsnK-M3X0A",
+      "name": "Fix \"Reminders may be delayed\" on a Samsung phone - RebootMonitor (1-minute guide)",
+      "description": "How to stop a Samsung phone from delaying RebootMonitor reminders: open Settings, tap the yellow card and switch the battery optimization off for the app.",
       "thumbnailUrl": "https://rebootmonitor.com/help_video_thumb.jpg",
       "uploadDate": "2026-10-03",
       "duration": "PT58S",
       "embedUrl": "https://www.youtube-nocookie.com/embed/yGsnK-M3X0A",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://rebootmonitor.com/fix-delayed-reminders.html#howto" }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://rebootmonitor.com/fix-delayed-reminders.html#video-8X_3hDOI63M",
+      "name": "Fix \"Reminders may be delayed\" on a Pixel or other Android phone - RebootMonitor (1-minute guide)",
+      "description": "How to stop Android from delaying RebootMonitor reminders: open Settings, tap the yellow card, open Allow background usage and choose Unrestricted.",
+      "thumbnailUrl": "https://rebootmonitor.com/help_video_thumb_android.jpg",
+      "uploadDate": "2026-10-03",
+      "duration": "PT58S",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/8X_3hDOI63M",
       "inLanguage": "en",
       "isPartOf": { "@id": "https://rebootmonitor.com/fix-delayed-reminders.html#howto" }
     },
@@ -136,6 +148,10 @@ a{color:var(--green)}
 .yt>button:focus-visible{outline:4px solid #7fc79a;outline-offset:-4px}
 .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .video-link{display:inline-block;margin-top:12px}
+.videos{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.videos figure{margin:0;width:260px;max-width:100%;text-align:center}
+.videos figcaption{margin-top:12px;font-size:15px}
+
 @media (max-width:640px){.guide-step,.guide-step:nth-child(even){grid-template-columns:1fr !important}.guide-step:nth-child(even) .guide-shot{order:0}.container{padding:16px 14px}.card{padding:20px;margin:14px 0;border-radius:14px}.hero-inner{padding:32px 16px;gap:20px}.hero-logo{width:88px;height:88px}.hero p{font-size:17px}.before-after{grid-template-columns:1fr}.video-card{grid-template-columns:1fr}}
 </style>
 </head>
@@ -175,18 +191,28 @@ a{color:var(--green)}
   </div>
 </section>
 
-<section class="card video-card" aria-labelledby="video">
-  <div>
-    <h2 id="video">Prefer to watch? Here's the 1-minute video</h2>
-    <p class="lead">See every tap, from the yellow card to the finished fix.</p>
-    <p style="color:var(--muted);max-width:55ch;margin:0">The video shows a Samsung phone. On a Google Pixel or another phone, follow the written steps below.</p>
-    <a class="video-link" href="https://youtube.com/shorts/yGsnK-M3X0A" target="_blank" rel="noopener">Watch on YouTube</a>
-  </div>
-  <div class="yt" data-id="yGsnK-M3X0A">
-    <button type="button" aria-label="Play the 1-minute video: how to fix delayed reminders">
-      <picture><source srcset="help_video_thumb.webp" type="image/webp"><img src="help_video_thumb.jpg" width="540" height="960" alt="Video thumbnail: Reminders may be delayed? Fix it in 1 minute" loading="lazy" decoding="async"></picture>
-      <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3.8v16.4a1 1 0 0 0 1.5.9l13-8.2a1 1 0 0 0 0-1.7l-13-8.2A1 1 0 0 0 6 3.8z"/></svg></span>
-    </button>
+<section class="card" aria-labelledby="video">
+  <h2 id="video">Prefer to watch? Pick the 1-minute video for your phone</h2>
+  <p class="lead">See every tap, from the yellow card to the finished fix.</p>
+  <div class="videos">
+    <figure>
+      <div class="yt" data-id="yGsnK-M3X0A">
+        <button type="button" aria-label="Play the video: Fix delayed reminders on a Samsung phone">
+          <picture><source srcset="help_video_thumb.webp" type="image/webp"><img src="help_video_thumb.jpg" width="540" height="960" alt="Video thumbnail: Fix delayed reminders on a Samsung phone" loading="lazy" decoding="async"></picture>
+          <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3.8v16.4a1 1 0 0 0 1.5.9l13-8.2a1 1 0 0 0 0-1.7l-13-8.2A1 1 0 0 0 6 3.8z"/></svg></span>
+        </button>
+      </div>
+      <figcaption><strong>Samsung phones</strong><br><a href="https://youtube.com/shorts/yGsnK-M3X0A" target="_blank" rel="noopener">Watch on YouTube</a></figcaption>
+    </figure>
+    <figure>
+      <div class="yt" data-id="8X_3hDOI63M">
+        <button type="button" aria-label="Play the video: Fix delayed reminders on a Pixel or other Android phone">
+          <picture><source srcset="help_video_thumb_android.webp" type="image/webp"><img src="help_video_thumb_android.jpg" width="540" height="960" alt="Video thumbnail: Fix delayed reminders on a Pixel or other Android phone" loading="lazy" decoding="async"></picture>
+          <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3.8v16.4a1 1 0 0 0 1.5.9l13-8.2a1 1 0 0 0 0-1.7l-13-8.2A1 1 0 0 0 6 3.8z"/></svg></span>
+        </button>
+      </div>
+      <figcaption><strong>Pixel and other Android phones</strong><br><a href="https://youtube.com/shorts/8X_3hDOI63M" target="_blank" rel="noopener">Watch on YouTube</a></figcaption>
+    </figure>
   </div>
 </section>
 
