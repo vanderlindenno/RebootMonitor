@@ -144,6 +144,24 @@ a{color:var(--green)}
 .faq details:last-child{border-bottom:1px solid var(--line)}
 .faq summary{font-weight:600;cursor:pointer;color:var(--green-dark)}
 .faq p{margin:10px 0 0;max-width:70ch}
+
+.features{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.intro-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start}
+.glance{background:var(--green-soft);border-radius:14px;padding:20px 22px}
+.glance h3{margin:0 0 12px;color:var(--green-dark);font-size:17px}
+.glance ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.glance li{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.glance .icon{flex:none;font-size:20px;color:var(--green);margin-top:2px}
+.has-phones{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center}
+.has-phones .phones{justify-content:flex-end;margin-top:0!important}
+.has-phones .phones figure{max-width:210px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0;padding:0;list-style:none}
+.chips li{background:var(--green-soft);color:var(--green-dark);border-radius:999px;padding:8px 16px;font-weight:600;font-size:15px}
+.week{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.week li{background:var(--orange-soft);border-radius:14px;padding:16px}
+.week b{display:block;color:#9a560a;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.week span{font-size:15px;color:#5c4423}
+@media (max-width:900px){.intro-grid,.has-phones{grid-template-columns:1fr}.has-phones .phones{justify-content:center}}
 </style>
 </head>
 <body>
@@ -176,13 +194,13 @@ a{color:var(--green)}
 <main class="container">
 <article>
 
-<section class="card prose" aria-labelledby="problem">
+<section class="card prose intro-grid" aria-labelledby="problem"><div class="intro-text">
   <p class="meta-line">By Nordic Appworks · Published <time datetime="2026-09-29">29 September 2026</time></p>
   <h2 id="problem">Unattended by design, forgotten in practice</h2>
   <p class="lead">A kiosk in a lobby or a self-checkout terminal is built to run without supervision — which also means nobody is watching for signs it needs a restart.</p>
   <p>Where a phone gets picked up, glanced at and occasionally restarted just by being handled, a kiosk sits in the same spot, running the same app, for as long as it's left plugged in. The first sign of trouble is often a frozen screen a customer reports, or doesn't.</p>
   <p>RebootMonitor gives that silent device a voice: a visible uptime, a history, and a reminder when it's overdue.</p>
-</section>
+</div><aside class="glance" aria-label="At a glance"><h3>At a glance</h3><ul><li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Free, no ads, no account</span></li><li><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><span>Your data stays on your device</span></li><li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>12 months of reboot history</span></li><li><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Works completely offline</span></li></ul></aside></section>
 
 <section class="features" aria-label="Why kiosks need reboot monitoring">
   <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-kiosk"/></svg><h3>Runs 24/7</h3><p>No sleep, no idle screen-off — kiosks accumulate uptime faster than almost any other device type.</p></div>
@@ -191,10 +209,8 @@ a{color:var(--green)}
   <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-signal"/></svg><h3>Easy to overlook remotely</h3><p>A kiosk can look "online" in a management console while quietly running for months without a restart.</p></div>
 </section>
 
-<section class="card" aria-labelledby="visibility">
-  <h2 id="visibility">What RebootMonitor adds to a kiosk</h2>
-  <p class="lead">Whoever services the kiosk — cleaning staff, a store manager, a technician — can check its status in seconds.</p>
-  <div class="phones" style="margin-top:16px">
+<section class="card has-phones" aria-labelledby="visibility"><div class="has-phones-text"><h2 id="visibility">What RebootMonitor adds to a kiosk</h2>
+  <p class="lead">Whoever services the kiosk — cleaning staff, a store manager, a technician — can check its status in seconds.</p></div><div class="phones" style="margin-top:16px">
     <figure class="shot">
       <picture><source srcset="screenshot1.webp" type="image/webp"><img src="screenshot1.png" width="525" height="1167" alt="RebootMonitor dashboard on an Android kiosk showing uptime and reboot status" loading="lazy" decoding="async"></picture>
       <figcaption>Current status and uptime, checked in seconds.</figcaption>
@@ -203,8 +219,7 @@ a{color:var(--green)}
       <picture><source srcset="screenshot2.webp" type="image/webp"><img src="screenshot2.png" width="525" height="1167" alt="RebootMonitor reboot history and monthly heatmap on an Android kiosk" loading="lazy" decoding="async"></picture>
       <figcaption>A month's worth of reboot activity at a glance.</figcaption>
     </figure>
-  </div>
-</section>
+  </div></section>
 
 <div class="two-col">
   <section class="card" aria-labelledby="reminder">
@@ -249,10 +264,12 @@ a{color:var(--green)}
   <h2 id="related">Related reading</h2>
   <ul class="related-list">
     <li><a href="android-reboot-notification.html">Android Reboot Notification</a> — how the reminder itself is configured and kept reliable.</li>
-    <li><a href="intune-shared-device-monitoring.html">Intune Shared Device Monitoring</a> — the same approach for managed, shared devices.</li>
-    <li><a href="android-uptime-monitoring.html">Android Uptime Monitoring</a> — how the live uptime counter works.</li>
-    <li><a href="android-reboot-tracking.html">Android Reboot Tracking</a> — how every restart gets logged automatically.</li>
-    <li><a href="android-device-uptime-report.html">Android Device Uptime Report</a> — reading the full report on a device.</li>
+    <li><a href="intune-shared-device-monitoring.html">Android Reboot Monitoring for Microsoft Intune</a> — the same approach for managed, shared devices.</li>
+    <li><a href="android-uptime-monitoring.html">Android Uptime Tracker</a> — how the live uptime counter works.</li>
+    <li><a href="android-reboot-tracking.html">Android Reboot Tracker</a> — how every restart gets logged automatically.</li>
+    <li><a href="android-device-uptime-report.html">Android Reboot History &amp; Uptime Report</a> — reading the full report on a device.</li>
+    <li><a href="check-last-reboot-android.html">How to check when your Android phone was last restarted</a> — three ways, from settings to automatic tracking.</li>
+    <li><a href="does-android-keep-reboot-history.html">Does Android keep a reboot history?</a> — what Android records, and what it doesn't.</li>
   </ul>
 </section>
 

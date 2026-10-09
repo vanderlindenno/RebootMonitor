@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rebootmonitor.com/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://rebootmonitor.com/privacy.html</loc>
@@ -10,38 +10,46 @@
   </url>
   <url>
     <loc>https://rebootmonitor.com/about.html</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://rebootmonitor.com/intune-shared-devices.html</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://rebootmonitor.com/android-uptime-monitoring.html</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://rebootmonitor.com/android-reboot-tracking.html</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://rebootmonitor.com/intune-shared-device-monitoring.html</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://rebootmonitor.com/android-kiosk-monitoring.html</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://rebootmonitor.com/android-device-uptime-report.html</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://rebootmonitor.com/android-reboot-notification.html</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://rebootmonitor.com/fix-delayed-reminders.html</loc>
     <lastmod>2026-10-08</lastmod>
+  </url>
+  <url>
+    <loc>https://rebootmonitor.com/check-last-reboot-android.html</loc>
+    <lastmod>2026-10-09</lastmod>
+  </url>
+  <url>
+    <loc>https://rebootmonitor.com/does-android-keep-reboot-history.html</loc>
+    <lastmod>2026-10-09</lastmod>
   </url>
 </urlset>

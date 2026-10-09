@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Check When Your Android Phone Was Last Restarted | RebootMonitor</title>
+<meta name="description" content="Learn how to check when your Android phone was last restarted and how to keep a complete reboot history automatically.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Nordic Appworks">
+<meta name="theme-color" content="#005824">
+<link rel="canonical" href="https://rebootmonitor.com/check-last-reboot-android.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="RebootMonitor">
+<meta property="og:title" content="How to Check When Your Android Phone Was Last Restarted | RebootMonitor">
+<meta property="og:description" content="Learn how to check when your Android phone was last restarted and how to keep a complete reboot history automatically.">
+<meta property="og:url" content="https://rebootmonitor.com/check-last-reboot-android.html">
+<meta property="og:image" content="https://rebootmonitor.com/header-banner.png">
+<meta property="og:image:alt" content="RebootMonitor – track uptime, reboot history and device stability">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-10-09">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Check When Your Android Phone Was Last Restarted | RebootMonitor">
+<meta name="twitter:description" content="Learn how to check when your Android phone was last restarted and how to keep a complete reboot history automatically.">
+<meta name="twitter:image" content="https://rebootmonitor.com/header-banner.png">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://rebootmonitor.com/#organization",
+      "name": "Nordic Appworks",
+      "url": "https://rebootmonitor.com/",
+      "logo": "https://rebootmonitor.com/apple-touch-icon.png"
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://rebootmonitor.com/check-last-reboot-android.html#article",
+      "headline": "How to Check When Your Android Phone Was Last Restarted",
+      "description": "Learn how to check when your Android phone was last restarted and how to keep a complete reboot history automatically.",
+      "url": "https://rebootmonitor.com/check-last-reboot-android.html",
+      "mainEntityOfPage": "https://rebootmonitor.com/check-last-reboot-android.html",
+      "inLanguage": "en",
+      "datePublished": "2026-10-09",
+      "dateModified": "2026-10-09",
+      "author": {
+        "@id": "https://rebootmonitor.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://rebootmonitor.com/#organization"
+      },
+      "image": [
+        "https://rebootmonitor.com/screenshot1.png",
+        "https://rebootmonitor.com/header-banner.png"
+      ],
+      "about": [
+        "Android uptime",
+        "Last Android reboot",
+        "Reboot history"
+      ],
+      "isPartOf": {
+        "@id": "https://rebootmonitor.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://rebootmonitor.com/check-last-reboot-android.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://rebootmonitor.com/check-last-reboot-android.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://rebootmonitor.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Check When Your Android Phone Was Last Restarted",
+          "item": "https://rebootmonitor.com/check-last-reboot-android.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://rebootmonitor.com/check-last-reboot-android.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I see when my Android phone last restarted without an app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sometimes. Some phones show an Up time value under Settings, About phone, Status information. Developers can also run adb shell uptime from a computer. Neither lists earlier restarts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Android uptime?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Android uptime is how long a device has been running since its last restart. RebootMonitor shows it on the dashboard together with the date and time of the latest reboot."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does putting the phone to sleep or turning off the screen count as a restart?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. A restart means the phone was switched off and started again, or was restarted from the power menu. Locking the screen or letting the phone sleep does not reset the uptime."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does RebootMonitor need an internet connection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. RebootMonitor works completely offline and stores your reboot history on the device."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{--green-dark:#005824;--green:#168039;--green-hover:#0f622c;--ground:#f5f7f8;--card:#fff;--text:#222;--muted:#4a5550;--line:#dfe5e2;--orange:#e07b17;--orange-soft:#fff1e2;--green-soft:#e6f4ea;color-scheme:light}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",Arial,sans-serif;margin:0;background:var(--ground);color:var(--text);font-size:16px;line-height:1.6}
+.icon{display:inline-block;width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.125em}
+header.hero{background-color:var(--green-dark);background-image:radial-gradient(rgba(255,255,255,.13) 1.5px,transparent 1.5px);background-size:28px 28px;color:#fff}
+.hero-inner{max-width:1200px;margin:auto;padding:48px 20px;display:flex;align-items:center;gap:36px;flex-wrap:wrap}
+.hero-logo{width:132px;height:132px;flex:none}
+.hero-text{flex:1;min-width:260px}
+.hero-eyebrow{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85;margin:0 0 8px}
+.hero h1{color:#fff;font-size:clamp(32px,5vw,54px);line-height:1.08;font-weight:800;margin:0 0 14px;text-wrap:balance}
+.hero p{font-size:19px;max-width:620px;margin:0;opacity:.95}
+.container{max-width:1200px;margin:auto;padding:40px 20px}
+.card{background:var(--card);padding:30px;border-radius:18px;box-shadow:0 4px 18px rgba(0,0,0,.08);margin:20px 0}
+h2{color:var(--green);margin:0 0 12px;text-wrap:balance}
+h3{margin:12px 0 6px}
+.lead{font-size:18px;color:var(--muted);margin:0 0 16px}
+.prose p{max-width:70ch}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.features .card{margin:0}
+.feature{text-align:center}
+.feature .icon{font-size:40px;color:var(--green)}
+.feature p{margin:0;color:var(--muted)}
+.split{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:36px;align-items:center}
+.phones{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.phones figure{margin:0;max-width:240px;width:100%;text-align:center}
+.phones svg{width:100%;height:auto;filter:drop-shadow(0 8px 20px rgba(0,0,0,.2))}
+.phones figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.steps{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;counter-reset:step}
+.steps li{counter-increment:step;position:relative;background:var(--green-soft);border-radius:14px;padding:20px 18px 18px}
+.steps li::before{content:counter(step);position:absolute;top:16px;right:18px;font-weight:800;font-size:28px;color:rgba(22,128,57,.25)}
+.steps .icon{font-size:30px;color:var(--green)}
+.steps h3{margin:10px 0 4px;font-size:17px}
+.steps p{margin:0;font-size:15px;color:var(--muted)}
+code{background:#eef2f0;padding:2px 6px;border-radius:6px;font-size:.92em}
+.check-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.check-list li{display:flex;gap:12px;align-items:flex-start}
+.check-list .icon{flex:none;font-size:22px;color:var(--green);margin-top:2px}
+.note{display:flex;gap:14px;align-items:flex-start;background:var(--orange-soft);border-radius:12px;padding:16px 18px;margin-top:20px}
+.note .icon{flex:none;font-size:24px;color:var(--orange);margin-top:2px}
+.note p{margin:0}
+.two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin:20px 0}
+.two-col .card{margin:0}
+.cta{display:flex;align-items:center;gap:24px;flex-wrap:wrap;border-left:6px solid var(--green)}
+.cta>.icon{font-size:48px;color:var(--green)}
+.cta .cta-text{flex:1;min-width:240px}
+.cta h2{margin-top:0}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;padding:12px 24px;border-radius:10px;font-weight:600}
+.btn:hover{background:var(--green-hover)}
+.btn:focus-visible,a:focus-visible{outline:3px solid #7fc79a;outline-offset:2px}
+a{color:var(--green)}
+.footer{background:var(--green-dark);color:#fff;text-align:center;padding:25px 16px}
+.footer a{color:#fff;display:inline-block;padding:12px}
+.related-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+@media (max-width:600px){.container{padding:16px 14px}.card{padding:20px;margin:14px 0;border-radius:14px}.hero-inner{padding:32px 16px;gap:20px}.hero-logo{width:88px;height:88px}.hero p{font-size:17px}.features{grid-template-columns:1fr 1fr;gap:12px}.features .card{padding:16px 12px}.feature .icon{font-size:30px}.feature h3{font-size:16px}.feature p{font-size:14px}.btn{width:100%;justify-content:center;box-sizing:border-box}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.meta-line{font-size:14px;color:var(--muted);margin:0 0 16px}
+.shot{margin:0;max-width:240px;width:100%;text-align:center}
+.shot img{width:100%;height:auto;border-radius:24px;box-shadow:0 8px 25px rgba(0,0,0,.2)}
+.shot figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.faq details{border-top:1px solid var(--line);padding:14px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{font-weight:600;cursor:pointer;color:var(--green-dark)}
+.faq p{margin:10px 0 0;max-width:70ch}
+
+.features{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.intro-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start}
+.glance{background:var(--green-soft);border-radius:14px;padding:20px 22px}
+.glance h3{margin:0 0 12px;color:var(--green-dark);font-size:17px}
+.glance ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.glance li{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.glance .icon{flex:none;font-size:20px;color:var(--green);margin-top:2px}
+.has-phones{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center}
+.has-phones .phones{justify-content:flex-end;margin-top:0!important}
+.has-phones .phones figure{max-width:210px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0;padding:0;list-style:none}
+.chips li{background:var(--green-soft);color:var(--green-dark);border-radius:999px;padding:8px 16px;font-weight:600;font-size:15px}
+.week{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.week li{background:var(--orange-soft);border-radius:14px;padding:16px}
+.week b{display:block;color:#9a560a;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.week span{font-size:15px;color:#5c4423}
+@media (max-width:900px){.intro-grid,.has-phones{grid-template-columns:1fr}.has-phones .phones{justify-content:center}}
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<symbol id="i-log" viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="17" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></symbol>
+<symbol id="i-power" viewBox="0 0 24 24"><path d="M12 4v7"/><path d="M7.5 6.5a7.5 7.5 0 1 0 9 0"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M8 3v4M16 3v4M3.5 10h17"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-1.5 2.5-4 2.5h-2"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.2 12.2 2.6 2.6 5-5.2"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.5v.2"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3.8v16.4a1 1 0 0 0 1.5.9l13-8.2a1 1 0 0 0 0-1.7l-13-8.2A1 1 0 0 0 6 3.8z"/></symbol>
+<symbol id="i-logo" viewBox="0 0 108 108"><path d="M28.62 42.17a28 28 0 0 1 50.76 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M74.4 44.49l8.36 4.93 1.6-9.57z" fill="#fff" stroke="none"/><path d="M79.38 65.83a28 28 0 0 1-50.76 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M33.6 63.51l-8.36-4.93-1.6 9.57z" fill="#fff" stroke="none"/><rect x="37" y="40" width="34" height="28" rx="4" fill="#fff" stroke="none"/><g fill="#2E7D32" stroke="none"><rect x="44" y="44" width="5" height="5" rx="1"/><rect x="51.5" y="44" width="5" height="5" rx="1"/><rect x="59" y="44" width="5" height="5" rx="1"/><rect x="44" y="51.5" width="5" height="5" rx="1"/><rect x="51.5" y="51.5" width="5" height="5" rx="1"/><rect x="59" y="51.5" width="5" height="5" rx="1"/><rect x="44" y="59" width="5" height="5" rx="1"/><rect x="51.5" y="59" width="5" height="5" rx="1"/><rect x="59" y="59" width="5" height="5" rx="1"/></g></symbol>
+</svg>
+
+<header class="hero">
+  <div class="hero-inner">
+    <svg class="hero-logo" aria-hidden="true"><use href="#i-logo"/></svg>
+    <div class="hero-text">
+      <p class="hero-eyebrow">Check your last Android reboot · RebootMonitor</p>
+      <h1>How to check when your Android phone was last restarted</h1>
+      <p>Three ways to find out when your phone last restarted, and how to stop having to look it up.</p>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+<article>
+
+<section class="card prose intro-grid" aria-labelledby="problem"><div class="intro-text">
+  <p class="meta-line">By Nordic Appworks · Published <time datetime="2026-10-09">9 October 2026</time></p>
+  <h2 id="problem">Finding out when your phone last restarted</h2>
+  <p class="lead">It sounds simple, but Android doesn't make it obvious. There are three ways to find out.</p>
+  <p>Knowing when a phone last restarted helps when it feels slow, when an update asks for a restart, or when you look after shared devices that nobody remembers restarting.</p>
+</div><aside class="glance" aria-label="At a glance"><h3>At a glance</h3><ul><li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Free, no ads, no account</span></li><li><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><span>Your data stays on your device</span></li><li><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><span>12 months of reboot history</span></li><li><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Works completely offline</span></li></ul></aside></section>
+
+<div class="two-col">
+<section class="card prose" aria-labelledby="settings">
+  <h2 id="settings">1. Look in your phone's settings</h2>
+  <p>Some Android phones show an <strong>Up time</strong> value under <em>Settings → About phone → Status information</em>. It tells you how long the phone has been running since it last started.</p>
+  <p>This is not available on every phone. It also shows only the current uptime, not the date of the restart, and it does not list earlier restarts.</p>
+</section>
+
+<section class="card prose" aria-labelledby="adb">
+  <h2 id="adb">2. Ask the device with ADB (for developers and IT)</h2>
+  <p>If USB debugging is switched on and the phone is connected to a computer, the command <code>adb shell uptime</code> prints how long the device has been running. That works well for a technician, but it is not practical for everyday use.</p>
+</section>
+</div>
+
+<section class="card has-phones" aria-labelledby="app"><div class="has-phones-text"><h2 id="app">3. Let RebootMonitor record it automatically</h2>
+  <p class="lead">Install the app once and the information is always one tap away.</p>
+  <ol class="steps">
+    <li><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg><h3>Install</h3><p>Get RebootMonitor from Google Play. It needs no account.</p></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#i-power"/></svg><h3>Nothing to do</h3><p>It detects every restart on its own and logs the date and time.</p></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><h3>Open the dashboard</h3><p>See your latest reboot and current uptime, plus the history.</p></li>
+  </ol>
+  
+  <div class="note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><p>RebootMonitor shows the current uptime right away. Its reboot history builds up from the moment the app is installed, so it can only list restarts that happen afterwards.</p></div>
+  <p style="margin-top:20px">RebootMonitor automatically records this information for you and keeps a clear history of previous device restarts. See also <a href="does-android-keep-reboot-history.html">does Android keep a reboot history?</a></p></div><div class="phones" style="margin-top:24px">
+    <figure class="shot">
+      <picture><source srcset="screenshot1.webp" type="image/webp"><img src="screenshot1.png" width="525" height="1167" alt="RebootMonitor dashboard showing current uptime and the reboot times of the last 7 days" loading="lazy" decoding="async"></picture>
+      <figcaption>Current uptime and the latest restarts at a glance.</figcaption>
+    </figure>
+  </div></section>
+
+<section class="card faq" aria-labelledby="faq">
+  <h2 id="faq">Frequently asked questions</h2>
+  <details><summary>Can I see when my Android phone last restarted without an app?</summary><p>Sometimes. Some phones show an Up time value under Settings, About phone, Status information. Developers can also run <code>adb shell uptime</code> from a computer. Neither lists earlier restarts.</p></details>
+  <details><summary>What is Android uptime?</summary><p>Android uptime is how long a device has been running since its last restart. RebootMonitor shows it on the dashboard together with the date and time of the latest reboot.</p></details>
+  <details><summary>Does putting the phone to sleep or turning off the screen count as a restart?</summary><p>No. A restart means the phone was switched off and started again, or was restarted from the power menu. Locking the screen or letting the phone sleep does not reset the uptime.</p></details>
+  <details><summary>Does RebootMonitor need an internet connection?</summary><p>No. RebootMonitor works completely offline and stores your reboot history on the device.</p></details>
+</section>
+
+<section class="card cta" aria-labelledby="get">
+  <svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>
+  <div class="cta-text">
+    <h2 id="get">Try RebootMonitor</h2>
+    <p style="margin:0">Free, ad-free and private: your reboot data stays on your device.</p>
+  </div>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=app.rebootmonitor.mobile" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg> View on Google Play</a>
+</section>
+
+<section class="card" aria-labelledby="related">
+  <h2 id="related">Related reading</h2>
+  <ul class="related-list">
+    <li><a href="android-reboot-tracking.html">Android Reboot Tracker</a> — how every restart is logged automatically.</li>
+    <li><a href="android-uptime-monitoring.html">Android Uptime Tracker</a> — the live uptime counter on the device.</li>
+    <li><a href="android-device-uptime-report.html">Android Reboot History &amp; Uptime Report</a> — reading the full history and heatmap.</li>
+    <li><a href="check-last-reboot-android.html">How to check when your Android phone was last restarted</a> — three ways, from settings to automatic tracking.</li>
+    <li><a href="does-android-keep-reboot-history.html">Does Android keep a reboot history?</a> — what Android records, and what it doesn't.</li>
+    <li><a href="intune-shared-device-monitoring.html">Android Reboot Monitoring for Microsoft Intune</a> — reboot monitoring across a managed fleet.</li>
+  </ul>
+</section>
+
+</article>
+</main>
+
+<footer class="footer">
+  <div>© 2026 Nordic Appworks • RebootMonitor</div>
+  <nav aria-label="Footer"><a href="https://rebootmonitor.com/">Home</a><a href="https://rebootmonitor.com/about.html">About</a><a href="https://rebootmonitor.com/intune-shared-devices.html">Intune guide</a><a href="https://rebootmonitor.com/privacy.html">Privacy Policy</a><a href="https://updatemonitor.app/">UpdateMonitor</a><a href="https://play.google.com/store/apps/details?id=app.rebootmonitor.mobile" target="_blank" rel="noopener">Google Play</a></nav>
+</footer>
+</body>
+</html>

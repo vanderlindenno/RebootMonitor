@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Android Uptime Monitoring | RebootMonitor</title>
-<meta name="description" content="Track Android device uptime in real time, right on the device. See how long it's been running, spot devices that are overdue for a reboot, and build healthier device habits.">
+<title>Android Uptime Tracker – Monitor Device Uptime | RebootMonitor</title>
+<meta name="description" content="Track Android uptime automatically and see exactly when your phone or tablet was last restarted with RebootMonitor.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="Nordic Appworks">
 <meta name="theme-color" content="#005824">
@@ -12,16 +12,16 @@
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="RebootMonitor">
-<meta property="og:title" content="Android Uptime Monitoring | RebootMonitor">
-<meta property="og:description" content="Track Android device uptime in real time, right on the device. See how long it's been running and spot devices that are overdue for a reboot.">
+<meta property="og:title" content="Android Uptime Tracker – Monitor Device Uptime | RebootMonitor">
+<meta property="og:description" content="Track Android uptime automatically and see exactly when your phone or tablet was last restarted with RebootMonitor.">
 <meta property="og:url" content="https://rebootmonitor.com/android-uptime-monitoring.html">
 <meta property="og:image" content="https://rebootmonitor.com/header-banner.png">
 <meta property="og:image:alt" content="RebootMonitor – track uptime, reboot history and device stability">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-09-29">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Android Uptime Monitoring | RebootMonitor">
-<meta name="twitter:description" content="Track Android device uptime in real time, right on the device.">
+<meta name="twitter:title" content="Android Uptime Tracker – Monitor Device Uptime | RebootMonitor">
+<meta name="twitter:description" content="Track Android uptime automatically and see exactly when your phone or tablet was last restarted with RebootMonitor.">
 <meta name="twitter:image" content="https://rebootmonitor.com/header-banner.png">
 
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -43,13 +43,13 @@
     {
       "@type": "TechArticle",
       "@id": "https://rebootmonitor.com/android-uptime-monitoring.html#article",
-      "headline": "Android Uptime Monitoring with RebootMonitor",
-      "description": "Track Android device uptime in real time, right on the device. See how long it's been running and spot devices that are overdue for a reboot.",
+      "headline": "Android Uptime Tracker – RebootMonitor",
+      "description": "Track Android uptime automatically and see exactly when your phone or tablet was last restarted with RebootMonitor.",
       "url": "https://rebootmonitor.com/android-uptime-monitoring.html",
       "mainEntityOfPage": "https://rebootmonitor.com/android-uptime-monitoring.html",
       "inLanguage": "en",
       "datePublished": "2026-09-29",
-      "dateModified": "2026-10-02",
+      "dateModified": "2026-10-09",
       "author": { "@id": "https://rebootmonitor.com/#organization" },
       "publisher": { "@id": "https://rebootmonitor.com/#organization" },
       "image": ["https://rebootmonitor.com/screenshot1.png", "https://rebootmonitor.com/header-banner.png"],
@@ -62,7 +62,7 @@
       "@id": "https://rebootmonitor.com/android-uptime-monitoring.html#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rebootmonitor.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Android Uptime Monitoring", "item": "https://rebootmonitor.com/android-uptime-monitoring.html" }
+        { "@type": "ListItem", "position": 2, "name": "Android Uptime Tracker", "item": "https://rebootmonitor.com/android-uptime-monitoring.html" }
       ]
     },
     {
@@ -144,6 +144,24 @@ a{color:var(--green)}
 .faq details:last-child{border-bottom:1px solid var(--line)}
 .faq summary{font-weight:600;cursor:pointer;color:var(--green-dark)}
 .faq p{margin:10px 0 0;max-width:70ch}
+
+.features{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.intro-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start}
+.glance{background:var(--green-soft);border-radius:14px;padding:20px 22px}
+.glance h3{margin:0 0 12px;color:var(--green-dark);font-size:17px}
+.glance ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.glance li{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.glance .icon{flex:none;font-size:20px;color:var(--green);margin-top:2px}
+.has-phones{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center}
+.has-phones .phones{justify-content:flex-end;margin-top:0!important}
+.has-phones .phones figure{max-width:210px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0;padding:0;list-style:none}
+.chips li{background:var(--green-soft);color:var(--green-dark);border-radius:999px;padding:8px 16px;font-weight:600;font-size:15px}
+.week{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.week li{background:var(--orange-soft);border-radius:14px;padding:16px}
+.week b{display:block;color:#9a560a;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.week span{font-size:15px;color:#5c4423}
+@media (max-width:900px){.intro-grid,.has-phones{grid-template-columns:1fr}.has-phones .phones{justify-content:center}}
 </style>
 </head>
 <body>
@@ -167,7 +185,7 @@ a{color:var(--green)}
     <svg class="hero-logo" aria-hidden="true"><use href="#i-logo"/></svg>
     <div class="hero-text">
       <p class="hero-eyebrow">Android Uptime Monitoring · RebootMonitor</p>
-      <h1>Know your device's uptime, instantly</h1>
+      <h1>Android Uptime Tracker: know your device's uptime, instantly</h1>
       <p>RebootMonitor shows exactly how long an Android device has been running since its last restart — no fleet dashboard, no ADB commands, just the answer on the device itself.</p>
     </div>
   </div>
@@ -176,13 +194,13 @@ a{color:var(--green)}
 <main class="container">
 <article>
 
-<section class="card prose" aria-labelledby="problem">
+<section class="card prose intro-grid" aria-labelledby="problem"><div class="intro-text">
   <p class="meta-line">By Nordic Appworks · Published <time datetime="2026-09-29">29 September 2026</time></p>
   <h2 id="problem">Uptime is easy to lose track of</h2>
   <p class="lead">Android doesn't put uptime anywhere a normal user will find it, so devices quietly keep running for weeks.</p>
   <p>Checking uptime the "official" way means digging into Settings, enabling Developer options, or connecting a computer with ADB. Nobody does that for a phone or tablet they use every day — and on a device nobody personally owns, nobody does it at all.</p>
   <p>RebootMonitor puts that number front and center: current uptime, updated live, the moment you open the app.</p>
-</section>
+</div><aside class="glance" aria-label="At a glance"><h3>At a glance</h3><ul><li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Free, no ads, no account</span></li><li><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><span>Your data stays on your device</span></li><li><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><span>12 months of reboot history</span></li><li><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Works completely offline</span></li></ul></aside></section>
 
 <section class="features" aria-label="What uptime monitoring looks like in RebootMonitor">
   <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg><h3>Live uptime counter</h3><p>Days, hours and minutes since the last restart, calculated straight from the system clock.</p></div>
@@ -191,10 +209,8 @@ a{color:var(--green)}
   <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><h3>Monthly heatmap</h3><p>Tap any day in the calendar to see exactly when the device restarted that day.</p></div>
 </section>
 
-<section class="card" aria-labelledby="report">
-  <h2 id="report">What the uptime screen actually shows</h2>
-  <p class="lead">Three numbers, one table — no configuration required.</p>
-  <div class="phones" style="margin-top:16px">
+<section class="card has-phones" aria-labelledby="report"><div class="has-phones-text"><h2 id="report">What the uptime screen actually shows</h2>
+  <p class="lead">Three numbers, one table — no configuration required.</p></div><div class="phones" style="margin-top:16px">
     <figure class="shot">
       <picture><source srcset="screenshot1.webp" type="image/webp"><img src="screenshot1.png" width="525" height="1167" alt="RebootMonitor dashboard showing status, current uptime and days with reboots in the last 7 days" loading="lazy" decoding="async"></picture>
       <figcaption>Status, live uptime and days with reboots.</figcaption>
@@ -203,8 +219,7 @@ a{color:var(--green)}
       <picture><source srcset="screenshot2.webp" type="image/webp"><img src="screenshot2.png" width="525" height="1167" alt="RebootMonitor history screen with a monthly reboot heatmap" loading="lazy" decoding="async"></picture>
       <figcaption>Longer-term uptime patterns in a monthly heatmap.</figcaption>
     </figure>
-  </div>
-</section>
+  </div></section>
 
 <div class="two-col">
   <section class="card" aria-labelledby="why">
@@ -245,11 +260,13 @@ a{color:var(--green)}
 <section class="card" aria-labelledby="related">
   <h2 id="related">Related reading</h2>
   <ul class="related-list">
-    <li><a href="android-reboot-tracking.html">Android Reboot Tracking</a> — how every restart gets logged automatically.</li>
+    <li><a href="android-reboot-tracking.html">Android Reboot Tracker</a> — how every restart gets logged automatically.</li>
     <li><a href="android-reboot-notification.html">Android Reboot Notification</a> — getting nudged once uptime runs too long.</li>
-    <li><a href="android-device-uptime-report.html">Android Device Uptime Report</a> — reading the full uptime report on a device.</li>
+    <li><a href="android-device-uptime-report.html">Android Reboot History &amp; Uptime Report</a> — reading the full uptime report on a device.</li>
     <li><a href="android-kiosk-monitoring.html">Android Kiosk Monitoring</a> — uptime visibility for unattended, single-purpose devices.</li>
-    <li><a href="intune-shared-device-monitoring.html">Intune Shared Device Monitoring</a> — uptime visibility across a managed fleet.</li>
+    <li><a href="intune-shared-device-monitoring.html">Android Reboot Monitoring for Microsoft Intune</a> — uptime visibility across a managed fleet.</li>
+    <li><a href="check-last-reboot-android.html">How to check when your Android phone was last restarted</a> — three ways, from settings to automatic tracking.</li>
+    <li><a href="does-android-keep-reboot-history.html">Does Android keep a reboot history?</a> — what Android records, and what it doesn't.</li>
   </ul>
 </section>
 

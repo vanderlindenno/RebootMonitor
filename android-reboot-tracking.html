@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Android Reboot Tracking | RebootMonitor</title>
-<meta name="description" content="Automatically track every Android device reboot with the exact date and time. A 7-day overview, a monthly heatmap and 12 months of history — all stored locally.">
+<title>Android Reboot Tracker – Automatically Track Restarts | RebootMonitor</title>
+<meta name="description" content="Automatically track Android restarts and keep a private reboot history with RebootMonitor. Free, ad-free and stored locally on your device.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="Nordic Appworks">
 <meta name="theme-color" content="#005824">
@@ -12,16 +12,16 @@
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="RebootMonitor">
-<meta property="og:title" content="Android Reboot Tracking | RebootMonitor">
-<meta property="og:description" content="Automatically track every Android device reboot with the exact date and time, plus a monthly heatmap and 12 months of history.">
+<meta property="og:title" content="Android Reboot Tracker – Automatically Track Restarts | RebootMonitor">
+<meta property="og:description" content="Automatically track Android restarts and keep a private reboot history with RebootMonitor. Free, ad-free and stored locally on your device.">
 <meta property="og:url" content="https://rebootmonitor.com/android-reboot-tracking.html">
 <meta property="og:image" content="https://rebootmonitor.com/header-banner.png">
 <meta property="og:image:alt" content="RebootMonitor – track uptime, reboot history and device stability">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-09-29">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Android Reboot Tracking | RebootMonitor">
-<meta name="twitter:description" content="Automatically track every Android device reboot with the exact date and time.">
+<meta name="twitter:title" content="Android Reboot Tracker – Automatically Track Restarts | RebootMonitor">
+<meta name="twitter:description" content="Automatically track Android restarts and keep a private reboot history with RebootMonitor. Free, ad-free and stored locally on your device.">
 <meta name="twitter:image" content="https://rebootmonitor.com/header-banner.png">
 
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -43,13 +43,13 @@
     {
       "@type": "TechArticle",
       "@id": "https://rebootmonitor.com/android-reboot-tracking.html#article",
-      "headline": "Android Reboot Tracking with RebootMonitor",
-      "description": "Automatically track every Android device reboot with the exact date and time, plus a monthly heatmap and 12 months of history.",
+      "headline": "Android Reboot Tracker – RebootMonitor",
+      "description": "Automatically track Android restarts and keep a private reboot history with RebootMonitor. Free, ad-free and stored locally on your device.",
       "url": "https://rebootmonitor.com/android-reboot-tracking.html",
       "mainEntityOfPage": "https://rebootmonitor.com/android-reboot-tracking.html",
       "inLanguage": "en",
       "datePublished": "2026-09-29",
-      "dateModified": "2026-10-02",
+      "dateModified": "2026-10-09",
       "author": { "@id": "https://rebootmonitor.com/#organization" },
       "publisher": { "@id": "https://rebootmonitor.com/#organization" },
       "image": ["https://rebootmonitor.com/screenshot2.png", "https://rebootmonitor.com/header-banner.png"],
@@ -62,7 +62,7 @@
       "@id": "https://rebootmonitor.com/android-reboot-tracking.html#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rebootmonitor.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Android Reboot Tracking", "item": "https://rebootmonitor.com/android-reboot-tracking.html" }
+        { "@type": "ListItem", "position": 2, "name": "Android Reboot Tracker", "item": "https://rebootmonitor.com/android-reboot-tracking.html" }
       ]
     },
     {
@@ -144,6 +144,24 @@ a{color:var(--green)}
 .faq details:last-child{border-bottom:1px solid var(--line)}
 .faq summary{font-weight:600;cursor:pointer;color:var(--green-dark)}
 .faq p{margin:10px 0 0;max-width:70ch}
+
+.features{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.intro-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start}
+.glance{background:var(--green-soft);border-radius:14px;padding:20px 22px}
+.glance h3{margin:0 0 12px;color:var(--green-dark);font-size:17px}
+.glance ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.glance li{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.glance .icon{flex:none;font-size:20px;color:var(--green);margin-top:2px}
+.has-phones{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center}
+.has-phones .phones{justify-content:flex-end;margin-top:0!important}
+.has-phones .phones figure{max-width:210px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0;padding:0;list-style:none}
+.chips li{background:var(--green-soft);color:var(--green-dark);border-radius:999px;padding:8px 16px;font-weight:600;font-size:15px}
+.week{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.week li{background:var(--orange-soft);border-radius:14px;padding:16px}
+.week b{display:block;color:#9a560a;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.week span{font-size:15px;color:#5c4423}
+@media (max-width:900px){.intro-grid,.has-phones{grid-template-columns:1fr}.has-phones .phones{justify-content:center}}
 </style>
 </head>
 <body>
@@ -166,7 +184,7 @@ a{color:var(--green)}
     <svg class="hero-logo" aria-hidden="true"><use href="#i-logo"/></svg>
     <div class="hero-text">
       <p class="hero-eyebrow">Android Reboot Tracking · RebootMonitor</p>
-      <h1>Every reboot, tracked automatically</h1>
+      <h1>Android Reboot Tracker: every restart, logged automatically</h1>
       <p>RebootMonitor logs the exact date and time of every restart, so you never have to guess when a device was last rebooted again.</p>
     </div>
   </div>
@@ -175,13 +193,13 @@ a{color:var(--green)}
 <main class="container">
 <article>
 
-<section class="card prose" aria-labelledby="problem">
+<section class="card prose intro-grid" aria-labelledby="problem"><div class="intro-text">
   <p class="meta-line">By Nordic Appworks · Published <time datetime="2026-09-29">29 September 2026</time></p>
   <h2 id="problem">"When was this last restarted?"</h2>
   <p class="lead">It's one of the first questions in almost any troubleshooting conversation — and usually nobody has a real answer.</p>
   <p>Without a log, the honest answer is a shrug: "a while ago, I think." RebootMonitor replaces the guess with a fact, recorded automatically the moment a restart happens.</p>
   <p>No app has to be opened for a reboot to be tracked. The next time you check, the entry is already there.</p>
-</section>
+</div><aside class="glance" aria-label="At a glance"><h3>At a glance</h3><ul><li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Free, no ads, no account</span></li><li><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><span>Your data stays on your device</span></li><li><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><span>12 months of reboot history</span></li><li><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Works completely offline</span></li></ul></aside></section>
 
 <section class="features" aria-label="How reboot tracking works">
   <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-power"/></svg><h3>Detected automatically</h3><p>RebootMonitor listens for Android's boot-completed signal and logs the exact time, with no action needed from the user.</p></div>
@@ -190,10 +208,8 @@ a{color:var(--green)}
   <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><h3>Tap-to-inspect heatmap</h3><p>A monthly calendar shows reboot activity at a glance; tap any day for its exact reboot times.</p></div>
 </section>
 
-<section class="card" aria-labelledby="log">
-  <h2 id="log">What the reboot log looks like</h2>
-  <p class="lead">Color-coded, dated, and searchable by month — never a raw text file.</p>
-  <div class="phones" style="margin-top:16px">
+<section class="card has-phones" aria-labelledby="log"><div class="has-phones-text"><h2 id="log">What the reboot log looks like</h2>
+  <p class="lead">Color-coded, dated, and searchable by month — never a raw text file.</p></div><div class="phones" style="margin-top:16px">
     <figure class="shot">
       <picture><source srcset="screenshot1.webp" type="image/webp"><img src="screenshot1.png" width="525" height="1167" alt="RebootMonitor 7-day reboot log with exact reboot times" loading="lazy" decoding="async"></picture>
       <figcaption>The last 7 days, with exact reboot times.</figcaption>
@@ -202,8 +218,7 @@ a{color:var(--green)}
       <picture><source srcset="screenshot2.webp" type="image/webp"><img src="screenshot2.png" width="525" height="1167" alt="RebootMonitor full reboot history with a monthly heatmap and monthly overview" loading="lazy" decoding="async"></picture>
       <figcaption>Full history with a monthly heatmap and overview.</figcaption>
     </figure>
-  </div>
-</section>
+  </div></section>
 
 <div class="two-col">
   <section class="card" aria-labelledby="who">
@@ -245,10 +260,12 @@ a{color:var(--green)}
   <h2 id="related">Related reading</h2>
   <ul class="related-list">
     <li><a href="android-reboot-notification.html">Android Reboot Notification</a> — the configurable reminder built on top of this history.</li>
-    <li><a href="android-uptime-monitoring.html">Android Uptime Monitoring</a> — the live uptime counter that sits alongside the reboot log.</li>
-    <li><a href="android-device-uptime-report.html">Android Device Uptime Report</a> — turning the log into a readable report.</li>
+    <li><a href="android-uptime-monitoring.html">Android Uptime Tracker</a> — the live uptime counter that sits alongside the reboot log.</li>
+    <li><a href="android-device-uptime-report.html">Android Reboot History &amp; Uptime Report</a> — turning the log into a readable report.</li>
     <li><a href="android-kiosk-monitoring.html">Android Kiosk Monitoring</a> — reboot tracking for unattended devices.</li>
-    <li><a href="intune-shared-device-monitoring.html">Intune Shared Device Monitoring</a> — reboot tracking across a managed fleet.</li>
+    <li><a href="intune-shared-device-monitoring.html">Android Reboot Monitoring for Microsoft Intune</a> — reboot tracking across a managed fleet.</li>
+    <li><a href="check-last-reboot-android.html">How to check when your Android phone was last restarted</a> — three ways, from settings to automatic tracking.</li>
+    <li><a href="does-android-keep-reboot-history.html">Does Android keep a reboot history?</a> — what Android records, and what it doesn't.</li>
   </ul>
 </section>
 

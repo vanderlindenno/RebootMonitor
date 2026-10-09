@@ -64,7 +64,7 @@
 }
 </script>
 
-<style>body{font-family:Segoe UI,Arial,sans-serif;margin:0;background:#f5f7f8;color:#222}header{background:#005824;line-height:0}.container{max-width:1200px;margin:auto;padding:40px 20px}.card{background:#fff;padding:30px;border-radius:18px;box-shadow:0 4px 18px rgba(0,0,0,.08);margin:20px 0}h1{color:#005824;font-size:30px;margin:0 0 6px}.tagline{font-size:18px;color:#444;margin:0 0 20px}h2{color:#168039}.quote{font-style:italic;font-size:19px;color:#005824;border-left:4px solid #168039;padding:4px 0 4px 18px;margin:20px 0}.perm-list,.card ul{margin:0;padding-left:20px}.card li{margin:6px 0}.closing{background:#005824;color:#fff}.closing h2{color:#fff}.closing p{font-size:18px;line-height:1.6}.closing a{color:#fff;font-weight:600}.play-btn{display:inline-flex;align-items:center;gap:10px;background:#168039;color:#fff;text-decoration:none;padding:12px 24px;border-radius:10px;font-weight:600;font-size:16px}.play-btn:hover{background:#0f622c}.footer{background:#005824;color:#fff;text-align:center;padding:25px}.footer a{color:#fff}.footer nav{margin-top:4px;display:flex;flex-wrap:wrap;justify-content:center}.footer nav a{display:inline-block;padding:14px 12px;min-height:48px;box-sizing:border-box}.related-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}@media (max-width:600px){.container{padding:16px 14px}.card{padding:20px;margin:14px 0;border-radius:14px}h1{font-size:24px}.tagline{font-size:16px}.closing p{font-size:16px}}</style>
+<style>body{font-family:Segoe UI,Arial,sans-serif;margin:0;background:#f5f7f8;color:#222}header{background:#005824;line-height:0}.container{max-width:1200px;margin:auto;padding:40px 20px}.card{background:#fff;padding:30px;border-radius:18px;box-shadow:0 4px 18px rgba(0,0,0,.08);margin:20px 0}h1{color:#005824;font-size:30px;margin:0 0 6px}.tagline{font-size:18px;color:#444;margin:0 0 20px}h2{color:#168039}.quote{font-style:italic;font-size:19px;color:#005824;border-left:4px solid #168039;padding:4px 0 4px 18px;margin:20px 0}.perm-list,.card ul{margin:0;padding-left:20px}.card li{margin:6px 0}.closing{background:#005824;color:#fff}.closing h2{color:#fff}.closing p{font-size:18px;line-height:1.6}.closing a{color:#fff;font-weight:600}.play-btn{display:inline-flex;align-items:center;gap:10px;background:#168039;color:#fff;text-decoration:none;padding:12px 24px;border-radius:10px;font-weight:600;font-size:16px}.play-btn:hover{background:#0f622c}.footer{background:#005824;color:#fff;text-align:center;padding:25px}.footer a{color:#fff}.footer nav{margin-top:4px;display:flex;flex-wrap:wrap;justify-content:center}.footer nav a{display:inline-block;padding:14px 12px;min-height:48px;box-sizing:border-box}.related-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}@media (max-width:600px){.container{padding:16px 14px}.card{padding:20px;margin:14px 0;border-radius:14px}h1{font-size:24px}.tagline{font-size:16px}.closing p{font-size:16px}}/*about-cols*/section.card>ul:not(.related-list){columns:2;column-gap:40px}section.card>ul:not(.related-list) li{break-inside:avoid}@media (max-width:700px){section.card>ul:not(.related-list){columns:1}}.screens{display:flex;gap:30px;justify-content:center;flex-wrap:wrap}.screens picture{max-width:260px;width:100%}.screens img{width:100%;height:auto;border-radius:24px;box-shadow:0 8px 25px rgba(0,0,0,.2)}</style>
 </head>
 <body>
 
@@ -102,6 +102,15 @@
 <p>RebootMonitor is a lightweight Android application that provides immediate visibility into device uptime and reboot information.</p>
 <p>Instead of navigating through Android settings or guessing when a device was last restarted, RebootMonitor displays the information directly on the device in a clear and easy-to-understand format.</p>
 <p>Whether you're an IT administrator, support engineer, or end user, RebootMonitor helps you quickly determine the current status of a device.</p>
+</section>
+
+<section class="card" aria-labelledby="screens">
+<h2 id="screens">RebootMonitor in action</h2>
+<div class="screens">
+<picture><source srcset="screenshot1.webp" type="image/webp"><img src="screenshot1.png" width="525" height="1167" alt="RebootMonitor dashboard showing status, current uptime and the reboot times of the last 7 days" loading="lazy" decoding="async"></picture>
+<picture><source srcset="screenshot2.webp" type="image/webp"><img src="screenshot2.png" width="525" height="1167" alt="RebootMonitor reboot history with a monthly calendar heatmap of reboots per day" loading="lazy" decoding="async"></picture>
+<picture><source srcset="screenshot_settings_row.webp" type="image/webp"><img src="screenshot_settings_row.png" width="525" height="1167" alt="RebootMonitor settings with a configurable reboot reminder and a homescreen widget option" loading="lazy" decoding="async"></picture>
+</div>
 </section>
 
 <section class="card" aria-labelledby="key-features">

@@ -148,6 +148,46 @@
             "@type": "Answer",
             "text": "On Samsung devices, yes. Deploy the Samsung Knox Service Plugin as an OEMConfig app through Intune and use its settings to exempt RebootMonitor from battery optimization across the whole fleet, instead of relying on the in-app shortcut on every device."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Does RebootMonitor replace Microsoft Intune?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. RebootMonitor is not an MDM solution. Intune stays responsible for enrollment, configuration, apps, policies and management. RebootMonitor focuses only on reboot and uptime visibility."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does RebootMonitor need a connection to Intune?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is a normal Android app that tracks restarts on its own. It can be deployed alongside your other apps through your existing Android management setup, and it also works on devices outside an enterprise environment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can IT administrators see the reboot history remotely?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The history is stored locally on the device. RebootMonitor provides local visibility and reminders rather than a central cloud dashboard for all devices."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will restarting the device fix every Android problem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. A restart can clear temporary processes and memory and can help with certain transient issues, but persistent problems should still be investigated through your normal IT support and device-management processes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is RebootMonitor only for companies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Individual Android users can use it to see when their device was last restarted. The shared-device and Intune use case is simply where the usual sense of ownership is missing."
+          }
         }
       ]
     }
@@ -211,7 +251,25 @@ a{color:var(--green)}
 @media (max-width:760px){.split{grid-template-columns:1fr}}
 @media (max-width:600px){.container{padding:16px 14px}.card{padding:20px;margin:14px 0;border-radius:14px}.hero-inner{padding:32px 16px;gap:20px}.hero-logo{width:88px;height:88px}.hero p{font-size:17px}.features{grid-template-columns:1fr 1fr;gap:12px}.features .card{padding:16px 12px}.feature .icon{font-size:30px}.feature h3{font-size:16px}.feature p{font-size:14px}.btn{width:100%;justify-content:center;box-sizing:border-box}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-.crumbs{max-width:1200px;margin:auto;padding:14px 20px 0;font-size:14px;color:var(--muted)}.crumbs ol{list-style:none;margin:0;padding:0;display:flex;gap:8px;flex-wrap:wrap}.crumbs li+li::before{content:"\203A";margin-right:8px}.meta-line{font-size:14px;color:var(--muted);margin:0 0 16px}.shot{margin:0;max-width:240px;width:100%;text-align:center}.shot img{width:100%;height:auto;border-radius:24px;box-shadow:0 8px 25px rgba(0,0,0,.2)}.shot figcaption{font-size:14px;color:var(--muted);margin-top:10px}.faq details{border-top:1px solid var(--line);padding:14px 0}.faq details:last-child{border-bottom:1px solid var(--line)}.faq summary{font-weight:600;cursor:pointer;color:var(--green-dark)}.faq p{margin:10px 0 0;max-width:70ch}.related-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}</style>
+.crumbs{max-width:1200px;margin:auto;padding:14px 20px 0;font-size:14px;color:var(--muted)}.crumbs ol{list-style:none;margin:0;padding:0;display:flex;gap:8px;flex-wrap:wrap}.crumbs li+li::before{content:"\203A";margin-right:8px}.meta-line{font-size:14px;color:var(--muted);margin:0 0 16px}.shot{margin:0;max-width:240px;width:100%;text-align:center}.shot img{width:100%;height:auto;border-radius:24px;box-shadow:0 8px 25px rgba(0,0,0,.2)}.shot figcaption{font-size:14px;color:var(--muted);margin-top:10px}.faq details{border-top:1px solid var(--line);padding:14px 0}.faq details:last-child{border-bottom:1px solid var(--line)}.faq summary{font-weight:600;cursor:pointer;color:var(--green-dark)}.faq p{margin:10px 0 0;max-width:70ch}.related-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.features{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.intro-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start}
+.glance{background:var(--green-soft);border-radius:14px;padding:20px 22px}
+.glance h3{margin:0 0 12px;color:var(--green-dark);font-size:17px}
+.glance ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.glance li{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.glance .icon{flex:none;font-size:20px;color:var(--green);margin-top:2px}
+.has-phones{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center}
+.has-phones .phones{justify-content:flex-end;margin-top:0!important}
+.has-phones .phones figure{max-width:210px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0;padding:0;list-style:none}
+.chips li{background:var(--green-soft);color:var(--green-dark);border-radius:999px;padding:8px 16px;font-weight:600;font-size:15px}
+.week{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.week li{background:var(--orange-soft);border-radius:14px;padding:16px}
+.week b{display:block;color:#9a560a;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.week span{font-size:15px;color:#5c4423}
+@media (max-width:900px){.intro-grid,.has-phones{grid-template-columns:1fr}.has-phones .phones{justify-content:center}}
+</style>
 </head>
 <body>
 
@@ -248,12 +306,19 @@ a{color:var(--green)}
 <main class="container">
 <article>
 
-<section class="card prose" aria-labelledby="problem">
+<section class="card prose intro-grid" aria-labelledby="problem"><div class="intro-text">
   <p class="meta-line">By Nordic Appworks · Published <time datetime="2026-09-29">29 September 2026</time></p>
   <h2 id="problem">The shared device problem</h2>
   <p class="lead">In healthcare, education, logistics and field service, one device is often shared by a whole team.</p>
   <p>A nurse on the day shift uses it in the morning and a colleague on the evening shift picks it up later. Nobody feels responsible for the device, so nobody thinks of restarting it. Weeks or even months without a reboot are the norm rather than the exception.</p>
   <p>This page explains how shared devices are set up with Microsoft Intune and Managed Home Screen, why a missing reboot causes problems, and how RebootMonitor closes that gap.</p>
+</div><aside class="glance" aria-label="At a glance"><h3>At a glance</h3><ul><li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Free, no ads, no account</span></li><li><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><span>Your data stays on your device</span></li><li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>12 months of reboot history</span></li><li><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Works completely offline</span></li></ul></aside></section>
+
+<section class="card" aria-labelledby="industries">
+  <h2 id="industries">Where shared Android devices run</h2>
+  <p class="lead" style="margin-bottom:0">Shared and dedicated Android devices are common wherever several people use the same device during the day:</p>
+  <ul class="chips"><li>Warehouses</li><li>Logistics</li><li>Retail</li><li>Manufacturing</li><li>Healthcare</li><li>Hospitality</li><li>Field services</li><li>Transportation</li><li>Education</li><li>Public services</li></ul>
+  <p style="margin:16px 0 0;max-width:70ch">These devices are switched between users many times, often without anyone specifically monitoring their uptime.</p>
 </section>
 
 <section class="card" aria-labelledby="mhs">
@@ -297,7 +362,7 @@ a{color:var(--green)}
 
 <section aria-labelledby="why" class="card">
   <h2 id="why">Why a reboot matters</h2>
-  <p class="lead" style="margin-bottom:0">A device that runs for weeks falls behind on updates and gets slower and less reliable.</p>
+  <p class="lead" style="margin-bottom:0">A device that runs for weeks can fall behind on updates and become slower and less reliable.</p>
 </section>
 <section class="features" aria-label="Effects of missing reboots">
   <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-update"/></svg><h3>Pending updates</h3><p>Android system updates and many security patches only take effect after a restart. The device can report as compliant while still running old code.</p></div>
@@ -305,6 +370,13 @@ a{color:var(--green)}
   <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><h3>Policies &amp; apps</h3><p>New Intune profiles, app updates and MHS configuration are sometimes only fully applied after a restart.</p></div>
   <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg><h3>Helpdesk tickets</h3><p>Many "the device is acting strange" reports disappear after a reboot. Without one, they end up at the service desk.</p></div>
   <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><h3>No owner</h3><p>An owner notices and restarts a personal device. On a shared device, everyone passes the problem to the next user.</p></div>
+</section>
+
+<section class="card" aria-labelledby="owner">
+  <h2 id="owner">What happens when nobody owns the device?</h2>
+  <p class="lead">Everyone uses the device. Nobody thinks about restarting it.</p>
+  <ul class="week"><li><b>Monday</b><span>Employee A uses the device for a full shift. No restart.</span></li><li><b>Tuesday</b><span>Employee B takes over. It still works, so there is no reason to restart it.</span></li><li><b>Wednesday</b><span>Employee C uses it. Again, no restart.</span></li><li><b>Thursday</b><span>The device has now been running for several days. Nobody necessarily notices.</span></li><li><b>Friday</b><span>It still works, so it keeps being used. The cycle can go on indefinitely.</span></li></ul>
+  <p style="margin:18px 0 0;max-width:70ch">The problem is not that users are doing something wrong. A shared device has no natural owner, so the question of who restarts it is easily overlooked.</p>
 </section>
 
 <section class="card" aria-labelledby="solution">
@@ -372,6 +444,13 @@ a{color:var(--green)}
   </div>
 </section>
 
+<section class="card" aria-labelledby="bigger">
+  <h2 id="bigger">A small addition to a larger management strategy</h2>
+  <p class="lead">Microsoft Intune and Managed Home Screen give organizations powerful tools for managing shared Android devices.</p>
+  <p style="max-width:70ch">RebootMonitor does not replace them. It focuses on one specific thing: making Android reboot activity visible. For organizations that run many shared devices, that can be a simple extra layer of device-maintenance awareness.</p>
+  <p style="margin:0;font-weight:600;color:var(--green-dark)">Know the uptime. Know the last restart. Keep shared devices running reliably.</p>
+</section>
+
 <section class="card faq" aria-labelledby="faq">
   <h2 id="faq">Frequently asked questions</h2>
   <details><summary>Why do shared Android devices rarely get restarted?</summary><p>Shared devices are used by changing people who do not feel responsible for the device. Managed Home Screen sign-in and automatic sign-out make it feel even less like anyone's own device, so nobody thinks of rebooting it.</p></details>
@@ -380,14 +459,21 @@ a{color:var(--green)}
   <details><summary>Does RebootMonitor send any data to a server?</summary><p>No. All reboot history is stored locally on the device. The app only uses the RECEIVE_BOOT_COMPLETED and POST_NOTIFICATIONS permissions.</p></details>
   <details><summary>When does the reboot reminder appear?</summary><p>By default, when the device has not been restarted for 7 days. That interval can be changed to 3 or 14 days, or turned off, from the app's settings menu. The reminder clears itself after the next reboot and stays silent during the first reminder period after installation. A shortcut to the device's battery optimization settings is also included, in case a reminder ever doesn't arrive as expected.</p></details>
   <details><summary>Can battery optimization be managed centrally instead of per device?</summary><p>On Samsung devices, yes. Deploy the Samsung Knox Service Plugin as an OEMConfig app through Intune and use its settings to exempt RebootMonitor from battery optimization across the whole fleet, instead of relying on the in-app shortcut on every device.</p></details>
+  <details><summary>Does RebootMonitor replace Microsoft Intune?</summary><p>No. RebootMonitor is not an MDM solution. Intune stays responsible for enrollment, configuration, apps, policies and management. RebootMonitor focuses only on reboot and uptime visibility.</p></details>
+  <details><summary>Does RebootMonitor need a connection to Intune?</summary><p>No. It is a normal Android app that tracks restarts on its own. It can be deployed alongside your other apps through your existing Android management setup, and it also works on devices outside an enterprise environment.</p></details>
+  <details><summary>Can IT administrators see the reboot history remotely?</summary><p>No. The history is stored locally on the device. RebootMonitor provides local visibility and reminders rather than a central cloud dashboard for all devices.</p></details>
+  <details><summary>Will restarting the device fix every Android problem?</summary><p>No. A restart can clear temporary processes and memory and can help with certain transient issues, but persistent problems should still be investigated through your normal IT support and device-management processes.</p></details>
+  <details><summary>Is RebootMonitor only for companies?</summary><p>No. Individual Android users can use it to see when their device was last restarted. The shared-device and Intune use case is simply where the usual sense of ownership is missing.</p></details>
 </section>
 
 <section class="card" aria-labelledby="related">
   <h2 id="related">Related reading</h2>
   <ul class="related-list">
     <li><a href="android-reboot-notification.html">Android Reboot Notification</a> — a closer look at how the configurable reminder works, for one phone or a whole fleet.</li>
-    <li><a href="intune-shared-device-monitoring.html">Intune Shared Device Monitoring</a> — the decentralized monitoring model behind this approach.</li>
+    <li><a href="intune-shared-device-monitoring.html">Android Reboot Monitoring for Microsoft Intune</a> — the decentralized monitoring model behind this approach.</li>
     <li><a href="android-kiosk-monitoring.html">Android Kiosk Monitoring</a> — the same idea applied to single-purpose kiosks.</li>
+    <li><a href="check-last-reboot-android.html">How to check when your Android phone was last restarted</a> — three ways, from settings to automatic tracking.</li>
+    <li><a href="does-android-keep-reboot-history.html">Does Android keep a reboot history?</a> — what Android records, and what it doesn't.</li>
   </ul>
 </section>
 
