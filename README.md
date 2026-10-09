@@ -1,4 +1,4 @@
-# RebootMonitor – website
+# Android app RebootMonitor – website
 
 Source of **[rebootmonitor.com](https://rebootmonitor.com/)**, the website of **RebootMonitor**, a free Android app that automatically tracks device restarts, uptime and reboot history.
 
