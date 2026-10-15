@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Android Multi-App Kiosk with Intune | RebootMonitor</title>
+<meta name="description" content="Learn how to build and manage shared Android multi-app kiosk devices with Intune and Managed Home Screen: setup steps, security, monitoring and FAQs.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Nordic Appworks">
+<meta name="theme-color" content="#005824">
+<link rel="canonical" href="https://rebootmonitor.com/android-multi-app-kiosk-intune.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="RebootMonitor">
+<meta property="og:title" content="Android Multi-App Kiosk with Intune | RebootMonitor">
+<meta property="og:description" content="Learn how to build and manage shared Android multi-app kiosk devices with Intune and Managed Home Screen: setup steps, security, monitoring and FAQs.">
+<meta property="og:url" content="https://rebootmonitor.com/android-multi-app-kiosk-intune.html">
+<meta property="og:image" content="https://rebootmonitor.com/og/android-multi-app-kiosk-intune.jpg">
+<meta property="og:image:alt" content="RebootMonitor – track uptime, reboot history and device stability">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-10-16">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Android Multi-App Kiosk with Intune | RebootMonitor">
+<meta name="twitter:description" content="Learn how to build and manage shared Android multi-app kiosk devices with Intune and Managed Home Screen: setup steps, security, monitoring and FAQs.">
+<meta name="twitter:image" content="https://rebootmonitor.com/og/android-multi-app-kiosk-intune.jpg">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://rebootmonitor.com/#organization",
+      "name": "Nordic Appworks",
+      "url": "https://rebootmonitor.com/",
+      "logo": "https://rebootmonitor.com/apple-touch-icon.png"
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://rebootmonitor.com/android-multi-app-kiosk-intune.html#article",
+      "headline": "Build a smarter Android multi-app kiosk with Intune",
+      "description": "Learn how to build and manage shared Android multi-app kiosk devices with Intune and Managed Home Screen: setup steps, security, monitoring and FAQs.",
+      "url": "https://rebootmonitor.com/android-multi-app-kiosk-intune.html",
+      "mainEntityOfPage": "https://rebootmonitor.com/android-multi-app-kiosk-intune.html",
+      "inLanguage": "en",
+      "datePublished": "2026-10-16",
+      "dateModified": "2026-10-16",
+      "author": {
+        "@id": "https://rebootmonitor.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://rebootmonitor.com/#organization"
+      },
+      "image": [
+        "https://rebootmonitor.com/og/android-multi-app-kiosk-intune.jpg"
+      ],
+      "about": [
+        "Android multi-app kiosk",
+        "Microsoft Intune",
+        "Managed Home Screen",
+        "Android Enterprise"
+      ],
+      "isPartOf": {
+        "@id": "https://rebootmonitor.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://rebootmonitor.com/android-multi-app-kiosk-intune.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://rebootmonitor.com/android-multi-app-kiosk-intune.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://rebootmonitor.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Android Multi-App Kiosk with Intune",
+          "item": "https://rebootmonitor.com/android-multi-app-kiosk-intune.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://rebootmonitor.com/android-multi-app-kiosk-intune.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I show multiple applications on one Android kiosk device?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Supported Android Enterprise devices can be configured for multi-app kiosk mode through Microsoft Intune. Managed Home Screen provides the managed launcher for approved applications."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need Managed Home Screen for every Android kiosk?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Managed Home Screen is used for supported multi-app kiosk scenarios. Single-app kiosk configurations and other Android management scenarios can use different approaches."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can users install their own applications in kiosk mode?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A properly configured kiosk restricts access to the approved experience. The exact protections depend on enrollment, app assignments, device restrictions and other security settings. Test the complete configuration rather than relying on the launcher alone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I manage Android kiosk devices remotely with Intune?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Microsoft Intune supports remote management of enrolled devices, including supported application deployments, configuration policies and compliance monitoring. Available actions depend on the device and management scenario."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should shared Android kiosk devices be restarted regularly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not necessarily. A scheduled restart may be appropriate for a specific operational requirement, but it should not be assumed to be necessary for every device. Base the policy on observed issues, application requirements, vendor guidance and operational needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Intune show the complete reboot history of every Android device?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Do not assume Intune provides a complete device-level reboot history for every Android Enterprise configuration. Available information depends on the management capabilities and diagnostic data exposed by the device and operating system."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can RebootMonitor replace Microsoft Intune?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. RebootMonitor focuses on uptime and reboot tracking. It does not replace Intune enrollment, application deployment, configuration, compliance or device-management capabilities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which organizations can benefit from multi-app kiosk mode?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can suit supported workflows in warehouses, production areas, retail, reception, logistics and other shared-device environments. The right setup depends on the work users need to do and the security controls required."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{--green-dark:#005824;--green:#168039;--green-hover:#0f622c;--ground:#f5f7f8;--card:#fff;--text:#222;--muted:#4a5550;--line:#dfe5e2;--orange:#e07b17;--orange-soft:#fff1e2;--green-soft:#e6f4ea;color-scheme:light}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",Arial,sans-serif;margin:0;background:var(--ground);color:var(--text);font-size:16px;line-height:1.6}
+.icon{display:inline-block;width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.125em}
+header.hero{background-color:var(--green-dark);background-image:radial-gradient(rgba(255,255,255,.13) 1.5px,transparent 1.5px);background-size:28px 28px;color:#fff}
+.hero-inner{max-width:1200px;margin:auto;padding:48px 20px;display:flex;align-items:center;gap:36px;flex-wrap:wrap}
+.hero-logo{width:132px;height:132px;flex:none}
+.hero-text{flex:1;min-width:260px}
+.hero-eyebrow{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85;margin:0 0 8px}
+.hero h1{color:#fff;font-size:clamp(32px,5vw,54px);line-height:1.08;font-weight:800;margin:0 0 14px;text-wrap:balance}
+.hero p{font-size:19px;max-width:620px;margin:0;opacity:.95}
+.container{max-width:1200px;margin:auto;padding:40px 20px}
+.card{background:var(--card);padding:30px;border-radius:18px;box-shadow:0 4px 18px rgba(0,0,0,.08);margin:20px 0}
+h2{color:var(--green);margin:0 0 12px;text-wrap:balance}
+h3{margin:12px 0 6px}
+.lead{font-size:18px;color:var(--muted);margin:0 0 16px}
+.prose p{max-width:70ch}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.features .card{margin:0}
+.feature{text-align:center}
+.feature .icon{font-size:40px;color:var(--green)}
+.feature p{margin:0;color:var(--muted)}
+.split{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:36px;align-items:center}
+.phones{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.phones figure{margin:0;max-width:240px;width:100%;text-align:center}
+.phones svg{width:100%;height:auto;filter:drop-shadow(0 8px 20px rgba(0,0,0,.2))}
+.phones figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.steps{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;counter-reset:step}
+.steps li{counter-increment:step;position:relative;background:var(--green-soft);border-radius:14px;padding:20px 18px 18px}
+.steps li::before{content:counter(step);position:absolute;top:16px;right:18px;font-weight:800;font-size:28px;color:rgba(22,128,57,.25)}
+.steps .icon{font-size:30px;color:var(--green)}
+.steps h3{margin:10px 0 4px;font-size:17px}
+.steps p{margin:0;font-size:15px;color:var(--muted)}
+code{background:#eef2f0;padding:2px 6px;border-radius:6px;font-size:.92em}
+.check-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.check-list li{display:flex;gap:12px;align-items:flex-start}
+.check-list .icon{flex:none;font-size:22px;color:var(--green);margin-top:2px}
+.note{display:flex;gap:14px;align-items:flex-start;background:var(--orange-soft);border-radius:12px;padding:16px 18px;margin-top:20px}
+.note .icon{flex:none;font-size:24px;color:var(--orange);margin-top:2px}
+.note p{margin:0}
+.two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin:20px 0}
+.two-col .card{margin:0}
+.cta{display:flex;align-items:center;gap:24px;flex-wrap:wrap;border-left:6px solid var(--green)}
+.cta>.icon{font-size:48px;color:var(--green)}
+.cta .cta-text{flex:1;min-width:240px}
+.cta h2{margin-top:0}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;padding:12px 24px;border-radius:10px;font-weight:600}
+.btn:hover{background:var(--green-hover)}
+.btn:focus-visible,a:focus-visible{outline:3px solid #7fc79a;outline-offset:2px}
+a{color:var(--green)}
+.footer{background:var(--green-dark);color:#fff;text-align:center;padding:25px 16px}
+.footer a{color:#fff;display:inline-block;padding:12px}
+.related-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+@media (max-width:600px){.container{padding:16px 14px}.card{padding:20px;margin:14px 0;border-radius:14px}.hero-inner{padding:32px 16px;gap:20px}.hero-logo{width:88px;height:88px}.hero p{font-size:17px}.features{grid-template-columns:1fr 1fr;gap:12px}.features .card{padding:16px 12px}.feature .icon{font-size:30px}.feature h3{font-size:16px}.feature p{font-size:14px}.btn{width:100%;justify-content:center;box-sizing:border-box}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.meta-line{font-size:14px;color:var(--muted);margin:0 0 16px}
+.shot{margin:0;max-width:240px;width:100%;text-align:center}
+.shot img{width:100%;height:auto;border-radius:24px;box-shadow:0 8px 25px rgba(0,0,0,.2)}
+.shot figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.faq details{border-top:1px solid var(--line);padding:14px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{font-weight:600;cursor:pointer;color:var(--green-dark)}
+.faq p{margin:10px 0 0;max-width:70ch}
+
+.features{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.intro-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start}
+.glance{background:var(--green-soft);border-radius:14px;padding:20px 22px}
+.glance h3{margin:0 0 12px;color:var(--green-dark);font-size:17px}
+.glance ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.glance li{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.glance .icon{flex:none;font-size:20px;color:var(--green);margin-top:2px}
+.has-phones{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center}
+.has-phones .phones{justify-content:flex-end;margin-top:0!important}
+.has-phones .phones figure{max-width:210px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0;padding:0;list-style:none}
+.chips li{background:var(--green-soft);color:var(--green-dark);border-radius:999px;padding:8px 16px;font-weight:600;font-size:15px}
+.week{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.week li{background:var(--orange-soft);border-radius:14px;padding:16px}
+.week b{display:block;color:#9a560a;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.week span{font-size:15px;color:#5c4423}
+@media (max-width:900px){.intro-grid,.has-phones{grid-template-columns:1fr}.has-phones .phones{justify-content:center}}
+.hero .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin:24px 0 0;max-width:none;font-size:16px;opacity:1}.btn-light{background:#fff;color:var(--green-dark)}.btn-light:hover{background:var(--green-soft)}.hero-note{opacity:.95}@media (max-width:600px){.hero .hero-cta{margin-top:20px}}.topnav{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:2px;background:#004a1f;padding:0 10px;overflow-x:auto;white-space:nowrap;line-height:1.2}.topnav a{color:#fff;text-decoration:none;padding:14px 12px;font-weight:600;font-size:15px;flex:none;display:inline-block}.topnav a:hover{background:#0b6a30}.topnav .brand{font-weight:800;margin-right:8px}[id]{scroll-margin-top:64px}table{width:100%;border-collapse:collapse;margin-top:10px;min-width:560px}table th,table td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line);font-size:15px}table th{color:var(--muted);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.04em}.steps h3{margin:0 0 4px}@media (min-width:900px){.features{grid-template-columns:repeat(3,minmax(0,1fr))}}</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<symbol id="i-log" viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="17" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></symbol>
+<symbol id="i-power" viewBox="0 0 24 24"><path d="M12 4v7"/><path d="M7.5 6.5a7.5 7.5 0 1 0 9 0"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M8 3v4M16 3v4M3.5 10h17"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-1.5 2.5-4 2.5h-2"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.2 12.2 2.6 2.6 5-5.2"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.5v.2"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3.8v16.4a1 1 0 0 0 1.5.9l13-8.2a1 1 0 0 0 0-1.7l-13-8.2A1 1 0 0 0 6 3.8z"/></symbol>
+<symbol id="i-logo" viewBox="0 0 108 108"><path d="M28.62 42.17a28 28 0 0 1 50.76 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M74.4 44.49l8.36 4.93 1.6-9.57z" fill="#fff" stroke="none"/><path d="M79.38 65.83a28 28 0 0 1-50.76 0" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M33.6 63.51l-8.36-4.93-1.6 9.57z" fill="#fff" stroke="none"/><rect x="37" y="40" width="34" height="28" rx="4" fill="#fff" stroke="none"/><g fill="#2E7D32" stroke="none"><rect x="44" y="44" width="5" height="5" rx="1"/><rect x="51.5" y="44" width="5" height="5" rx="1"/><rect x="59" y="44" width="5" height="5" rx="1"/><rect x="44" y="51.5" width="5" height="5" rx="1"/><rect x="51.5" y="51.5" width="5" height="5" rx="1"/><rect x="59" y="51.5" width="5" height="5" rx="1"/><rect x="44" y="59" width="5" height="5" rx="1"/><rect x="51.5" y="59" width="5" height="5" rx="1"/><rect x="59" y="59" width="5" height="5" rx="1"/></g></symbol>
+</svg>
+
+<nav class="topnav" aria-label="Main"><a class="brand" href="https://rebootmonitor.com/">RebootMonitor</a><a href="https://rebootmonitor.com/#intro">How it works</a><a href="https://rebootmonitor.com/#personal">Your phone</a><a href="https://rebootmonitor.com/#it">IT teams</a><a href="https://rebootmonitor.com/#explore">Guides</a><a href="https://rebootmonitor.com/#faq">FAQ</a><a href="https://rebootmonitor.com/privacy.html">Privacy</a></nav>
+<header class="hero">
+  <div class="hero-inner">
+    <svg class="hero-logo" aria-hidden="true"><use href="#i-logo"/></svg>
+    <div class="hero-text">
+      <p class="hero-eyebrow">Android Enterprise · Microsoft Intune</p>
+      <h1>Build a smarter Android multi-app kiosk with Intune</h1>
+      <p>Learn how Intune and Managed Home Screen turn shared Android devices into secure, task-focused tools for frontline teams, warehouses and reception desks.</p>
+      <p class="hero-cta"><a class="btn btn-light" href="https://play.google.com/store/apps/details?id=app.rebootmonitor.mobile" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg> View on Google Play</a><span class="hero-note">Free Android app · No ads, no account<span class="status-testing"> · Currently in testing</span></span></p>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+<article>
+
+<section class="card prose intro-grid" aria-labelledby="basics">
+<div class="intro-text">
+<p class="meta-line">By Nordic Appworks · Published <time datetime="2026-10-16">16 October 2026</time></p>
+<h2 id="basics">What is a multi-app Android kiosk?</h2>
+<p class="lead">A practical guide for IT administrators planning, deploying and supporting shared Android devices.</p>
+<p>A multi-app kiosk is an Android device configured to give users access to a predefined set of business applications instead of the unrestricted Android experience. Unlike a single-app kiosk, it lets users switch between several approved apps for a complete work process.</p>
+<p>For example, a warehouse employee might need an inventory scanner, a work-order app, a browser-based portal and a communication tool, all on one shared device.</p>
+<ul class="check-list">
+<li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Give employees quick access to the tools they need.</span></li>
+<li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Reduce accidental changes to device settings.</span></li>
+<li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Standardize the experience across a fleet of devices.</span></li>
+<li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Manage deployments and policies centrally through Intune.</span></li>
+</ul>
+</div>
+<aside class="glance" aria-label="In short"><h3>In short</h3><ul><li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Centralized management</span></li><li><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><span>Approved apps only</span></li><li><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><span>Built for shared workflows</span></li></ul></aside></section>
+
+<section class="card" aria-labelledby="overview-image">
+  <h2 id="overview-image">Shared devices, one managed experience</h2>
+  <picture><source srcset="android-multi-app-kiosk-intune.webp" type="image/webp"><img src="android-multi-app-kiosk-intune.jpg" width="1200" height="675" alt="Illustration of shared Android kiosk devices showing business apps, connected to centralized cloud management and security controls" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:14px"></picture>
+</section>
+
+<section class="card" aria-labelledby="why">
+  <h2 id="why">One managed device. The right apps. A clearer workflow.</h2>
+  <p class="lead" style="margin-bottom:0">Multi-app kiosk mode is useful when devices are shared, work is task-based, and IT needs a consistent experience that is easier to support.</p>
+</section>
+<section class="features" aria-label="Why organizations use multi-app kiosks">
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><h3>Purpose-built app access</h3><p>Show the applications and web links needed for a role, rather than a full collection of unrelated apps.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><h3>More controlled usage</h3><p>Apply kiosk and device restriction policies to limit access to approved apps and selected system features.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-log"/></svg><h3>Centralized administration</h3><p>Use Intune to assign apps, deploy supported configurations, and review device and policy status.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg><h3>Designed for shared devices</h3><p>Support common-use devices in production, logistics, retail, healthcare administration and reception areas.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><h3>Consistent day-to-day use</h3><p>A familiar launcher and layout can reduce confusion when devices move between shifts or users.</p></div>
+  <div class="card feature"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Room for the whole workflow</h3><p>Users can move between approved apps and supported web links without needing a separate device for each task.</p></div>
+</section>
+
+<section class="card" aria-labelledby="pieces">
+  <h2 id="pieces">Intune manages the device. Managed Home Screen shapes the experience.</h2>
+  <p class="lead">These components work together, but they have different roles in an Android Enterprise deployment.</p>
+  <div class="two-col" style="margin:16px 0 0">
+    <div><h3>Microsoft Intune</h3><p>Enrolls and manages supported devices, assigns applications, deploys configuration policies and reports available compliance and device status.</p></div>
+    <div><h3>Managed Home Screen</h3><p>Acts as the managed launcher in supported multi-app kiosk scenarios and presents the approved apps and configured shortcuts.</p></div>
+  </div>
+  <h3 style="margin-top:20px">Android Enterprise policies</h3>
+  <p>Define the supported kiosk mode, application availability and relevant device restrictions. Review the whole configuration as one security design.</p>
+  <div class="note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><p><strong>Important:</strong> Managed Home Screen is not a substitute for device restrictions. App behavior and configuration determine whether other Android features can be reached.</p></div>
+</section>
+
+<section class="card" aria-labelledby="checklist">
+  <h2 id="checklist">How to configure a multi-app Android kiosk in Intune</h2>
+  <p class="lead">Use these steps as a planning guide. Exact options vary by Android Enterprise enrollment type, device manufacturer, OS version and the current Intune admin center.</p>
+  <ol class="steps">
+    <li><h3>Choose enrollment</h3><p>Decide whether a dedicated device or a supported fully managed, user-affiliated device best matches the scenario.</p></li>
+    <li><h3>Enroll and group</h3><p>Set up Android Enterprise enrollment, confirm devices appear in Intune, and assign them to the intended device groups.</p></li>
+    <li><h3>Deploy required apps</h3><p>Add the business apps and Managed Home Screen through the supported Intune and Managed Google Play workflow. Assign required installations.</p></li>
+    <li><h3>Configure kiosk mode</h3><p>Create the applicable device restrictions profile and select multi-app kiosk mode and the permitted applications.</p></li>
+    <li><h3>Customize the launcher</h3><p>Use a Managed Home Screen app configuration policy for the supported layout, app list, web links and user experience settings.</p></li>
+    <li><h3>Apply restrictions</h3><p>Review system settings, status bar, notifications and other available controls against your business and security requirements.</p></li>
+    <li><h3>Test real workflows</h3><p>Check every app, sign-in, links, connectivity, reboot recovery, app updates and approved maintenance procedures on test devices.</p></li>
+    <li><h3>Roll out and support</h3><p>Deploy in stages, monitor policy and app status, document troubleshooting, and review the setup as requirements change.</p></li>
+  </ol>
+  <div class="note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><p><strong>Deployment tip:</strong> install and assign the required apps before expecting them to appear in Managed Home Screen. Pilot the complete user experience before applying the configuration to a large device fleet.</p></div>
+</section>
+
+<section class="card prose" aria-labelledby="ownership">
+  <h2 id="ownership">Shared devices need clear ownership, not just kiosk mode</h2>
+  <p>When many employees use the same Android device, it can be unclear who should report a problem or check its condition. A device might stay in use for long periods, an app may become unresponsive, or an issue may go unnoticed between shifts.</p>
+  <p>Good operations combine Intune management with a simple process for checking devices, reporting faults and deciding when maintenance is needed.</p>
+  <ul class="check-list">
+    <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Assign responsibility for device checks and fault reporting.</span></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Track recurring app, network and device issues.</span></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Use available Intune diagnostics and compliance information.</span></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Define when to restart, update or replace a device.</span></li>
+  </ul>
+  <h3 style="margin-top:20px">Do all kiosk devices need scheduled reboots?</h3>
+  <p>No. A regular restart can be useful in a specific environment, but it should not be treated as a universal requirement. Base restart procedures on observed issues, app requirements, vendor guidance and operational needs. Avoid disrupting active work without a clear reason.</p>
+</section>
+
+<section class="card prose" aria-labelledby="reliability">
+  <h2 id="reliability">Monitor Android uptime and reboot history</h2>
+  <p>When investigating a shared-device issue, IT may need to know whether the device restarted shortly before the problem occurred. Reboot history and uptime can add context to other evidence, such as Intune status, application diagnostics, connectivity information and user reports.</p>
+  <p>RebootMonitor is an Android app designed to track uptime, reboot history and reboot statistics. According to its product description, monitoring data is stored locally on the device. It is an optional complement to a device-management process, not a requirement for Intune kiosk mode, and not a replacement for Intune.</p>
+  <p>Learn more: <a href="intune-shared-devices.html">deploying RebootMonitor with Intune and Managed Home Screen</a>, <a href="intune-shared-device-monitoring.html">reboot monitoring for shared device fleets</a> and <a href="android-kiosk-monitoring.html">Android kiosk monitoring</a>.</p>
+  <div class="note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><p>Before deployment, validate compatibility with your Android Enterprise enrollment type, kiosk restrictions, app permissions and organizational security requirements.</p></div>
+</section>
+
+<section class="card" aria-labelledby="tools">
+  <h2 id="tools">Management, launcher and monitoring are different jobs</h2>
+  <p class="lead">Use each component for what it is designed to do.</p>
+  <div style="overflow-x:auto"><table>
+    <thead><tr><th>Component</th><th>Primary purpose</th><th>What it does not replace</th></tr></thead>
+    <tbody>
+    <tr><td><strong>Microsoft Intune</strong></td><td>Enrollment, app deployment, configuration policies and supported management and compliance reporting.</td><td>It does not guarantee that every diagnostic detail is available for every device.</td></tr>
+    <tr><td><strong>Managed Home Screen</strong></td><td>Controlled launcher experience for approved apps in supported kiosk scenarios.</td><td>It is not a standalone security boundary; pair it with suitable device restrictions and testing.</td></tr>
+    <tr><td><strong>RebootMonitor</strong></td><td>Tracks Android uptime and reboot history on the device.</td><td>It does not enroll, configure, secure or remotely manage a fleet like Intune.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="card faq" aria-labelledby="faq">
+  <h2 id="faq">Android multi-app kiosk and Intune FAQs</h2>
+  <details><summary>Can I show multiple applications on one Android kiosk device?</summary><p>Yes. Supported Android Enterprise devices can be configured for multi-app kiosk mode through Microsoft Intune. Managed Home Screen provides the managed launcher for approved applications.</p></details>
+  <details><summary>Do I need Managed Home Screen for every Android kiosk?</summary><p>No. Managed Home Screen is used for supported multi-app kiosk scenarios. Single-app kiosk configurations and other Android management scenarios can use different approaches.</p></details>
+  <details><summary>Can users install their own applications in kiosk mode?</summary><p>A properly configured kiosk restricts access to the approved experience. The exact protections depend on enrollment, app assignments, device restrictions and other security settings. Test the complete configuration rather than relying on the launcher alone.</p></details>
+  <details><summary>Can I manage Android kiosk devices remotely with Intune?</summary><p>Microsoft Intune supports remote management of enrolled devices, including supported application deployments, configuration policies and compliance monitoring. Available actions depend on the device and management scenario.</p></details>
+  <details><summary>Should shared Android kiosk devices be restarted regularly?</summary><p>Not necessarily. A scheduled restart may be appropriate for a specific operational requirement, but it should not be assumed to be necessary for every device. Base the policy on observed issues, application requirements, vendor guidance and operational needs.</p></details>
+  <details><summary>Does Intune show the complete reboot history of every Android device?</summary><p>Do not assume Intune provides a complete device-level reboot history for every Android Enterprise configuration. Available information depends on the management capabilities and diagnostic data exposed by the device and operating system.</p></details>
+  <details><summary>Can RebootMonitor replace Microsoft Intune?</summary><p>No. RebootMonitor focuses on uptime and reboot tracking. It does not replace Intune enrollment, application deployment, configuration, compliance or device-management capabilities.</p></details>
+  <details><summary>Which organizations can benefit from multi-app kiosk mode?</summary><p>It can suit supported workflows in warehouses, production areas, retail, reception, logistics and other shared-device environments. The right setup depends on the work users need to do and the security controls required.</p></details>
+</section>
+
+<section class="card" aria-labelledby="docs">
+  <h2 id="docs">Official Microsoft documentation</h2>
+  <p class="lead">Use Microsoft's current documentation to validate the enrollment path and configuration options for your environment.</p>
+  <ul class="related-list">
+    <li><a href="intune-shared-devices.html">RebootMonitor with Intune &amp; Managed Home Screen</a> — deploying to shared devices.</li>
+    <li><a href="intune-shared-device-monitoring.html">Android Reboot Monitoring for Intune</a> — reboot health across a managed fleet.</li>
+    <li><a href="android-kiosk-monitoring.html">Android Kiosk Monitoring</a> — keeping unattended kiosks stable.</li>
+    <li><a href="android-uptime-monitoring.html">Android Uptime Tracker</a> — the live uptime counter on the device.</li>
+  </ul>
+  <p style="margin:16px 0 0;font-size:14px;color:var(--muted)">This guide is informational and is not official Microsoft documentation. Intune features and settings can change; verify the supported options for your device, enrollment type and operating-system version.</p>
+</section>
+
+<section class="card cta" aria-labelledby="get">
+  <svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>
+  <div class="cta-text">
+    <h2 id="get">Try RebootMonitor</h2>
+    <p style="margin:0">Free, ad-free and private: your reboot data stays on your device.</p>
+  </div>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=app.rebootmonitor.mobile" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg> View on Google Play</a>
+</section>
+
+<section class="card" aria-labelledby="related">
+  <h2 id="related">Related reading</h2>
+  <ul class="related-list">
+    <li><a href="check-last-reboot-android.html">How to check when your Android phone was last restarted</a> — three ways, from settings to automatic tracking.</li>
+    <li><a href="does-android-keep-reboot-history.html">Does Android keep a reboot history?</a> — what Android records, and what it doesn't.</li>
+    <li><a href="android-reboot-notification.html">Android Reboot Notification &amp; Reminder</a> — how the 3, 7 or 14-day reminder works.</li>
+    <li><a href="android-uptime-monitoring.html">Android Uptime Tracker</a> — the live uptime counter on the device.</li>
+    <li><a href="android-reboot-tracking.html">Android Reboot Tracker</a> — how every restart is logged automatically.</li>
+  </ul>
+</section>
+
+</article>
+</main>
+
+<footer class="footer">
+  <div>© 2026 Nordic Appworks • RebootMonitor</div>
+  <nav aria-label="Footer"><a href="https://rebootmonitor.com/">Home</a><a href="https://rebootmonitor.com/about.html">About</a><a href="https://rebootmonitor.com/intune-shared-devices.html">Intune guide</a><a href="https://rebootmonitor.com/privacy.html">Privacy Policy</a><a href="https://updatemonitor.app/">UpdateMonitor</a><a href="https://play.google.com/store/apps/details?id=app.rebootmonitor.mobile" target="_blank" rel="noopener">Google Play</a></nav>
+</footer>
+</body>
+</html>
